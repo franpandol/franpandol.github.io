@@ -2,9 +2,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import About from './components/About'; // Ensure this component exists
-import ProjectList from './components/ProjectList'; // Ensure this component exists
-import './App.css'; // Ensure this CSS file exists
+import About from './components/About';
+import Blog from './components/Blog';
+import ProjectList from './components/ProjectList';
+import './App.css'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<ProjectList />} />
+          <Route path="/blogs" element={<Blog />} />
           {/* Redirect to /about as the home page */}
           <Route path="/" element={<About />} />
         </Routes>
