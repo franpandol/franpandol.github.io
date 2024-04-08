@@ -1,6 +1,13 @@
 import React from 'react';
+import { usePostHog } from 'posthog-js/react'
+
 
 const About = () => {
+    const posthog = usePostHog();
+
+    const handleDownloadClick = (format) => {
+        posthog.capture('download_cv', { format });
+    };
   return (
     <div className="container mx-auto mt-8">
     
@@ -8,15 +15,18 @@ const About = () => {
       <p className="mb-2">I'm Francisco Pandol, a professional software engineer with extensive experience across a variety of technologies and industries. My career is marked by a passion for developing scalable and efficient software solutions that enhance user experiences and drive business success.</p>
       <p className="mb-2">Throughout my career, I have led teams, pioneered development projects, and delivered comprehensive backend solutions, always focusing on writing clean, efficient, and maintainable code.</p>
       
-      {/* CV Download Links */}
-      <div className="flex mt-4">
-        <a href="/cv_markdown_en_Francisco_Pandol.md" download className="text-blue-500 hover:underline mr-4">
-          Download CV (Markdown)
-        </a>
-        <a href="/CV_en_Francisco_Pandol.pdf" download className="text-blue-500 hover:underline">
-          Download CV (PDF)
-        </a>
-      </div>
+
+        {/* CV Download Links */}
+        <div className="flex mt-4">
+            <a href="/cv_markdown_en_Francisco_Pandol.md" download className="text-blue-500 hover:underline mr-4"
+                onClick={() => handleDownloadClick('markdown')}>
+                Download CV (Markdown)
+            </a>
+            <a href="/CV_en_Francisco_Pandol.pdf" download className="text-blue-500 hover:underline"
+                onClick={() => handleDownloadClick('pdf')}>
+                Download CV (PDF)
+            </a>
+        </div>
       <h3 className="text-xl font-semibold mt-4 mb-2">Key Skills</h3>
       <ul className="list-disc list-inside">
         <li>Python & Django Development</li>
