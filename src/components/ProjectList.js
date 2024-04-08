@@ -54,6 +54,16 @@ const projects = [
         tags: ['Golang', ],
     },
     {
+        id: 8,
+        name: 'Chat with your PDF',
+        longDescription: 'This Streamlit application allows you to upload a PDF document, and then ask questions to retrieve relevant information from the document.',
+        language: 'Python',
+        lastUpdate: '2021-10-13',
+        repoUrl: 'https://github.com/franpandol/streamlit_openai_ask_pdf/',
+        demoUrl: '', // Add a demo URL if available
+        tags: ['Python', 'Streamlit', 'OpenAI'],
+    },
+    {
         id: 6,
         name: 'OpenAI Pricing API',
         longDescription: 'A Django based app providing a RESTful API to calculate costs based on the usage of OpenAI\'s GPT and image generation models. Useful for saas companies that want to offer OpenAI services to their customers.',
@@ -72,16 +82,6 @@ const projects = [
         repoUrl: 'https://github.com/franpandol/stock_market_django',
         demoUrl: '', // Add a demo URL if available
         tags: ['Django', 'Python'],
-    },
-    {
-        id: 8,
-        name: 'Chat with your PDF',
-        longDescription: 'This Streamlit application allows you to upload a PDF document, and then ask questions to retrieve relevant information from the document.',
-        language: 'Python',
-        lastUpdate: '2021-10-13',
-        repoUrl: 'https://github.com/franpandol/streamlit_openai_ask_pdf/',
-        demoUrl: '', // Add a demo URL if available
-        tags: ['Python', 'Streamlit', 'OpenAI'],
     },
     {
         id: 8,
