@@ -10,7 +10,7 @@ const projects = [
       language: 'Javascript',
       lastUpdate: '2021-10-13',
       repoUrl: 'https://github.com/franpandol/franpandol.github.io', // Add the repo URL if this project is in a repository
-      demoUrl: 'franpandol.github.io', // Add a demo URL if available
+      demoUrl: 'https://franpandol.github.io', // Add a demo URL if available
       tags: ['React', 'TailwindCSS'],
     },
     {
@@ -127,7 +127,7 @@ const ProjectList = () => {
       {Object.keys(projectsByLanguage).map((language) => (
         <div key={language}>
 
-          <h2 className="text-xl font-bold mb-4 mt-4">{language} Projects</h2>
+          <h2 className="text-xl font-bold mb-4 mt-6">{language} Projects</h2>
 
             <div className="grid grid-cols-3 gap-4">
                 {projectsByLanguage[language].map((project) => (
