@@ -1,25 +1,25 @@
 /** @type {import("tailwindcss").Config} */
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
         surface: {
-          DEFAULT: "#f5f3ef",
-          raised: "#fffcf8",
-          overlay: "#ebe6de",
-          border: "#ddd6cb",
+          DEFAULT: "#fafafa",
+          raised: "#ffffff",
+          overlay: "#f4f4f5",
+          border: "#e5e5e5",
         },
         accent: {
-          DEFAULT: "#3f5d4a",
-          muted: "#2d4334",
-          dim: "rgba(63, 93, 74, 0.14)",
-          soft: "#e8efe9",
+          DEFAULT: "#171717",
+          muted: "#404040",
+          dim: "rgba(23, 23, 23, 0.06)",
+          soft: "#f4f4f5",
         },
         content: {
-          primary: "#1c1917",
-          secondary: "#57534e",
-          tertiary: "#78716c",
+          primary: "#171717",
+          secondary: "#525252",
+          tertiary: "#737373",
         },
       },
       fontFamily: {
@@ -37,8 +37,8 @@ module.exports = {
         ],
       },
       fontSize: {
-        "display-lg": ["clamp(2.25rem,5vw,3.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
-        "display-sm": ["clamp(1.5rem,3vw,2rem)", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
+        "display-lg": ["clamp(1.75rem,4vw,2.25rem)", { lineHeight: "1.25", letterSpacing: "-0.02em" }],
+        "display-sm": ["1.125rem", { lineHeight: "1.35", letterSpacing: "0.08em" }],
       },
       animation: {
         "fade-up": "fadeUp 0.6s ease-out forwards",
@@ -55,8 +55,12 @@ module.exports = {
         },
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(63, 93, 74, 0.08), 0 20px 40px -16px rgba(28, 25, 23, 0.12)",
-        card: "0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 4px 24px -6px rgba(28, 25, 23, 0.08)",
+        glow: "none",
+        card: "0 1px 2px rgba(0, 0, 0, 0.04)",
+        page: "0 0 0 1px #e5e5e5, 0 1px 3px rgba(0, 0, 0, 0.06)",
+      },
+      maxWidth: {
+        doc: "42rem",
       },
     },
   },

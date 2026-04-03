@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "./Section";
+import Section, { sectionTitleClass } from "./Section";
 
 const skillGroups = [
   {
@@ -22,24 +22,19 @@ const skillGroups = [
 
 const SkillsSection = () => (
   <Section id="skills">
-    <h2 className="font-display text-display-sm font-semibold text-content-primary">Skills</h2>
-    <p className="mt-3 max-w-2xl text-content-secondary">
-      High-level map aligned with senior backend and technical leadership expectations — concise,
-      not a keyword dump.
+    <h2 className={sectionTitleClass}>Skills</h2>
+    <p className="mt-4 max-w-2xl text-sm leading-relaxed text-content-secondary">
+      Concise map of backend, systems, cloud, and delivery — aligned with senior technical
+      leadership roles.
     </p>
-    <div className="mt-10 grid gap-8 sm:grid-cols-2">
+    <div className="mt-8 space-y-8 border-t border-surface-border pt-8">
       {skillGroups.map((group) => (
         <div key={group.title}>
-          <h3 className="font-mono text-xs font-medium uppercase tracking-wider text-accent">
-            {group.title}
-          </h3>
-          <ul className="mt-4 space-y-2 text-sm text-content-secondary">
+          <h3 className={`${sectionTitleClass} mb-3`}>{group.title}</h3>
+          <ul className="space-y-1 text-sm text-content-secondary">
             {group.items.map((item) => (
-              <li key={item} className="flex gap-2">
-                <span className="text-content-tertiary" aria-hidden>
-                  ·
-                </span>
-                <span>{item}</span>
+              <li key={item} className="leading-relaxed">
+                {item}
               </li>
             ))}
           </ul>

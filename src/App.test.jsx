@@ -1,15 +1,16 @@
 import { render, screen } from "@testing-library/react";
+import { expect, test, vi } from "vitest";
 import App from "./App";
 
-jest.mock("posthog-js/react", () => ({
-  usePostHog: () => ({ capture: jest.fn() }),
+vi.mock("posthog-js/react", () => ({
+  usePostHog: () => ({ capture: vi.fn() }),
   PostHogProvider: ({ children }) => children,
 }));
 
-test("renders site title and hero", () => {
+test("renders CV masthead and name", () => {
   render(<App />);
   expect(screen.getAllByText(/Francisco Pandol/i).length).toBeGreaterThanOrEqual(1);
   expect(
-    screen.getByRole("heading", { name: /I design and lead scalable backend systems/i })
+    screen.getByRole("heading", { level: 1, name: /Francisco Pandol/i })
   ).toBeInTheDocument();
 });
