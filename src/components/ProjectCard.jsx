@@ -1,20 +1,20 @@
 import React from "react";
 
 const linkClass =
-  "text-sm text-content-secondary underline-offset-4 hover:text-content-primary hover:underline";
+  "text-sm text-accent-muted underline-offset-4 hover:text-accent hover:underline";
 
 const ProjectCard = ({ project }) => (
-  <article className="border-b border-surface-border py-8 last:border-b-0">
-    <h3 className="text-base font-semibold text-content-primary">{project.name}</h3>
-    <p className="mt-3 text-sm leading-relaxed text-content-secondary">
+  <article className="py-8 md:py-10">
+    <h3 className="text-lg font-semibold text-content-primary md:text-xl">{project.name}</h3>
+    <p className="mt-3 text-sm leading-relaxed text-content-secondary md:text-[15px]">
       <span className="font-medium text-content-primary">Problem. </span>
       {project.problem}
     </p>
-    <p className="mt-2 text-sm leading-relaxed text-content-secondary">
+    <p className="mt-2 text-sm leading-relaxed text-content-secondary md:text-[15px]">
       <span className="font-medium text-content-primary">Solution. </span>
       {project.solution}
     </p>
-    <p className="mt-2 text-sm leading-relaxed text-content-secondary">
+    <p className="mt-2 text-sm leading-relaxed text-content-secondary md:text-[15px]">
       <span className="font-medium text-content-primary">Impact. </span>
       {project.impact}
     </p>

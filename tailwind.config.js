@@ -5,31 +5,36 @@ export default {
     extend: {
       colors: {
         surface: {
-          DEFAULT: "#fafafa",
+          DEFAULT: "#f4f4f5",
           raised: "#ffffff",
-          overlay: "#f4f4f5",
-          border: "#e5e5e5",
+          overlay: "#e4e4e7",
+          border: "rgba(0, 0, 0, 0.08)",
         },
         accent: {
-          DEFAULT: "#171717",
-          muted: "#404040",
-          dim: "rgba(23, 23, 23, 0.06)",
-          soft: "#f4f4f5",
+          DEFAULT: "#0f766e",
+          muted: "#0d9488",
+          dim: "rgba(13, 148, 136, 0.18)",
+          soft: "rgba(13, 148, 136, 0.09)",
         },
         content: {
-          primary: "#171717",
-          secondary: "#525252",
-          tertiary: "#737373",
+          primary: "#18181b",
+          secondary: "#52525b",
+          tertiary: "#71717a",
         },
       },
       fontFamily: {
         sans: [
-          "IBM Plex Sans",
+          "Plus Jakarta Sans",
           "system-ui",
           "-apple-system",
           "sans-serif",
         ],
-        display: ["IBM Plex Serif", "Georgia", "Times New Roman", "serif"],
+        display: [
+          "Outfit",
+          "Plus Jakarta Sans",
+          "system-ui",
+          "sans-serif",
+        ],
         mono: [
           "IBM Plex Mono",
           "ui-monospace",
@@ -37,8 +42,8 @@ export default {
         ],
       },
       fontSize: {
-        "display-lg": ["clamp(1.75rem,4vw,2.25rem)", { lineHeight: "1.25", letterSpacing: "-0.02em" }],
-        "display-sm": ["1.125rem", { lineHeight: "1.35", letterSpacing: "0.08em" }],
+        "display-lg": ["clamp(2rem,5vw,3.25rem)", { lineHeight: "1.1", letterSpacing: "-0.03em" }],
+        "display-sm": ["1.125rem", { lineHeight: "1.35", letterSpacing: "0.06em" }],
       },
       animation: {
         "fade-up": "fadeUp 0.6s ease-out forwards",
@@ -55,12 +60,12 @@ export default {
         },
       },
       boxShadow: {
-        glow: "none",
-        card: "0 1px 2px rgba(0, 0, 0, 0.04)",
-        page: "0 0 0 1px #e5e5e5, 0 1px 3px rgba(0, 0, 0, 0.06)",
+        glow: "0 0 0 1px rgba(13, 148, 136, 0.35)",
+        card: "0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.06)",
+        page: "none",
       },
       maxWidth: {
-        doc: "42rem",
+        doc: "90rem",
       },
     },
   },

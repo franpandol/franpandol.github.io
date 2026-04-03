@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { usePostHog } from "posthog-js/react";
-import Section, { sectionTitleClass } from "./Section";
 
 const EMAIL = "pandol.francisco@gmail.com";
 
 const linkClass =
-  "text-sm text-content-primary underline-offset-4 hover:underline";
+  "text-sm text-accent-muted underline-offset-4 hover:text-accent hover:underline";
 
-const ContactSection = () => {
+export const ContactContent = () => {
   const posthog = usePostHog();
   const [copySuccess, setCopySuccess] = useState("");
 
@@ -28,14 +27,8 @@ const ContactSection = () => {
   };
 
   return (
-    <Section id="contact" className="pb-16 md:pb-20">
-      <h2 className={sectionTitleClass}>Contact</h2>
-      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-content-secondary">
-        Open to <strong className="font-medium text-content-primary">Software Project Leader</strong>{" "}
-        and <strong className="font-medium text-content-primary">Backend Tech Lead</strong> roles
-        where system design, high concurrency, and technical ownership matter.
-      </p>
-      <div className="mt-8 space-y-3 text-sm">
+    <>
+      <div className="space-y-4 text-sm md:text-[15px]">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <a href={`mailto:${EMAIL}`} className={linkClass} onClick={handleContactClick}>
             {EMAIL}
@@ -73,12 +66,11 @@ const ContactSection = () => {
           </a>
         </p>
       </div>
-      <p className="mt-10 border-t border-surface-border pt-8 text-sm leading-relaxed text-content-tertiary">
-        Interested in marketplaces, payments, and platform-scale backends where engineering impact
-        is measured in reliability and throughput.
+      <p className="mt-12 border-t border-surface-border pt-10 text-sm leading-relaxed text-content-tertiary md:text-[15px]">
+        Interested in marketplaces, payments, and platform-scale backends where engineering impact is
+        measured in reliability and throughput.
       </p>
-    </Section>
+    </>
   );
 };
 
-export default ContactSection;

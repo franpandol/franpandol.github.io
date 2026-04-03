@@ -27,7 +27,12 @@
   }
 
   ::selection {
-    @apply bg-accent-dim text-content-primary;
+    @apply bg-accent-soft text-content-primary;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
   }
 }
 

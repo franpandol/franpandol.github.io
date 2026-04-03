@@ -1,35 +1,30 @@
 import React from "react";
-import Section, { sectionTitleClass } from "./Section";
+import { sectionTitleClass } from "../sectionTitles";
 import { featuredRoles, earlierRoles } from "../data/experience";
 
-const ExperienceSection = () => (
-  <Section id="experience">
-    <h2 className={sectionTitleClass}>Experience</h2>
-    <p className="mt-4 max-w-2xl text-sm leading-relaxed text-content-secondary">
-      System design, architecture, scalability, and leadership — marketplaces, fintech, and
-      high-traffic backends (including the Mercado Libre ecosystem at RealTrends).
-    </p>
-    <div className="mt-8 space-y-0 divide-y divide-surface-border border-t border-surface-border">
+export const ExperienceContent = () => (
+  <>
+    <div className="space-y-0 divide-y divide-surface-border border-t border-surface-border">
       {featuredRoles.map((role) => (
-        <article key={role.id} className="py-8 first:pt-6">
+        <article key={role.id} className="py-8 first:pt-6 md:py-10 md:first:pt-8">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
             <div>
-              <h3 className="text-base font-semibold text-content-primary">{role.title}</h3>
+              <h3 className="text-lg font-semibold text-content-primary md:text-xl">{role.title}</h3>
               <p className="text-sm text-content-secondary">{role.org}</p>
             </div>
             <time className="shrink-0 font-mono text-xs text-content-tertiary">{role.period}</time>
           </div>
           <div className="mt-4">
-            <p className="text-xs font-medium uppercase tracking-wide text-content-tertiary">
-              Challenge
+            <p className="text-xs font-medium uppercase tracking-wide text-accent-muted">Challenge</p>
+            <p className="mt-2 text-sm leading-relaxed text-content-secondary md:text-[15px]">
+              {role.problem}
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-content-secondary">{role.problem}</p>
           </div>
           <div className="mt-4">
-            <p className="text-xs font-medium uppercase tracking-wide text-content-tertiary">
+            <p className="text-xs font-medium uppercase tracking-wide text-accent-muted">
               What I designed &amp; led
             </p>
-            <ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-relaxed text-content-secondary">
+            <ul className="mt-2 list-disc space-y-2 pl-4 text-sm leading-relaxed text-content-secondary md:text-[15px]">
               {role.highlights.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -39,14 +34,14 @@ const ExperienceSection = () => (
         </article>
       ))}
     </div>
-    <div className="mt-10 border-t border-surface-border pt-8">
+    <div className="mt-12 border-t border-surface-border pt-10 md:mt-16 md:pt-12">
       <h3 className={sectionTitleClass}>Earlier career</h3>
-      <p className="mt-4 text-sm leading-relaxed text-content-secondary">
+      <p className="mt-4 text-sm leading-relaxed text-content-secondary md:text-[15px]">
         Teaching, public-sector platforms, freelance delivery, and university engineering.
       </p>
-      <ul className="mt-6 space-y-5">
+      <ul className="mt-8 space-y-6">
         {earlierRoles.map((role) => (
-          <li key={role.id} className="text-sm">
+          <li key={role.id} className="text-sm md:text-[15px]">
             <div className="flex flex-col gap-0.5 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-4">
               <span>
                 <span className="font-medium text-content-primary">{role.title}</span>
@@ -59,7 +54,6 @@ const ExperienceSection = () => (
         ))}
       </ul>
     </div>
-  </Section>
+  </>
 );
 
-export default ExperienceSection;
