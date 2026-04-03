@@ -1,6 +1,6 @@
 {
-  "short_name": "Portfolio",
-  "name": "Portfolio",
+  "short_name": "F. Pandol",
+  "name": "Francisco Pandol — Backend Tech Lead",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#f5f3ef",
+  "background_color": "#f5f3ef"
 }

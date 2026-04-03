@@ -1,27 +1,25 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import About from './components/About';
-import Blog from './components/Blog';
-import ProjectList from './components/ProjectList';
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Blog from "./components/Blog";
+import ProjectList from "./components/ProjectList";
 
-const App = () => {
-  return (
-    <Router>
+const basename = process.env.PUBLIC_URL || "";
+
+const App = () => (
+  <Router basename={basename}>
+    <div className="min-h-screen bg-surface">
       <Navbar />
-      <div className="mt-16">
-        <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<ProjectList />} />
-          <Route path="/blogs" element={<Blog />} />
-          {/* Redirect to /about as the home page */}
-          <Route path="/" element={<About />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-};
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<ProjectList />} />
+        <Route path="/blogs" element={<Blog />} />
+        <Route path="/about" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </div>
+  </Router>
+);
 
 export default App;

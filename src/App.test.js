@@ -1,8 +1,15 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+jest.mock("posthog-js/react", () => ({
+  usePostHog: () => ({ capture: jest.fn() }),
+  PostHogProvider: ({ children }) => children,
+}));
+
+test("renders site title and hero", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getAllByText(/Francisco Pandol/i).length).toBeGreaterThanOrEqual(1);
+  expect(
+    screen.getByRole("heading", { name: /I design and lead scalable backend systems/i })
+  ).toBeInTheDocument();
 });
