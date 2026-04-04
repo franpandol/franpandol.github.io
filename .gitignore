@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# npm audit snapshots (regenerate locally or in CI; do not commit)
+audit.txt
+
 # production
 /build
 /dist
