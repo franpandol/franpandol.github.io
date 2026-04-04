@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import DocumentMeta from "./components/DocumentMeta";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Blog from "./components/Blog";
@@ -15,6 +16,7 @@ const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "";
 const App = () => (
   <Router basename={basename}>
     <div className="min-h-screen w-full bg-surface">
+      <DocumentMeta />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

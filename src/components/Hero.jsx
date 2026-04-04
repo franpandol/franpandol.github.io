@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { usePostHog } from "posthog-js/react";
+import { useTranslation } from "react-i18next";
 
 const textLink =
   "text-sm text-accent-muted underline-offset-4 hover:text-accent hover:underline";
 
 const Hero = () => {
   const posthog = usePostHog();
+  const { t } = useTranslation();
 
   const onDownload = (format) => {
     posthog?.capture("download_cv", { format });
@@ -20,63 +22,59 @@ const Hero = () => {
       />
       <div className="relative w-full max-w-[90rem] px-6 pb-14 pt-12 md:px-12 md:pb-20 md:pt-16 lg:px-16">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-muted">
-          Software leadership · Backend
+          {t("hero.kicker")}
         </p>
         <h1 className="font-display mt-4 text-display-lg font-semibold tracking-tight text-content-primary">
-          Francisco Pandol
+          {t("nav.brand")}
         </h1>
-        <p className="mt-3 text-sm text-content-tertiary md:text-[15px]">
-          Software Project Leader · Backend Tech Lead · 10+ years
-        </p>
+        <p className="mt-3 text-sm text-content-tertiary md:text-[15px]">{t("hero.subtitle")}</p>
         <p className="mt-8 max-w-3xl text-[15px] leading-relaxed text-content-secondary md:text-base md:leading-relaxed">
-          Backend Tech Lead with 10+ years building high-concurrency systems in fintech and real-time
-          environments. Strong in Python, Django, and FastAPI — owning architecture, leading teams,
-          and delivering measurable performance and scale outcomes.
+          {t("hero.intro")}
         </p>
         <p className="mt-4 max-w-3xl text-[15px] leading-relaxed text-content-secondary md:text-base">
-          <span className="font-medium text-content-primary">Summary:</span> I design and lead scalable
-          backend systems for product and platform teams.
+          <span className="font-medium text-content-primary">{t("hero.summaryLabel")}</span>{" "}
+          {t("hero.summaryLine")}
         </p>
         <div className="mt-10 flex flex-wrap gap-x-3 gap-y-2 text-sm text-content-tertiary">
-          <span className="text-content-secondary">Go to:</span>
+          <span className="text-content-secondary">{t("hero.goTo")}</span>
           <Link to="/experience" className={textLink}>
-            Experience
+            {t("nav.experience")}
           </Link>
           <span aria-hidden className="text-content-tertiary">
             ·
           </span>
           <Link to="/about" className={textLink}>
-            About
+            {t("nav.about")}
           </Link>
           <span aria-hidden className="text-content-tertiary">
             ·
           </span>
           <Link to="/skills" className={textLink}>
-            Skills
+            {t("nav.skills")}
           </Link>
           <span aria-hidden className="text-content-tertiary">
             ·
           </span>
           <Link to="/work" className={textLink}>
-            Selected work
+            {t("nav.work")}
           </Link>
           <span aria-hidden className="text-content-tertiary">
             ·
           </span>
           <Link to="/projects" className={textLink}>
-            All projects
+            {t("nav.projects")}
           </Link>
           <span aria-hidden className="text-content-tertiary">
             ·
           </span>
           <Link to="/blogs" className={textLink}>
-            Writing
+            {t("nav.blogs")}
           </Link>
           <span aria-hidden className="text-content-tertiary">
             ·
           </span>
           <Link to="/contact" className={textLink}>
-            Contact
+            {t("nav.contact")}
           </Link>
         </div>
         <div className="mt-8 flex flex-wrap gap-x-4 gap-y-1 text-sm">
@@ -86,7 +84,7 @@ const Hero = () => {
             className={textLink}
             onClick={() => onDownload("pdf")}
           >
-            Download CV (PDF)
+            {t("hero.downloadPdf")}
           </a>
           <span className="text-content-tertiary">·</span>
           <a
@@ -95,7 +93,7 @@ const Hero = () => {
             className={textLink}
             onClick={() => onDownload("markdown")}
           >
-            Download CV (Markdown)
+            {t("hero.downloadMd")}
           </a>
         </div>
       </div>

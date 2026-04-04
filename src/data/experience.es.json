@@ -1,0 +1,223 @@
+{
+  "experiences": [
+    {
+      "role": "Líder técnico de backend",
+      "company": "Dexter Development",
+      "start": "2024-07-01",
+      "current": true,
+      "summary": "Lideré el desarrollo de punta a punta de una plataforma de trading de criptomonedas desde el MVP hasta producción, definiendo arquitectura y hoja de ruta técnica mientras coordinaba escalabilidad, seguridad y cumplimiento regulatorio (KYC/AML).",
+      "achievements": [
+        "Lideré el desarrollo de punta a punta de una plataforma de trading de criptomonedas, definiendo arquitectura y hoja de ruta técnica.",
+        "Coordiné decisiones técnicas clave para escalabilidad, seguridad y cumplimiento regulatorio (KYC/AML).",
+        "Diseñé APIs de alta concurrencia con Django/DRF para procesamiento de transacciones en tiempo real.",
+        "Integré servicios críticos (Fireblocks, MetaMap) para custodia de activos y verificación de identidad.",
+        "Establecí pipelines de CI/CD y prácticas de ingeniería para alta disponibilidad y entrega rápida."
+      ],
+      "tech": [
+        "Python",
+        "Django",
+        "DRF",
+        "PostgreSQL",
+        "Fireblocks",
+        "MetaMap",
+        "CI/CD",
+        "APIs de criptomonedas"
+      ],
+      "projects": [
+        {
+          "name": "UniversalCoins — exchange de criptomonedas",
+          "link": "https://universalcoins.net/",
+          "description": "Plataforma de trading con BTC, ETH y USDT e integración bancaria."
+        }
+      ]
+    },
+    {
+      "role": "Ingeniero senior de backend",
+      "company": "AgioRatings",
+      "start": "2023-12-01",
+      "end": "2024-03-31",
+      "summary": "Construí APIs de alto rendimiento con FastAPI para análisis financiero en tiempo real y desplegué soluciones escalables en Azure.",
+      "achievements": [
+        "Construí APIs de alto rendimiento con FastAPI para análisis financiero en tiempo real.",
+        "Diseñé sistemas de detección de anomalías para monitoreo de exchanges.",
+        "Implementé pipelines de procesamiento asíncrono para flujos de datos de alto volumen.",
+        "Desplegué soluciones escalables en Azure con automatización de CI/CD."
+      ],
+      "tech": ["Python", "FastAPI", "Azure", "Asyncio", "Analítica en tiempo real"],
+      "projects": [
+        {
+          "name": "Sistema de detección de anomalías financieras",
+          "link": "https://www.agioratings.io",
+          "description": "Monitoreo en tiempo real de exchanges digitales con señales de estrés y patrones inusuales."
+        }
+      ]
+    },
+    {
+      "role": "Ingeniero senior de backend",
+      "company": "GLASFunds",
+      "start": "2022-08-01",
+      "end": "2023-10-31",
+      "summary": "Desarrollé backends escalables para herramientas financieras en Django con fuerte foco en rendimiento de base de datos y escalado horizontal en GCP.",
+      "achievements": [
+        "Desarrollé backends escalables para herramientas financieras con Django.",
+        "Optimicé el rendimiento de la base de datos reduciendo el tiempo de consulta en más del 40%.",
+        "Implementé escalado horizontal en GCP para alta disponibilidad."
+      ],
+      "tech": ["Python", "Django", "Google Cloud Platform", "PostgreSQL"],
+      "projects": [
+        {
+          "name": "Plataforma de gestión patrimonial GLASFunds",
+          "link": "https://www.glasfunds.com",
+          "description": "Plataforma de gestión patrimonial para activos financieros."
+        }
+      ]
+    },
+    {
+      "role": "Ingeniero senior de software",
+      "company": "Apptim",
+      "start": "2021-02-01",
+      "end": "2022-07-31",
+      "summary": "Desarrollé herramientas de análisis de rendimiento para apps móviles, lideré la migración de Python 2 a 3 y automatizé pruebas con AWS Device Farm.",
+      "achievements": [
+        "Desarrollé herramientas de análisis de rendimiento para apps móviles.",
+        "Lideré la migración de Python 2 a Python 3.",
+        "Automatizé pipelines de pruebas con AWS Device Farm."
+      ],
+      "tech": ["Python", "AWS", "AWS Device Farm", "Pruebas de rendimiento móvil"],
+      "projects": [
+        {
+          "name": "Plataforma Apptim de análisis de rendimiento móvil",
+          "link": "https://www.apptim.com",
+          "description": "Herramientas de análisis de rendimiento para iOS y Android."
+        }
+      ]
+    },
+    {
+      "role": "Líder técnico de backend",
+      "company": "RealTrends",
+      "start": "2019-02-01",
+      "end": "2021-02-28",
+      "summary": "Lideré el equipo de backend de una plataforma de analítica para vendedores de Mercado Libre con arquitectura orientada a eventos y fuerte colaboración con producto.",
+      "achievements": [
+        "Lideré el equipo de backend (4–6 ingenieros) en una plataforma de analítica para vendedores de Mercado Libre.",
+        "Diseñé arquitectura orientada a eventos y sistemas en tiempo real.",
+        "Reduje la latencia del sistema en más del 60% mediante procesamiento asíncrono.",
+        "Colaboré con producto para definir roadmap y prioridades."
+      ],
+      "tech": ["Python", "Django", "PostgreSQL", "Procesamiento en tiempo real", "Liderazgo de equipo"],
+      "projects": [
+        {
+          "name": "Plataforma de business intelligence RealTrends",
+          "link": "https://www.real-trends.com",
+          "description": "Herramientas de analítica e inventario para vendedores de e-commerce con datos en tiempo real."
+        }
+      ]
+    },
+    {
+      "role": "Ingeniero líder",
+      "company": "Al Pelo",
+      "start": "2018-01-01",
+      "end": "2019-02-01",
+      "summary": "Ingeniero líder de una plataforma de delivery bajo demanda (0 → MVP): fundé y lideré el equipo de ingeniería, definí la arquitectura de backend y entregué un MVP listo para producción.",
+      "achievements": [
+        "Fundé y lideré el equipo de ingeniería, definiendo la arquitectura de backend desde cero.",
+        "Diseñé un sistema escalable de dispatch y logística en tiempo real.",
+        "Construí infraestructura en AWS (S3, RDS, SQS, SNS) con resiliencia y procesamiento asíncrono.",
+        "Entregué un MVP en producción optimizado para escalar y extender funcionalidades."
+      ],
+      "tech": ["Python", "Django", "AWS S3", "AWS RDS", "AWS SQS", "AWS SNS", "PostgreSQL", "Arquitectura de sistemas"],
+      "projects": [
+        {
+          "name": "Plataforma de delivery bajo demanda (0 → MVP)",
+          "description": "Delivery de punta a punta con dispatch en tiempo real, logística y backend escalable."
+        }
+      ]
+    },
+    {
+      "role": "Líder de desarrollo Python",
+      "company": "PredictionLabs",
+      "start": "2016-07-01",
+      "end": "2017-11-30",
+      "summary": "Líder técnico de backend de un exchange de criptomonedas: arquitectura, APIs, sistemas de administración y seguridad para transacciones financieras.",
+      "achievements": [
+        "Diseñé e implementé la arquitectura de backend de un exchange de Bitcoin, incluyendo APIs y paneles de administración.",
+        "Desarrollé mecanismos de seguridad avanzados (MFA, verificación de identidad) para proteger transacciones.",
+        "Gestioné almacenamiento transaccional seguro con PostgreSQL y MongoDB.",
+        "Establecí estándares y buenas prácticas para estabilidad y escalabilidad."
+      ],
+      "tech": ["Python", "Django", "PostgreSQL", "MongoDB", "Criptomonedas", "Seguridad"],
+      "projects": [
+        {
+          "name": "Plataforma de exchange de Bitcoin",
+          "description": "Exchange con APIs, administración y patrones de custodia seguros."
+        }
+      ]
+    },
+    {
+      "role": "Instructor de Django",
+      "earlierCareer": true,
+      "company": "Gobierno de Catamarca y Clúster Tecnológico",
+      "start": "2016-11-01",
+      "end": "2017-06-30",
+      "summary": "Instructor de Django en un programa de formación técnica: currículos intensivos de backend y mentoría.",
+      "achievements": [
+        "Diseñé e impartí programas intensivos de desarrollo backend con Django.",
+        "Mentoricé a profesionales en buenas prácticas, diseño de sistemas y arquitectura escalable.",
+        "Impulsé la adopción de estándares modernos de desarrollo e ingeniería."
+      ],
+      "tech": ["Django", "Python", "Formación técnica", "Arquitectura de software"]
+    },
+    {
+      "role": "Consultor técnico",
+      "earlierCareer": true,
+      "company": "Ministerio Nacional de Economía — Plataformas digitales gubernamentales",
+      "start": "2015-01-01",
+      "end": "2015-12-31",
+      "summary": "Consultor técnico en plataformas digitales del Estado: sistemas seguros, cumplimiento y alineación con stakeholders.",
+      "achievements": [
+        "Lideré el desarrollo de plataformas gubernamentales seguras con altos requisitos de cumplimiento y confiabilidad.",
+        "Diseñé sistemas con autenticación multicapa y cifrado de datos sensibles.",
+        "Implementé soluciones escalables en AWS alineadas con normativa.",
+        "Colaboré con perfiles no técnicos para traducir requisitos de negocio en soluciones técnicas."
+      ],
+      "tech": ["Django", "Python", "AWS", "Seguridad", "TI gubernamental"],
+      "projects": [
+        {
+          "name": "Plataforma oficial del Gobierno de Catamarca",
+          "link": "https://portal.catamarca.gob.ar",
+          "description": "Sitios gubernamentales seguros y paneles internos para funcionarios."
+        }
+      ]
+    },
+    {
+      "role": "Ingeniero de software (freelance)",
+      "earlierCareer": true,
+      "company": "Soluciones de software a medida",
+      "start": "2013-01-01",
+      "end": "2015-12-31",
+      "summary": "Entrega freelance de soluciones backend y móviles con CI/CD y ejecución ágil para varios clientes.",
+      "achievements": [
+        "Entregué soluciones backend y móviles para múltiples clientes e industrias.",
+        "Diseñé arquitecturas adaptables según requisitos de negocio.",
+        "Implementé pipelines de CI/CD y flujos ágiles para entrega eficiente.",
+        "Integré apps móviles con backends escalables (Firebase, Parse)."
+      ],
+      "tech": ["Django", "Python", "Android", "Firebase", "Parse", "CI/CD", "Agile"]
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "Java", "SQL"],
+    "frameworks": ["Django", "FastAPI", "Django REST Framework"],
+    "databases": ["PostgreSQL", "MongoDB"],
+    "cloud": ["AWS", "GCP", "Azure"],
+    "tools": ["CI/CD", "Asyncio", "Microservicios", "Android", "Firebase", "Parse"],
+    "soft_skills": [
+      "Sistemas distribuidos",
+      "Liderazgo técnico y mentoría",
+      "Optimización de rendimiento",
+      "Sistemas en tiempo real y alta concurrencia",
+      "Buenas prácticas de ingeniería",
+      "Formación técnica"
+    ]
+  }
+}

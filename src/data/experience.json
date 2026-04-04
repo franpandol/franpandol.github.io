@@ -155,6 +155,7 @@
     },
     {
       "role": "Django Instructor",
+      "earlierCareer": true,
       "company": "Catamarca Government & Technology Cluster",
       "start": "2016-11-01",
       "end": "2017-06-30",
@@ -168,6 +169,7 @@
     },
     {
       "role": "Technical Consultant",
+      "earlierCareer": true,
       "company": "Argentina National Ministry of Economy – Government Digital Platforms",
       "start": "2015-01-01",
       "end": "2015-12-31",
@@ -189,6 +191,7 @@
     },
     {
       "role": "Software Engineer (Freelance)",
+      "earlierCareer": true,
       "company": "Custom Software Solutions",
       "start": "2013-01-01",
       "end": "2015-12-31",

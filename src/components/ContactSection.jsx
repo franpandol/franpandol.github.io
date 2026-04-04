@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { usePostHog } from "posthog-js/react";
+import { useTranslation } from "react-i18next";
 
 const EMAIL = "pandol.francisco@gmail.com";
 
@@ -8,6 +9,7 @@ const linkClass =
 
 export const ContactContent = () => {
   const posthog = usePostHog();
+  const { t } = useTranslation();
   const [copySuccess, setCopySuccess] = useState("");
 
   const handleContactClick = () => {
@@ -17,11 +19,11 @@ export const ContactContent = () => {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(EMAIL).then(
       () => {
-        setCopySuccess("Copied");
+        setCopySuccess(t("common.copied"));
         setTimeout(() => setCopySuccess(""), 2000);
       },
       () => {
-        setCopySuccess("Copy failed");
+        setCopySuccess(t("common.copyFailed"));
       }
     );
   };
@@ -37,9 +39,9 @@ export const ContactContent = () => {
             type="button"
             onClick={copyToClipboard}
             className="text-sm text-content-tertiary underline-offset-4 hover:text-content-primary hover:underline"
-            aria-label="Copy email address"
+            aria-label={t("common.copyEmailAria")}
           >
-            Copy
+            {t("common.copy")}
           </button>
           {copySuccess ? (
             <span className="font-mono text-xs text-content-tertiary">{copySuccess}</span>
@@ -67,10 +69,8 @@ export const ContactContent = () => {
         </p>
       </div>
       <p className="mt-12 border-t border-surface-border pt-10 text-sm leading-relaxed text-content-tertiary md:text-[15px]">
-        Interested in marketplaces, payments, and platform-scale backends where engineering impact is
-        measured in reliability and throughput.
+        {t("contact.footer")}
       </p>
     </>
   );
 };
-

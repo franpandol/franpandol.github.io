@@ -1,100 +1,66 @@
 
-# Portfolio React App
+# Portfolio (React + Vite)
 
-This is a React-based web application designed to showcase my professional portfolio and blog entries. It includes interactive elements and responsive design to provide an optimal viewing experience across a variety of devices.
+React portfolio site with Vite, React Router, Tailwind CSS, and Vitest.
 
-## Getting Started
+## Getting started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Follow the steps below to set up your local environment and deploy the application using GitHub Pages.
-
-### Prerequisites
-
-To run this project locally, you'll need to have the following installed:
-
-- Node.js (preferably the latest LTS version)
-- npm (Node Package Manager), which comes with Node.js
-- Git, for version control
-
-### Installing
-
-First, clone the repository to your local machine:
+**Prerequisites:** Node.js 18+ and npm.
 
 ```bash
-git clone https://github.com/franpandol/franpandol.github.io
-mv franpandol.github.io portfolio-blog-react-app
-cd portfolio-blog-react-app
-```
-
-Then, install the necessary dependencies:
-
-```bash
+git clone https://github.com/franpandol/franpandol.github.io.git
+cd franpandol.github.io
 npm install
 ```
 
-### Running Locally
-
-To start the application locally, run the following command:
+### Run locally
 
 ```bash
-npm start
+npm run dev
 ```
 
-This will start the development server and open the application in your default web browser. By default, the app will be available at [http://localhost:3000](http://localhost:3000).
+Opens the Vite dev server (default [http://localhost:5173](http://localhost:5173)).
 
-### Testing
-
-To run the test suite:
+### Tests
 
 ```bash
 npm test
 ```
 
-### Deployment
+### Production build
 
-This project can be deployed using GitHub Pages with the following steps:
+```bash
+npm run build
+npm run preview
+```
 
-1. First, install the `gh-pages` package:
+## Deployment (Cloudflare Pages)
 
-   ```bash
-   npm install gh-pages --save-dev
-   ```
+Hosting is on **Cloudflare Pages** (connected to this GitHub repository).
 
-2. Add the following scripts to your `package.json` file:
+**Build settings** (Dashboard → Workers & Pages → your project → Settings → Builds):
 
-   ```json
-   "scripts": {
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
-   },
-   ```
+| Setting | Value |
+|--------|--------|
+| Framework preset | None, or Vite (if offered) |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Root directory | `/` (repository root) |
 
-3. Update the `homepage` field in your `package.json` file:
+**Node version:** set **Environment variable** `NODE_VERSION` to `20` (or `18`), or pin in the Pages project settings if your dashboard exposes a Node version control.
 
-   ```json
-   "homepage": "https://your-github-username.github.io/",
-   ```
+**Client-side routing:** [`public/_redirects`](public/_redirects) sends all paths to `index.html` so React Router works on direct loads and refresh.
 
-   Replace `your-github-username` with your actual GitHub username.
+**Environment variables:** add any `VITE_*` secrets (e.g. PostHog) under **Settings → Environment variables** for Production and Preview as needed.
 
-4. Run the deployment script:
+**Custom domain:** attach your domain in **Custom domains**; DNS can stay on Cloudflare or follow their docs for external registrars.
 
-   ```bash
-   npm run deploy
-   ```
+## Built with
 
-   This command builds the app for production to the `build` folder and deploys it to GitHub Pages.
-
-5. Your app should now be live at the URL provided in the `homepage` field of your `package.json`.
-
-## Built With
-
-- [React](https://reactjs.org/) - The web framework used
-- [Create React App](https://github.com/facebook/create-react-app) - Toolchain used to setup the development environment
-
-## Authors
-
-- **Fran Pandol** - [franpandol](https://github.com/franpandol)
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
+MIT (see repository if a `LICENSE` file is added).

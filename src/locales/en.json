@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "title": "Francisco Pandol · Software Project Leader · Backend",
+    "description": "Francisco Pandol — Software Project Leader & Backend Tech Lead. 10+ years, Python/Django/FastAPI, Mercado Libre ecosystem, fintech, high concurrency, system design."
+  },
+  "common": {
+    "present": "Present",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyFailed": "Copy failed",
+    "menu": "Menu",
+    "toggleMenu": "Toggle menu",
+    "copyEmailAria": "Copy email address",
+    "language": "Language"
+  },
+  "nav": {
+    "brand": "Francisco Pandol",
+    "experience": "Experience",
+    "about": "About",
+    "skills": "Skills",
+    "work": "Selected work",
+    "projects": "All projects",
+    "blogs": "Writing",
+    "contact": "Contact"
+  },
+  "hero": {
+    "kicker": "Software leadership · Backend",
+    "subtitle": "Software Project Leader · Backend Tech Lead · 10+ years",
+    "intro": "Backend Tech Lead with 10+ years building high-concurrency systems in fintech and real-time environments. Strong in Python, Django, and FastAPI — owning architecture, leading teams, and delivering measurable performance and scale outcomes.",
+    "summaryLabel": "Summary:",
+    "summaryLine": "I design and lead scalable backend systems for product and platform teams.",
+    "goTo": "Go to:",
+    "downloadPdf": "Download CV (PDF)",
+    "downloadMd": "Download CV (Markdown)"
+  },
+  "landing": {
+    "explore": "Explore",
+    "view": "View →",
+    "experience": {
+      "title": "Experience",
+      "description": "Roles, challenges, and outcomes across fintech and high-scale backends."
+    },
+    "about": {
+      "title": "About",
+      "description": "Background, focus, and how I partner with product and engineering."
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "Python, Django, FastAPI, cloud, and delivery leadership."
+    },
+    "work": {
+      "title": "Selected work",
+      "description": "Highlighted projects with problem, solution, and impact."
+    },
+    "projects": {
+      "title": "All projects",
+      "description": "Full list of public repositories and demos."
+    },
+    "blogs": {
+      "title": "Writing",
+      "description": "Notes on backend engineering and career growth."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Email, GitHub, and LinkedIn."
+    }
+  },
+  "experience": {
+    "page": {
+      "title": "Experience",
+      "description": "System design, architecture, scalability, and leadership — marketplaces, fintech, and high-traffic backends (including the Mercado Libre ecosystem at RealTrends)."
+    },
+    "challenge": "Challenge",
+    "designed": "What I designed & led",
+    "earlierTitle": "Earlier career",
+    "earlierIntro": "Teaching, public-sector platforms, freelance delivery, and university engineering."
+  },
+  "about": {
+    "page": {
+      "title": "About",
+      "description": "Background, focus areas, and how I work with product and platform teams."
+    },
+    "p1": "I am <1>Francisco Pandol</1> — a <2>Software Project Leader and Backend Tech Lead</2> with <3>over ten years</3> owning architecture and delivery in <4>fintech, real-time systems, and marketplace-scale backends</4>. I lead with <5>Python, Django, and FastAPI</5>, and I am comfortable making the calls that affect scalability, latency, and operational safety — the same profile that matters for large product and payments platforms.",
+    "p2": "I have led teams on the <1>Mercado Libre ecosystem</1> (RealTrends), shipped exchange-grade backends with custody and KYC integrations, and improved platform performance at scale (including significant gains on wealth-management workloads). I stay close to code and reviews while aligning engineering with business outcomes."
+  },
+  "skills": {
+    "page": {
+      "title": "Skills",
+      "description": "Backend, systems, cloud, and delivery — aligned with senior technical leadership roles."
+    },
+    "groups": {
+      "backend": {
+        "title": "Backend",
+        "items": ["Python", "Django", "FastAPI", "REST & API design"]
+      },
+      "systems": {
+        "title": "Systems",
+        "items": ["Distributed systems", "Async & event-driven patterns", "High concurrency"]
+      },
+      "cloud": {
+        "title": "Cloud",
+        "items": ["AWS", "Google Cloud Platform", "Azure"]
+      },
+      "engineering": {
+        "title": "Engineering",
+        "items": ["CI/CD (GitHub Actions)", "Architecture & tradeoffs", "Performance engineering"]
+      }
+    }
+  },
+  "work": {
+    "page": {
+      "title": "Selected work",
+      "description": "Representative backend work with public repositories — problem, solution, impact, and stack."
+    },
+    "browseAll": "Browse all projects →"
+  },
+  "projects": {
+    "labels": {
+      "problem": "Problem.",
+      "solution": "Solution.",
+      "impact": "Impact.",
+      "github": "GitHub",
+      "liveDemo": "Live demo",
+      "live": "Live"
+    },
+    "page": {
+      "title": "All projects",
+      "description": "APIs and backends with real constraints: problem, solution, impact, and stack."
+    },
+    "items": {
+      "openai-pricing": {
+        "name": "OpenAI Pricing API",
+        "problem": "SaaS teams reselling OpenAI need accurate, explainable cost estimates across models and modalities before they commit to pricing.",
+        "solution": "Designed and implemented a Django REST API that computes usage-based spend from token and image-generation inputs, structured for billing integrations.",
+        "impact": "Shows how I ship production-minded APIs: clear contracts, documentation, and packaging for external integrators."
+      },
+      "automotive-django": {
+        "name": "Dealership platform API",
+        "problem": "Reference backends often skip the discipline real teams use: quality gates, containers, and automated checks.",
+        "solution": "Led-style reference implementation with Django REST Framework, Docker, flake8, black, pre-commit, and GitHub Actions mirroring professional delivery.",
+        "impact": "Demonstrates architecture-for-maintainability and CI hygiene at the level expected of senior backend owners."
+      },
+      "stock-api": {
+        "name": "Market data API",
+        "problem": "Financial data APIs must be easy to run, audit, and extend for reviewers and future contributors.",
+        "solution": "Built a containerized Django REST service with explicit dependencies, Dockerfile, and README oriented toward operational clarity.",
+        "impact": "Signals how I present complex backends to stakeholders: reproducible environments and clear boundaries."
+      }
+    }
+  },
+  "blogs": {
+    "page": {
+      "title": "Writing",
+      "description": "Occasional notes on backend engineering and career growth."
+    },
+    "readArticle": "Read article",
+    "djangoZero": {
+      "title": "Django: From zero to your first job",
+      "summary": "A practical path into Django and how to position yourself for a first backend role — focused on fundamentals and delivery."
+    }
+  },
+  "contact": {
+    "page": {
+      "title": "Contact",
+      "description": "Open to Software Project Leader and Backend Tech Lead roles where system design, high concurrency, and technical ownership matter."
+    },
+    "footer": "Interested in marketplaces, payments, and platform-scale backends where engineering impact is measured in reliability and throughput."
+  }
+}
