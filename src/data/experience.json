@@ -1,0 +1,220 @@
+{
+  "experiences": [
+    {
+      "role": "Backend Tech Lead",
+      "company": "Dexter Development",
+      "start": "2024-07-01",
+      "current": true,
+      "summary": "Led end-to-end development of a cryptocurrency trading platform from MVP to production, defining architecture and technical roadmap while coordinating scalability, security, and regulatory compliance (KYC/AML).",
+      "achievements": [
+        "Led end-to-end development of a cryptocurrency trading platform, defining architecture and technical roadmap.",
+        "Coordinated key technical decisions ensuring scalability, security, and regulatory compliance (KYC/AML).",
+        "Designed high-concurrency APIs using Django/DRF for real-time transaction processing.",
+        "Integrated critical services (Fireblocks, MetaMap) for secure asset management and identity verification.",
+        "Established CI/CD pipelines and engineering practices for high availability and fast delivery."
+      ],
+      "tech": [
+        "Python",
+        "Django",
+        "DRF",
+        "PostgreSQL",
+        "Fireblocks",
+        "MetaMap",
+        "CI/CD",
+        "Cryptocurrency APIs"
+      ],
+      "projects": [
+        {
+          "name": "UniversalCoins Cryptocurrency Exchange",
+          "link": "https://universalcoins.net/",
+          "description": "Full-featured cryptocurrency trading platform supporting BTC, ETH, and USDT with bank integration."
+        }
+      ]
+    },
+    {
+      "role": "Senior Backend Engineer",
+      "company": "AgioRatings",
+      "start": "2023-12-01",
+      "end": "2024-03-31",
+      "summary": "Built high-performance APIs with FastAPI for real-time financial data analysis and deployed scalable solutions on Azure.",
+      "achievements": [
+        "Built high-performance APIs with FastAPI for real-time financial data analysis.",
+        "Designed anomaly detection systems for exchange monitoring.",
+        "Implemented async processing pipelines for high-volume data streams.",
+        "Deployed scalable solutions on Azure with CI/CD automation."
+      ],
+      "tech": ["Python", "FastAPI", "Azure", "Asyncio", "Real-time Analytics"],
+      "projects": [
+        {
+          "name": "Financial Anomaly Detection System",
+          "link": "https://www.agioratings.io",
+          "description": "Real-time monitoring system for digital asset exchanges detecting distress signals and unusual patterns."
+        }
+      ]
+    },
+    {
+      "role": "Senior Backend Engineer",
+      "company": "GLASFunds",
+      "start": "2022-08-01",
+      "end": "2023-10-31",
+      "summary": "Developed scalable backend systems for financial tools on Django with strong focus on database performance and horizontal scaling on GCP.",
+      "achievements": [
+        "Developed scalable backend systems for financial tools using Django.",
+        "Optimized database performance reducing query time by 40%+.",
+        "Implemented horizontal scaling on GCP for high availability."
+      ],
+      "tech": ["Python", "Django", "Google Cloud Platform", "PostgreSQL"],
+      "projects": [
+        {
+          "name": "GLASFunds Wealth Management Platform",
+          "link": "https://www.glasfunds.com",
+          "description": "Wealth management platform for managing financial assets."
+        }
+      ]
+    },
+    {
+      "role": "Senior Software Engineer",
+      "company": "Apptim",
+      "start": "2021-02-01",
+      "end": "2022-07-31",
+      "summary": "Developed performance analysis tools for mobile apps, led Python 2 to 3 migration, and automated testing with AWS Device Farm.",
+      "achievements": [
+        "Developed performance analysis tools for mobile apps.",
+        "Led migration from Python 2 to Python 3.",
+        "Automated testing pipelines with AWS Device Farm."
+      ],
+      "tech": ["Python", "AWS", "AWS Device Farm", "Mobile Performance Testing"],
+      "projects": [
+        {
+          "name": "Apptim Mobile App Performance Analysis Platform",
+          "link": "https://www.apptim.com",
+          "description": "Performance analysis tools for iOS and Android."
+        }
+      ]
+    },
+    {
+      "role": "Backend Tech Lead",
+      "company": "RealTrends",
+      "start": "2019-02-01",
+      "end": "2021-02-28",
+      "summary": "Led backend team building an analytics platform for MercadoLibre sellers with event-driven architecture and strong product collaboration.",
+      "achievements": [
+        "Led backend team (4–6 engineers) building analytics platform for MercadoLibre sellers.",
+        "Designed event-driven architecture and real-time systems.",
+        "Reduced system latency by 60%+ through async processing.",
+        "Collaborated with product to define roadmap and priorities."
+      ],
+      "tech": ["Python", "Django", "PostgreSQL", "Real-time Processing", "Team Leadership"],
+      "projects": [
+        {
+          "name": "RealTrends Business Intelligence Platform",
+          "link": "https://www.real-trends.com",
+          "description": "Analytics and inventory management tools for e-commerce sellers with real-time data processing."
+        }
+      ]
+    },
+    {
+      "role": "Lead Engineer",
+      "company": "Al Pelo",
+      "start": "2018-01-01",
+      "end": "2019-02-01",
+      "summary": "Lead Engineer for an on-demand delivery platform (0 → MVP): founded and led the engineering team, defined backend architecture, and shipped a production-ready MVP.",
+      "achievements": [
+        "Founded and led the engineering team, defining backend architecture from scratch.",
+        "Designed a scalable real-time dispatch and logistics system.",
+        "Built AWS-based infrastructure (S3, RDS, SQS, SNS) ensuring resilience and asynchronous processing.",
+        "Delivered a production-ready MVP optimized for scalability and future feature expansion."
+      ],
+      "tech": ["Python", "Django", "AWS S3", "AWS RDS", "AWS SQS", "AWS SNS", "PostgreSQL", "System Architecture"],
+      "projects": [
+        {
+          "name": "On-Demand Delivery Platform (0 → MVP)",
+          "description": "End-to-end on-demand delivery with real-time dispatch, logistics, and scalable backend."
+        }
+      ]
+    },
+    {
+      "role": "Python Lead Developer",
+      "company": "PredictionLabs",
+      "start": "2016-07-01",
+      "end": "2017-11-30",
+      "summary": "Backend tech lead for a cryptocurrency exchange platform: architecture, APIs, admin systems, and security for financial transactions.",
+      "achievements": [
+        "Designed and implemented backend architecture for a Bitcoin exchange platform, including APIs and admin systems.",
+        "Developed advanced security mechanisms (MFA, identity verification) to protect financial transactions.",
+        "Managed secure transactional data storage using PostgreSQL and MongoDB.",
+        "Established engineering standards and best practices to ensure system stability and scalability."
+      ],
+      "tech": ["Python", "Django", "PostgreSQL", "MongoDB", "Cryptocurrency", "Security"],
+      "projects": [
+        {
+          "name": "Bitcoin Exchange Platform",
+          "description": "Bitcoin exchange platform with APIs, admin, and secure custody patterns."
+        }
+      ]
+    },
+    {
+      "role": "Django Instructor",
+      "company": "Catamarca Government & Technology Cluster",
+      "start": "2016-11-01",
+      "end": "2017-06-30",
+      "summary": "Django instructor for a technical training program: intensive backend development curricula and mentoring.",
+      "achievements": [
+        "Designed and delivered intensive backend development training programs using Django.",
+        "Mentored professionals on best practices, system design, and scalable architecture.",
+        "Promoted adoption of modern development standards and engineering practices."
+      ],
+      "tech": ["Django", "Python", "Technical Training", "Software Architecture"]
+    },
+    {
+      "role": "Technical Consultant",
+      "company": "Argentina National Ministry of Economy – Government Digital Platforms",
+      "start": "2015-01-01",
+      "end": "2015-12-31",
+      "summary": "Technical consultant on government digital platforms: secure, compliant systems and stakeholder alignment.",
+      "achievements": [
+        "Led development of secure government platforms with high compliance and reliability requirements.",
+        "Designed systems with multi-layer authentication and data encryption for sensitive information.",
+        "Implemented scalable AWS-based solutions aligned with regulatory standards.",
+        "Collaborated with non-technical stakeholders to translate business requirements into technical solutions."
+      ],
+      "tech": ["Django", "Python", "AWS", "Security", "Government IT"],
+      "projects": [
+        {
+          "name": "Official Catamarca Government Platform",
+          "link": "https://portal.catamarca.gob.ar",
+          "description": "Secure government websites and internal dashboards for civil servants."
+        }
+      ]
+    },
+    {
+      "role": "Software Engineer (Freelance)",
+      "company": "Custom Software Solutions",
+      "start": "2013-01-01",
+      "end": "2015-12-31",
+      "summary": "Freelance delivery of backend and mobile solutions with CI/CD and agile execution across clients.",
+      "achievements": [
+        "Delivered backend and mobile solutions for multiple clients across different industries.",
+        "Designed adaptable architectures based on diverse business requirements.",
+        "Implemented CI/CD pipelines and agile workflows for efficient delivery.",
+        "Integrated mobile applications with scalable backend services (Firebase, Parse)."
+      ],
+      "tech": ["Django", "Python", "Android", "Firebase", "Parse", "CI/CD", "Agile"]
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "Java", "SQL"],
+    "frameworks": ["Django", "FastAPI", "Django REST Framework"],
+    "databases": ["PostgreSQL", "MongoDB"],
+    "cloud": ["AWS", "GCP", "Azure"],
+    "tools": ["CI/CD", "Asyncio", "Microservices", "Android", "Firebase", "Parse"],
+    "soft_skills": [
+      "Distributed systems",
+      "Technical leadership and mentoring",
+      "Performance optimization",
+      "Real-time and high-concurrency systems",
+      "Engineering best practices",
+      "Technical training"
+    ]
+  }
+}
