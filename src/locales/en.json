@@ -31,7 +31,8 @@
     "summaryLine": "I design and lead scalable backend systems for product and platform teams.",
     "goTo": "Go to:",
     "downloadPdf": "Download CV (PDF)",
-    "downloadMd": "Download CV (Markdown)"
+    "downloadMd": "Download CV (Markdown)",
+    "recruitersLink": "For recruiters →"
   },
   "landing": {
     "explore": "Explore",
@@ -62,7 +63,7 @@
     },
     "contact": {
       "title": "Contact",
-      "description": "Email, GitHub, and LinkedIn."
+      "description": "Email, availability for interviews, GitHub, and LinkedIn."
     }
   },
   "experience": {
@@ -164,6 +165,21 @@
       "title": "Contact",
       "description": "Open to Software Project Leader and Backend Tech Lead roles where system design, high concurrency, and technical ownership matter."
     },
-    "footer": "Interested in marketplaces, payments, and platform-scale backends where engineering impact is measured in reliability and throughput."
+    "footer": "Interested in marketplaces, payments, and platform-scale backends where engineering impact is measured in reliability and throughput.",
+    "recruiters": {
+      "title": "For recruiters",
+      "intro": "If you are hiring for a Software Project Leader or Backend Tech Lead role, propose an interview by email. Please send a calendar invitation (Google Calendar, Outlook, etc.) once we agree on a time.",
+      "slotsHeading": "Typical availability",
+      "timezoneNote": "Times are in Argentina (ART).",
+      "dailyIntro": "Every day (local time):",
+      "windowLine": "{{start}}–{{end}}",
+      "disclaimer": "These windows are a guide; I will confirm a specific slot by email.",
+      "ctaInstruction": "Send email from your own client to the address below. You can copy a draft message that includes this availability.",
+      "copyTemplate": "Copy draft message",
+      "subjectLineLabel": "Subject:",
+      "templateCopied": "Draft copied",
+      "mailSubject": "Interview request — Francisco Pandol",
+      "mailBody": "Hello,\n\nI would like to schedule an interview with Francisco Pandol. Please send a calendar invitation to {{email}}.\n\nReference availability (please propose a concrete time):\n{{slots}}\n\nPlease include:\n- Company and role title\n- Interview format (phone / video) and expected duration\n\nThank you,\n"
+    }
   }
 }

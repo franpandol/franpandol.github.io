@@ -10,7 +10,7 @@ export const SelectedWorkContent = () => {
   const preview = selectedProjects.filter((p) => p.featured);
 
   return (
-    <div className="space-y-0 divide-y divide-surface-border border-t border-surface-border">
+    <div className="space-y-0 divide-y divide-surface-border">
       {preview.map((project) => {
         const base = `projects.items.${project.id}`;
         return (

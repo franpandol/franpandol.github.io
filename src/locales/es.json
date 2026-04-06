@@ -31,7 +31,8 @@
     "summaryLine": "Diseño y lidero backends escalables para equipos de producto y plataforma.",
     "goTo": "Ir a:",
     "downloadPdf": "Descargar CV (PDF)",
-    "downloadMd": "Descargar CV (Markdown)"
+    "downloadMd": "Descargar CV (Markdown)",
+    "recruitersLink": "Para reclutadores →"
   },
   "landing": {
     "explore": "Explorar",
@@ -62,7 +63,7 @@
     },
     "contact": {
       "title": "Contacto",
-      "description": "Correo, GitHub y LinkedIn."
+      "description": "Correo, disponibilidad para entrevistas, GitHub y LinkedIn."
     }
   },
   "experience": {
@@ -164,6 +165,21 @@
       "title": "Contacto",
       "description": "Abierto a roles de Líder de proyectos de software y Líder técnico de backend donde importen diseño de sistemas, alta concurrencia y ownership técnico."
     },
-    "footer": "Me interesan marketplaces, pagos y backends a escala de plataforma donde el impacto de ingeniería se mida en confiabilidad y throughput."
+    "footer": "Me interesan marketplaces, pagos y backends a escala de plataforma donde el impacto de ingeniería se mida en confiabilidad y throughput.",
+    "recruiters": {
+      "title": "Para reclutadores",
+      "intro": "Si buscas cubrir un rol de Líder de proyectos de software o Líder técnico de backend, propón una entrevista por correo. Cuando acordemos un horario, envía una invitación de calendario (Google Calendar, Outlook, etc.).",
+      "slotsHeading": "Disponibilidad habitual",
+      "timezoneNote": "Horarios en Argentina (ART).",
+      "dailyIntro": "Todos los días (hora local):",
+      "windowLine": "{{start}}–{{end}}",
+      "disclaimer": "Estas ventanas son orientativas; confirmaré un horario concreto por correo.",
+      "ctaInstruction": "Escribe desde tu cliente de correo a la dirección de abajo. Puedes copiar un borrador que incluye esta disponibilidad.",
+      "copyTemplate": "Copiar borrador",
+      "subjectLineLabel": "Asunto:",
+      "templateCopied": "Borrador copiado",
+      "mailSubject": "Solicitud de entrevista — Francisco Pandol",
+      "mailBody": "Hola,\n\nQuiero coordinar una entrevista con Francisco Pandol. Por favor envía una invitación de calendario a {{email}}.\n\nDisponibilidad de referencia (propón un horario concreto):\n{{slots}}\n\nIncluye:\n- Empresa y título del rol\n- Formato de la entrevista (teléfono / videollamada) y duración aproximada\n\nGracias,\n"
+    }
   }
 }

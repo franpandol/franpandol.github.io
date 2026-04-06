@@ -18,8 +18,8 @@ const Blog = () => {
   return (
     <main className="w-full">
       <PageHeader title={t("blogs.page.title")} description={t("blogs.page.description")} />
-      <div className="w-full border-t border-surface-border px-6 py-12 md:px-12 md:py-16 lg:px-16">
-        <ul className="mx-auto max-w-[90rem] divide-y divide-surface-border border-t border-surface-border">
+      <div className="w-full px-6 pb-12 pt-8 md:px-12 md:pb-16 md:pt-10 lg:px-16">
+        <ul className="mx-auto max-w-[90rem] divide-y divide-surface-border">
           {blogs.map((blog) => (
             <li key={blog.id} className="py-8 md:py-10">
               <a href={blog.url} target="_blank" rel="noopener noreferrer" className="group block">

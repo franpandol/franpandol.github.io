@@ -12,7 +12,7 @@ export const ExperienceContent = () => {
 
   return (
     <>
-      <div className="space-y-0 divide-y divide-surface-border border-t border-surface-border">
+      <div className="space-y-0 divide-y divide-surface-border">
         {featuredRoles.map((role) => (
           <article key={role.id} className="py-8 first:pt-6 md:py-10 md:first:pt-8">
             <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
@@ -44,7 +44,7 @@ export const ExperienceContent = () => {
           </article>
         ))}
       </div>
-      <div className="mt-12 border-t border-surface-border pt-10 md:mt-16 md:pt-12">
+      <div className="mt-12 pt-10 md:mt-16 md:pt-12">
         <h3 className={sectionTitleClass}>{t("experience.earlierTitle")}</h3>
         <p className="mt-4 text-sm leading-relaxed text-content-secondary md:text-[15px]">
           {t("experience.earlierIntro")}

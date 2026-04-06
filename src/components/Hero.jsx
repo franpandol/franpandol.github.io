@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <header className="relative overflow-hidden border-b border-surface-border">
+    <header className="relative overflow-hidden">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_55%_at_50%_-15%,rgba(13,148,136,0.09),transparent)]"
         aria-hidden
@@ -75,6 +75,12 @@ const Hero = () => {
           </span>
           <Link to="/contact" className={textLink}>
             {t("nav.contact")}
+          </Link>
+          <span aria-hidden className="text-content-tertiary">
+            ·
+          </span>
+          <Link to="/contact#recruiters" className={textLink}>
+            {t("hero.recruitersLink")}
           </Link>
         </div>
         <div className="mt-8 flex flex-wrap gap-x-4 gap-y-1 text-sm">

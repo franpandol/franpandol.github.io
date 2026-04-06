@@ -8,7 +8,7 @@ export const SkillsContent = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="grid gap-10 border-t border-surface-border pt-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12 lg:pt-12">
+    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
       {groupKeys.map((key) => {
         const items = t(`skills.groups.${key}.items`, { returnObjects: true });
         const list = Array.isArray(items) ? items : [];

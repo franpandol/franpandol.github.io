@@ -5,7 +5,7 @@ React portfolio site with Vite, React Router, Tailwind CSS, and Vitest.
 
 ## Getting started
 
-**Prerequisites:** Node.js 18+ and npm.
+**Prerequisites:** Node.js 20+ and npm.
 
 ```bash
 git clone https://github.com/franpandol/franpandol.github.io.git
@@ -47,7 +47,7 @@ Hosting is on **Cloudflare Pages** (connected to this GitHub repository).
 | Build output directory | `dist` |
 | Root directory | `/` (repository root) |
 
-**Node version:** set **Environment variable** `NODE_VERSION` to `20` (or `18`), or pin in the Pages project settings if your dashboard exposes a Node version control.
+**Node version:** set **Environment variable** `NODE_VERSION` to `20` or `22`, or pin in the Pages project settings if your dashboard exposes a Node version control.
 
 **Client-side routing:** [`public/_redirects`](public/_redirects) sends all paths to `index.html` so React Router works on direct loads and refresh.
 

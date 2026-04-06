@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { usePostHog } from "posthog-js/react";
 import { useTranslation } from "react-i18next";
-
-const EMAIL = "pandol.francisco@gmail.com";
+import { EMAIL } from "../constants/contact";
 
 const linkClass =
   "text-sm text-accent-muted underline-offset-4 hover:text-accent hover:underline";
@@ -68,7 +67,7 @@ export const ContactContent = () => {
           </a>
         </p>
       </div>
-      <p className="mt-12 border-t border-surface-border pt-10 text-sm leading-relaxed text-content-tertiary md:text-[15px]">
+      <p className="mt-12 pt-10 text-sm leading-relaxed text-content-tertiary md:text-[15px]">
         {t("contact.footer")}
       </p>
     </>
