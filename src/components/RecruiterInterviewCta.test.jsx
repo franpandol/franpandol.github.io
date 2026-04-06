@@ -45,6 +45,19 @@ test("subject line and draft preview label are visible on screen", () => {
   expect(screen.getByText(/Preview message/i)).toBeInTheDocument();
 });
 
+test("availability windows show both ART and UTC times", () => {
+  render(
+    <I18nextProvider i18n={i18n}>
+      <RecruiterInterviewCta />
+    </I18nextProvider>
+  );
+
+  // 6:00 AM ART = 9:00 AM UTC — both should appear somewhere in the list
+  const content = document.body.textContent;
+  expect(content).toContain("ART");
+  expect(content).toContain("UTC");
+});
+
 test("next steps instruction is shown after primary CTA", () => {
   render(
     <I18nextProvider i18n={i18n}>

@@ -2,14 +2,20 @@ import React, { useMemo, useState } from "react";
 import { usePostHog } from "posthog-js/react";
 import { useTranslation } from "react-i18next";
 import { EMAIL } from "../constants/contact";
-import { dailyWindows } from "../data/availability";
+import { dailyWindows, TIMEZONE_IANA } from "../data/availability";
 
-const formatHm = (hhmm, locale) => {
+// Parse "HH:mm" as Argentina time (always UTC-3, no DST) → UTC Date
+const argHmToDate = (hhmm) => {
   const [h, m] = hhmm.split(":").map(Number);
-  const d = new Date();
-  d.setHours(h, m, 0, 0);
-  return new Intl.DateTimeFormat(locale, { hour: "numeric", minute: "2-digit" }).format(d);
+  return new Date(
+    `2000-01-01T${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:00-03:00`
+  );
 };
+
+const formatInTz = (hhmm, tz, locale) =>
+  new Intl.DateTimeFormat(locale, { hour: "numeric", minute: "2-digit", timeZone: tz }).format(
+    argHmToDate(hhmm)
+  );
 
 const RecruiterInterviewCta = () => {
   const { t, i18n } = useTranslation();
@@ -20,9 +26,11 @@ const RecruiterInterviewCta = () => {
   const windowLines = useMemo(
     () =>
       dailyWindows.map((w) => {
-        const start = formatHm(w.start, locale);
-        const end = formatHm(w.end, locale);
-        return t("contact.recruiters.windowLine", { start, end });
+        const start = formatInTz(w.start, TIMEZONE_IANA, locale);
+        const end = formatInTz(w.end, TIMEZONE_IANA, locale);
+        const utcStart = formatInTz(w.start, "UTC", "en-US");
+        const utcEnd = formatInTz(w.end, "UTC", "en-US");
+        return t("contact.recruiters.windowLine", { start, end, utcStart, utcEnd });
       }),
     [t, locale]
   );
