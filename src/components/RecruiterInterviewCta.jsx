@@ -32,11 +32,17 @@ const RecruiterInterviewCta = () => {
     [windowLines]
   );
 
-  const messageDraft = useMemo(() => {
-    const subject = t("contact.recruiters.mailSubject");
-    const body = t("contact.recruiters.mailBody", { email: EMAIL, slots: slotsSummary });
-    return `${t("contact.recruiters.subjectLineLabel")} ${subject}\n\n${body}`;
-  }, [t, slotsSummary]);
+  const mailSubject = useMemo(() => t("contact.recruiters.mailSubject"), [t]);
+
+  const mailBody = useMemo(
+    () => t("contact.recruiters.mailBody", { email: EMAIL, slots: slotsSummary }),
+    [t, slotsSummary]
+  );
+
+  const messageDraft = useMemo(
+    () => `${t("contact.recruiters.subjectLineLabel")} ${mailSubject}\n\n${mailBody}`,
+    [t, mailSubject, mailBody]
+  );
 
   const showFeedback = (key) => {
     setCopyFeedback(t(key));
@@ -78,6 +84,8 @@ const RecruiterInterviewCta = () => {
       <p className="mt-3 text-sm leading-relaxed text-content-secondary md:text-[15px]">
         {t("contact.recruiters.intro")}
       </p>
+
+      {/* Availability block */}
       <p className="mt-4 text-xs font-medium uppercase tracking-[0.12em] text-accent-muted">
         {t("contact.recruiters.slotsHeading")}
       </p>
@@ -90,34 +98,64 @@ const RecruiterInterviewCta = () => {
           <li key={`${w.start}-${w.end}`}>{windowLines[i]}</li>
         ))}
       </ul>
-      <p className="mt-3 text-xs leading-relaxed text-content-tertiary">{t("contact.recruiters.disclaimer")}</p>
-
-      <p className="mt-8 text-sm leading-relaxed text-content-secondary md:text-[15px]">
-        {t("contact.recruiters.ctaInstruction")}
+      <p className="mt-3 text-xs leading-relaxed text-content-tertiary">
+        {t("contact.recruiters.disclaimer")}
       </p>
-      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="font-mono text-sm text-accent-muted">{EMAIL}</span>
-        <button
-          type="button"
-          onClick={copyEmail}
-          className="text-sm text-content-tertiary underline-offset-4 hover:text-content-primary hover:underline"
-          aria-label={t("common.copyEmailAria")}
-        >
-          {t("common.copy")}
-        </button>
-        {copyFeedback ? (
-          <span className="font-mono text-xs text-content-tertiary">{copyFeedback}</span>
-        ) : null}
-      </div>
 
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-        <button
-          type="button"
-          onClick={copyTemplate}
-          className="inline-flex items-center justify-center rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-accent-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-        >
-          {t("contact.recruiters.copyTemplate")}
-        </button>
+      {/* Action zone */}
+      <div className="mt-6 rounded-md border border-surface-border bg-surface p-4">
+        <p className="text-sm leading-relaxed text-content-secondary md:text-[15px]">
+          {t("contact.recruiters.ctaInstruction")}
+        </p>
+
+        {/* Send-to row */}
+        <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span className="text-xs text-content-tertiary">{t("contact.recruiters.sendToLabel")}</span>
+          <span className="font-mono text-sm text-accent-muted">{EMAIL}</span>
+          <button
+            type="button"
+            onClick={copyEmail}
+            className="text-sm text-content-tertiary underline-offset-4 hover:text-content-primary hover:underline"
+            aria-label={t("common.copyEmailAria")}
+          >
+            {t("common.copy")}
+          </button>
+        </div>
+
+        {/* Subject line row */}
+        <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span className="text-xs text-content-tertiary">{t("contact.recruiters.subjectLineLabel")}</span>
+          <span className="font-mono text-sm text-content-secondary">{mailSubject}</span>
+        </div>
+
+        {/* Draft preview */}
+        <details className="mt-4">
+          <summary className="cursor-pointer select-none text-sm text-content-tertiary hover:text-content-secondary">
+            {t("contact.recruiters.previewDraft")}
+          </summary>
+          <pre className="mt-2 overflow-x-auto rounded border border-surface-border bg-surface-raised p-3 font-mono text-xs leading-relaxed text-content-tertiary whitespace-pre-wrap">
+            {messageDraft}
+          </pre>
+        </details>
+
+        {/* Primary CTA */}
+        <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+          <button
+            type="button"
+            onClick={copyTemplate}
+            className="inline-flex items-center justify-center rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-accent-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            {t("contact.recruiters.copyTemplate")}
+          </button>
+          {copyFeedback ? (
+            <span className="font-mono text-xs text-content-tertiary">{copyFeedback}</span>
+          ) : null}
+        </div>
+
+        {/* Next steps */}
+        <p className="mt-3 text-xs leading-relaxed text-content-tertiary">
+          {t("contact.recruiters.nextSteps")}
+        </p>
       </div>
     </section>
   );

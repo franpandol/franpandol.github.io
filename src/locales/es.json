@@ -175,9 +175,12 @@
       "windowLine": "{{start}}–{{end}}",
       "disclaimer": "Estas ventanas son orientativas; confirmaré un horario concreto por correo.",
       "ctaInstruction": "Escribe desde tu cliente de correo a la dirección de abajo. Puedes copiar un borrador que incluye esta disponibilidad.",
+      "sendToLabel": "Enviar a:",
       "copyTemplate": "Copiar borrador",
       "subjectLineLabel": "Asunto:",
       "templateCopied": "Borrador copiado",
+      "previewDraft": "Vista previa del mensaje",
+      "nextSteps": "Tras copiar, abre tu cliente de correo, pega, añade empresa y cargo, y envía.",
       "mailSubject": "Solicitud de entrevista — Francisco Pandol",
       "mailBody": "Hola,\n\nQuiero coordinar una entrevista con Francisco Pandol. Por favor envía una invitación de calendario a {{email}}.\n\nDisponibilidad de referencia (propón un horario concreto):\n{{slots}}\n\nIncluye:\n- Empresa y título del rol\n- Formato de la entrevista (teléfono / videollamada) y duración aproximada\n\nGracias,\n"
     }

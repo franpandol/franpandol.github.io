@@ -19,7 +19,7 @@ test("recruiter CTA shows email and copy draft control (no mailto)", () => {
     </I18nextProvider>
   );
 
-  expect(screen.getByText("pandol.francisco@gmail.com")).toBeInTheDocument();
+  expect(screen.getByText("hire@franpandol.com")).toBeInTheDocument();
   expect(document.querySelector('a[href^="mailto:"]')).toBeNull();
   expect(screen.getByRole("button", { name: /Copy draft message/i })).toBeInTheDocument();
 });
@@ -32,4 +32,27 @@ test("section is anchor target for recruiters", () => {
   );
 
   expect(document.getElementById("recruiters")).toBeTruthy();
+});
+
+test("subject line and draft preview label are visible on screen", () => {
+  render(
+    <I18nextProvider i18n={i18n}>
+      <RecruiterInterviewCta />
+    </I18nextProvider>
+  );
+
+  expect(screen.getByText("Interview request — Francisco Pandol")).toBeInTheDocument();
+  expect(screen.getByText(/Preview message/i)).toBeInTheDocument();
+});
+
+test("next steps instruction is shown after primary CTA", () => {
+  render(
+    <I18nextProvider i18n={i18n}>
+      <RecruiterInterviewCta />
+    </I18nextProvider>
+  );
+
+  expect(
+    screen.getByText(/After copying, open your email client/i)
+  ).toBeInTheDocument();
 });

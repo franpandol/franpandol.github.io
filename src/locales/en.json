@@ -175,9 +175,12 @@
       "windowLine": "{{start}}–{{end}}",
       "disclaimer": "These windows are a guide; I will confirm a specific slot by email.",
       "ctaInstruction": "Send email from your own client to the address below. You can copy a draft message that includes this availability.",
+      "sendToLabel": "Send to:",
       "copyTemplate": "Copy draft message",
       "subjectLineLabel": "Subject:",
       "templateCopied": "Draft copied",
+      "previewDraft": "Preview message",
+      "nextSteps": "After copying, open your email client, paste, add your company name and role title, and send.",
       "mailSubject": "Interview request — Francisco Pandol",
       "mailBody": "Hello,\n\nI would like to schedule an interview with Francisco Pandol. Please send a calendar invitation to {{email}}.\n\nReference availability (please propose a concrete time):\n{{slots}}\n\nPlease include:\n- Company and role title\n- Interview format (phone / video) and expected duration\n\nThank you,\n"
     }
