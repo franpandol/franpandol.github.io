@@ -4,8 +4,7 @@ import { useTranslation } from "react-i18next";
 import PageHeader from "../components/PageHeader";
 import { SelectedWorkContent } from "../components/SelectedWorkPreview";
 
-const linkClass =
-  "text-sm text-accent-muted underline-offset-4 hover:text-accent hover:underline";
+const linkClass = "text-sm text-accent underline-offset-4 hover:underline";
 
 const WorkPage = () => {
   const { t } = useTranslation();
@@ -19,7 +18,7 @@ const WorkPage = () => {
           </Link>
         </p>
       </PageHeader>
-      <div className="w-full px-6 pb-12 pt-8 md:px-12 md:pb-16 md:pt-10 lg:px-16">
+      <div className="w-full px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8 lg:px-16">
         <div className="max-w-[90rem]">
           <SelectedWorkContent />
         </div>

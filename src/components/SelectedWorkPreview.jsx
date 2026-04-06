@@ -2,8 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { selectedProjects } from "../data/projects";
 
-const linkClass =
-  "text-sm text-accent-muted underline-offset-4 hover:text-accent hover:underline";
+const linkClass = "text-sm text-accent underline-offset-4 hover:underline";
 
 export const SelectedWorkContent = () => {
   const { t } = useTranslation();

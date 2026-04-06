@@ -27,6 +27,10 @@ export const ContactContent = () => {
     );
   };
 
+  const onDownload = (format) => {
+    posthog?.capture("download_cv", { format });
+  };
+
   return (
     <>
       <div className="space-y-4 text-sm md:text-[15px]">
@@ -67,7 +71,28 @@ export const ContactContent = () => {
           </a>
         </p>
       </div>
-      <p className="mt-12 pt-10 text-sm leading-relaxed text-content-tertiary md:text-[15px]">
+
+      <div className="mt-8 flex flex-wrap gap-x-4 gap-y-1">
+        <a
+          href="/CV_en_Francisco_Pandol.pdf"
+          download
+          className={linkClass}
+          onClick={() => onDownload("pdf")}
+        >
+          {t("contact.downloadPdf")}
+        </a>
+        <span className="text-content-tertiary">·</span>
+        <a
+          href="/cv_markdown_en_Francisco_Pandol.md"
+          download
+          className={linkClass}
+          onClick={() => onDownload("markdown")}
+        >
+          {t("contact.downloadMd")}
+        </a>
+      </div>
+
+      <p className="mt-8 border-t border-surface-border pt-6 text-sm leading-relaxed text-content-tertiary md:text-[15px]">
         {t("contact.footer")}
       </p>
     </>

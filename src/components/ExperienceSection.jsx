@@ -44,7 +44,7 @@ export const ExperienceContent = () => {
           </article>
         ))}
       </div>
-      <div className="mt-12 pt-10 md:mt-16 md:pt-12">
+      <div className="mt-10 border-t border-surface-border pt-8 md:mt-12 md:pt-10">
         <h3 className={sectionTitleClass}>{t("experience.earlierTitle")}</h3>
         <p className="mt-4 text-sm leading-relaxed text-content-secondary md:text-[15px]">
           {t("experience.earlierIntro")}

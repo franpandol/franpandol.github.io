@@ -9,7 +9,7 @@ const ExperiencePage = () => {
   return (
     <main className="w-full">
       <PageHeader title={t("experience.page.title")} description={t("experience.page.description")} />
-      <div className="w-full px-6 pb-12 pt-8 md:px-12 md:pb-16 md:pt-10 lg:px-16">
+      <div className="w-full px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8 lg:px-16">
         <div className="max-w-[90rem]">
           <ExperienceContent />
         </div>

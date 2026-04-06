@@ -10,7 +10,7 @@ const ProjectList = () => {
   return (
     <main className="w-full">
       <PageHeader title={t("projects.page.title")} description={t("projects.page.description")} />
-      <div className="w-full px-6 pb-12 pt-8 md:px-12 md:pb-16 md:pt-10 lg:px-16">
+      <div className="w-full px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8 lg:px-16">
         <div className="max-w-[90rem] divide-y divide-surface-border">
           {selectedProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />

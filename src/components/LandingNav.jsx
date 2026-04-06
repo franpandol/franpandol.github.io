@@ -14,7 +14,7 @@ const LandingNav = () => {
   ];
 
   return (
-    <section className="px-6 py-12 md:px-12 md:py-16 lg:px-16">
+    <section className="px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8 lg:px-16">
       <div className="mx-auto w-full max-w-[90rem]">
         <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-accent-muted">
           {t("landing.explore")}

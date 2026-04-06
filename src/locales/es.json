@@ -167,6 +167,8 @@
       "description": "Abierto a roles de Líder de proyectos de software y Líder técnico de backend donde importen diseño de sistemas, alta concurrencia y ownership técnico."
     },
     "footer": "Me interesan marketplaces, pagos y backends a escala de plataforma donde el impacto de ingeniería se mida en confiabilidad y throughput.",
+    "downloadPdf": "Descargar CV (PDF)",
+    "downloadMd": "Descargar CV (Markdown)",
     "recruiters": {
       "title": "Para reclutadores",
       "intro": "Si buscas cubrir un rol de Líder de proyectos de software o Líder técnico de backend, propón una entrevista por correo. Cuando acordemos un horario, envía una invitación de calendario (Google Calendar, Outlook, etc.).",

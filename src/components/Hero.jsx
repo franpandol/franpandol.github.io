@@ -12,10 +12,6 @@ const Hero = () => {
   const { t } = useTranslation();
   const [copyFeedback, setCopyFeedback] = useState("");
 
-  const onDownload = (format) => {
-    posthog?.capture("download_cv", { format });
-  };
-
   const copyEmail = () => {
     navigator.clipboard.writeText(EMAIL).then(
       () => {
@@ -36,7 +32,7 @@ const Hero = () => {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_55%_at_50%_-15%,rgba(13,148,136,0.09),transparent)]"
         aria-hidden
       />
-      <div className="relative w-full max-w-[90rem] px-6 pb-14 pt-12 md:px-12 md:pb-20 md:pt-16 lg:px-16">
+      <div className="relative w-full max-w-[90rem] px-6 pb-10 pt-12 md:px-12 md:pb-14 md:pt-16 lg:px-16">
         {/* Always full-width: kicker, name, subtitle */}
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-muted">
           {t("hero.kicker")}
@@ -70,25 +66,6 @@ const Hero = () => {
               <Link to="/projects" className={textLink}>{t("nav.projects")}</Link>
               <span aria-hidden className="text-content-tertiary">·</span>
               <Link to="/contact" className={textLink}>{t("nav.contact")}</Link>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-x-4 gap-y-1">
-              <a
-                href="/CV_en_Francisco_Pandol.pdf"
-                download
-                className={textLink}
-                onClick={() => onDownload("pdf")}
-              >
-                {t("hero.downloadPdf")}
-              </a>
-              <span className="text-content-tertiary">·</span>
-              <a
-                href="/cv_markdown_en_Francisco_Pandol.md"
-                download
-                className={textLink}
-                onClick={() => onDownload("markdown")}
-              >
-                {t("hero.downloadMd")}
-              </a>
             </div>
           </div>
 
