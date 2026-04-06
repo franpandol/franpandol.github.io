@@ -32,7 +32,8 @@
     "goTo": "Ir a:",
     "downloadPdf": "Descargar CV (PDF)",
     "downloadMd": "Descargar CV (Markdown)",
-    "recruitersLink": "Para reclutadores →"
+    "recruitersLink": "Para reclutadores →",
+    "contactLabel": "Contacto"
   },
   "landing": {
     "explore": "Explorar",

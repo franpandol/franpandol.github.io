@@ -32,7 +32,8 @@
     "goTo": "Go to:",
     "downloadPdf": "Download CV (PDF)",
     "downloadMd": "Download CV (Markdown)",
-    "recruitersLink": "For recruiters →"
+    "recruitersLink": "For recruiters →",
+    "contactLabel": "Contact"
   },
   "landing": {
     "explore": "Explore",

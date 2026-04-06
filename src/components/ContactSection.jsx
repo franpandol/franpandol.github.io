@@ -3,8 +3,8 @@ import { usePostHog } from "posthog-js/react";
 import { useTranslation } from "react-i18next";
 import { EMAIL } from "../constants/contact";
 
-const linkClass =
-  "text-sm text-accent-muted underline-offset-4 hover:text-accent hover:underline";
+// text-accent (#0f766e) ~5:1 on surface — passes WCAG AA
+const linkClass = "text-sm text-accent underline-offset-4 hover:underline";
 
 export const ContactContent = () => {
   const posthog = usePostHog();

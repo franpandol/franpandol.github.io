@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import DocumentMeta from "./components/DocumentMeta";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import Blog from "./components/Blog";
 import ProjectList from "./components/ProjectList";
 import ExperiencePage from "./pages/ExperiencePage";
 import AboutPage from "./pages/AboutPage";
@@ -25,7 +24,6 @@ const App = () => (
         <Route path="/skills" element={<SkillsPage />} />
         <Route path="/work" element={<WorkPage />} />
         <Route path="/projects" element={<ProjectList />} />
-        <Route path="/blogs" element={<Blog />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

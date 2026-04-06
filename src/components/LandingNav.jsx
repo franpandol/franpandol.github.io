@@ -10,7 +10,6 @@ const LandingNav = () => {
     { to: "/skills", titleKey: "landing.skills.title", descKey: "landing.skills.description" },
     { to: "/work", titleKey: "landing.work.title", descKey: "landing.work.description" },
     { to: "/projects", titleKey: "landing.projects.title", descKey: "landing.projects.description" },
-    { to: "/blogs", titleKey: "landing.blogs.title", descKey: "landing.blogs.description" },
     { to: "/contact", titleKey: "landing.contact.title", descKey: "landing.contact.description" },
   ];
 
@@ -33,7 +32,7 @@ const LandingNav = () => {
                 <span className="mt-2 text-sm leading-relaxed text-content-secondary">
                   {t(item.descKey)}
                 </span>
-                <span className="mt-4 text-sm font-medium text-accent-muted group-hover:text-accent">
+                <span className="mt-4 text-sm font-medium text-accent group-hover:underline">
                   {t("landing.view")}
                 </span>
               </Link>
