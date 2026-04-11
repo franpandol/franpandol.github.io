@@ -5,23 +5,23 @@
 
 export const selectedProjects = [
   {
-    id: "openai-pricing",
-    stack: ["Django", "Python", "REST"],
-    repoUrl: "https://github.com/franpandol/openai_pricing",
+    id: "lebenslauf-generator",
+    stack: ["Python", "Pydantic", "Jinja2", "WeasyPrint", "Pyodide"],
+    repoUrl: "https://github.com/franpandol/lebenslauf-generator",
     demoUrl: "",
     featured: true,
   },
   {
-    id: "automotive-django",
-    stack: ["Django", "DRF", "Docker", "GitHub Actions"],
-    repoUrl: "https://github.com/franpandol/automotive_django_app",
+    id: "readme-enhancer",
+    stack: ["Go", "OpenAI API"],
+    repoUrl: "https://github.com/franpandol/readme_enhancer",
     demoUrl: "",
     featured: true,
   },
   {
-    id: "stock-api",
-    stack: ["Django", "Python", "Docker"],
-    repoUrl: "https://github.com/franpandol/stock_market_django",
+    id: "chicago-artworks",
+    stack: ["JavaScript", "TypeScript", "Node.js", "React"],
+    repoUrl: "https://github.com/franpandol/chicago_artworks_app",
     demoUrl: "",
     featured: true,
   },

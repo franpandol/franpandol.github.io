@@ -93,19 +93,36 @@
     "groups": {
       "backend": {
         "title": "Backend",
-        "items": ["Python", "Django", "FastAPI", "REST & API design"]
+        "items": [
+          "Python",
+          "Django",
+          "FastAPI",
+          "REST & API design"
+        ]
       },
       "systems": {
         "title": "Systems",
-        "items": ["Distributed systems", "Async & event-driven patterns", "High concurrency"]
+        "items": [
+          "Distributed systems",
+          "Async & event-driven patterns",
+          "High concurrency"
+        ]
       },
       "cloud": {
         "title": "Cloud",
-        "items": ["AWS", "Google Cloud Platform", "Azure"]
+        "items": [
+          "AWS",
+          "Google Cloud Platform",
+          "Azure"
+        ]
       },
       "engineering": {
         "title": "Engineering",
-        "items": ["CI/CD (GitHub Actions)", "Architecture & tradeoffs", "Performance engineering"]
+        "items": [
+          "CI/CD (GitHub Actions)",
+          "Architecture & tradeoffs",
+          "Performance engineering"
+        ]
       }
     }
   },
@@ -130,23 +147,23 @@
       "description": "APIs and backends with real constraints: problem, solution, impact, and stack."
     },
     "items": {
-      "openai-pricing": {
-        "name": "OpenAI Pricing API",
-        "problem": "SaaS teams reselling OpenAI need accurate, explainable cost estimates across models and modalities before they commit to pricing.",
-        "solution": "Designed and implemented a Django REST API that computes usage-based spend from token and image-generation inputs, structured for billing integrations.",
-        "impact": "Shows how I ship production-minded APIs: clear contracts, documentation, and packaging for external integrators."
+      "lebenslauf-generator": {
+        "name": "CV Generator",
+        "problem": "Professionals need portable, version-controlled CVs that render consistently across formats — without locking content into proprietary tools.",
+        "solution": "Built an open-source CLI and in-browser app: Pydantic validates the JSON source, Jinja2 renders it, WeasyPrint exports PDF, and a Pyodide-powered web app runs the whole pipeline client-side with no server.",
+        "impact": "Demonstrates end-to-end Python tooling — schema validation, templating, PDF generation — plus WebAssembly delivery for zero-dependency distribution."
       },
-      "automotive-django": {
-        "name": "Dealership platform API",
-        "problem": "Reference backends often skip the discipline real teams use: quality gates, containers, and automated checks.",
-        "solution": "Led-style reference implementation with Django REST Framework, Docker, flake8, black, pre-commit, and GitHub Actions mirroring professional delivery.",
-        "impact": "Demonstrates architecture-for-maintainability and CI hygiene at the level expected of senior backend owners."
+      "readme-enhancer": {
+        "name": "README Enhancer",
+        "problem": "Most open-source projects ship with weak or missing README files, hurting adoption and contributor onboarding.",
+        "solution": "Built a Go CLI that reads repository content and rewrites the README using the OpenAI API, producing structured, informative documentation in one command.",
+        "impact": "Shows Go engineering and practical AI API integration: a self-contained tool developers can run in seconds against any repo."
       },
-      "stock-api": {
-        "name": "Market data API",
-        "problem": "Financial data APIs must be easy to run, audit, and extend for reviewers and future contributors.",
-        "solution": "Built a containerized Django REST service with explicit dependencies, Dockerfile, and README oriented toward operational clarity.",
-        "impact": "Signals how I present complex backends to stakeholders: reproducible environments and clear boundaries."
+      "chicago-artworks": {
+        "name": "Chicago Artworks Explorer",
+        "problem": "Public cultural datasets like the Art Institute of Chicago API are rarely exposed through clean, usable interfaces.",
+        "solution": "Full-stack app with a TypeScript/Node.js backend and React frontend, surfacing the museum's public API with search and browsing.",
+        "impact": "Demonstrates end-to-end JS/TS development — from API integration to UI delivery — across the full stack in a single project."
       }
     }
   },

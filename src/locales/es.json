@@ -93,19 +93,36 @@
     "groups": {
       "backend": {
         "title": "Backend",
-        "items": ["Python", "Django", "FastAPI", "REST y diseño de APIs"]
+        "items": [
+          "Python",
+          "Django",
+          "FastAPI",
+          "REST y diseño de APIs"
+        ]
       },
       "systems": {
         "title": "Sistemas",
-        "items": ["Sistemas distribuidos", "Patrones asíncronos y orientados a eventos", "Alta concurrencia"]
+        "items": [
+          "Sistemas distribuidos",
+          "Patrones asíncronos y orientados a eventos",
+          "Alta concurrencia"
+        ]
       },
       "cloud": {
         "title": "Nube",
-        "items": ["AWS", "Google Cloud Platform", "Azure"]
+        "items": [
+          "AWS",
+          "Google Cloud Platform",
+          "Azure"
+        ]
       },
       "engineering": {
         "title": "Ingeniería",
-        "items": ["CI/CD (GitHub Actions)", "Arquitectura y tradeoffs", "Ingeniería de rendimiento"]
+        "items": [
+          "CI/CD (GitHub Actions)",
+          "Arquitectura y tradeoffs",
+          "Ingeniería de rendimiento"
+        ]
       }
     }
   },
@@ -130,23 +147,23 @@
       "description": "APIs y backends con restricciones reales: problema, solución, impacto y stack."
     },
     "items": {
-      "openai-pricing": {
-        "name": "API de precios OpenAI",
-        "problem": "Los equipos SaaS que revenden OpenAI necesitan estimaciones de costo precisas y explicables entre modelos y modalidades antes de fijar precios.",
-        "solution": "Diseñé e implementé una API REST en Django que calcula el gasto por uso a partir de tokens y generación de imágenes, pensada para integraciones de facturación.",
-        "impact": "Muestra cómo entrego APIs con mentalidad de producción: contratos claros, documentación y empaquetado para integradores externos."
+      "lebenslauf-generator": {
+        "name": "Generador de CV",
+        "problem": "Los profesionales necesitan CVs portátiles y versionados que se rendericen consistentemente en distintos formatos, sin depender de herramientas propietarias.",
+        "solution": "Construí una CLI y una app web de código abierto: Pydantic valida el JSON fuente, Jinja2 lo renderiza, WeasyPrint exporta el PDF, y una app con Pyodide ejecuta todo el pipeline en el navegador sin servidor.",
+        "impact": "Demuestra tooling Python de extremo a extremo — validación de esquemas, plantillas, generación de PDF — más distribución vía WebAssembly sin dependencias."
       },
-      "automotive-django": {
-        "name": "API de plataforma para concesionarios",
-        "problem": "Los backends de referencia a menudo omiten la disciplina de equipos reales: calidad, contenedores y comprobaciones automáticas.",
-        "solution": "Implementación de referencia al estilo “lead” con Django REST Framework, Docker, flake8, black, pre-commit y GitHub Actions, reflejando entrega profesional.",
-        "impact": "Demuestra arquitectura orientada al mantenimiento e higiene de CI al nivel que se espera de owners backend senior."
+      "readme-enhancer": {
+        "name": "README Enhancer",
+        "problem": "La mayoría de los proyectos open-source tienen READMEs débiles o inexistentes, lo que perjudica la adopción y el onboarding de colaboradores.",
+        "solution": "Construí una CLI en Go que lee el contenido del repositorio y reescribe el README usando la API de OpenAI, generando documentación estructurada en un solo comando.",
+        "impact": "Muestra ingeniería en Go e integración práctica de la API de IA: una herramienta autónoma que cualquier desarrollador puede ejecutar en segundos sobre cualquier repo."
       },
-      "stock-api": {
-        "name": "API de datos de mercado",
-        "problem": "Las APIs de datos financieros deben ser fáciles de ejecutar, auditar y extender para quienes revisan el código y futuros colaboradores.",
-        "solution": "Construí un servicio Django REST containerizado con dependencias explícitas, Dockerfile y README orientados a claridad operativa.",
-        "impact": "Refleja cómo presento backends complejos a stakeholders: entornos reproducibles y límites claros."
+      "chicago-artworks": {
+        "name": "Explorador de Arte de Chicago",
+        "problem": "Datasets culturales públicos como la API del Art Institute of Chicago rara vez se exponen a través de interfaces limpias y usables.",
+        "solution": "App full-stack con backend TypeScript/Node.js y frontend React, que expone la API pública del museo con búsqueda y navegación.",
+        "impact": "Demuestra desarrollo JS/TS de extremo a extremo — desde integración de API hasta entrega de UI — en un único proyecto full-stack."
       }
     }
   },
