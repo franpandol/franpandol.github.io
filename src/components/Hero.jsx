@@ -32,7 +32,8 @@ const Hero = () => {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_55%_at_50%_-15%,rgba(13,148,136,0.09),transparent)]"
         aria-hidden
       />
-      <div className="relative w-full max-w-[90rem] px-6 pb-10 pt-12 md:px-12 md:pb-14 md:pt-16 lg:px-16">
+      <div className="relative w-full px-6 pb-10 pt-12 md:px-12 md:pb-14 md:pt-16 lg:px-16">
+        <div className="mx-auto w-full max-w-[90rem]">
         {/* Always full-width: kicker, name, subtitle */}
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-muted">
           {t("hero.kicker")}
@@ -114,6 +115,7 @@ const Hero = () => {
               </div>
             </div>
           </aside>
+        </div>
         </div>
       </div>
     </header>
