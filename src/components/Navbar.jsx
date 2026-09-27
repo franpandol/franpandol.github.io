@@ -17,9 +17,10 @@ const Navbar = () => {
       <nav className="mx-auto flex w-full max-w-[90rem] flex-wrap items-center justify-between gap-3 px-6 py-4 md:px-12 lg:px-16">
         <Link
           to="/"
-          className="order-1 font-display text-base font-semibold text-content-primary hover:text-accent md:text-lg"
+          className="order-1 flex items-center gap-2 font-display text-base font-semibold text-content-primary hover:text-accent md:text-lg"
           onClick={() => setOpen(false)}
         >
+          <img src="/logo-mark.svg" alt="" aria-hidden="true" className="h-7 w-7" />
           {t("nav.brand")}
         </Link>
         <div className="order-2 flex items-center gap-2 md:order-3">
@@ -47,9 +48,6 @@ const Navbar = () => {
           </NavLink>
           <NavLink to="/skills" className={navLinkClass} onClick={() => setOpen(false)}>
             {t("nav.skills")}
-          </NavLink>
-          <NavLink to="/work" className={navLinkClass} onClick={() => setOpen(false)}>
-            {t("nav.work")}
           </NavLink>
           <NavLink to="/projects" className={navLinkClass} onClick={() => setOpen(false)}>
             {t("nav.projects")}

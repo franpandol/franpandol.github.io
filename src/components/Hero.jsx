@@ -38,10 +38,13 @@ const Hero = () => {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-muted">
           {t("hero.kicker")}
         </p>
-        <h1 className="font-display mt-4 text-display-lg font-semibold tracking-tight text-content-primary">
+        <h1 className="font-display mt-4 flex animate-fade-up items-center gap-3 text-display-lg font-semibold tracking-tight text-content-primary">
+          <img src="/logo-mark.svg" alt="" aria-hidden="true" className="h-9 w-9 shrink-0 md:h-11 md:w-11" />
           {t("nav.brand")}
         </h1>
-        <p className="mt-3 text-sm text-content-tertiary md:text-[15px]">{t("hero.subtitle")}</p>
+        <p className="mt-3 animate-fade-up text-sm text-content-tertiary opacity-0 [animation-delay:80ms] md:text-[15px]">
+          {t("hero.subtitle")}
+        </p>
 
         {/* Two-column layout from intro onwards */}
         <div className="mt-8 md:flex md:items-start md:gap-x-12 lg:gap-x-16">
@@ -61,8 +64,6 @@ const Hero = () => {
               <Link to="/about" className={textLink}>{t("nav.about")}</Link>
               <span aria-hidden className="text-content-tertiary">·</span>
               <Link to="/skills" className={textLink}>{t("nav.skills")}</Link>
-              <span aria-hidden className="text-content-tertiary">·</span>
-              <Link to="/work" className={textLink}>{t("nav.work")}</Link>
               <span aria-hidden className="text-content-tertiary">·</span>
               <Link to="/projects" className={textLink}>{t("nav.projects")}</Link>
               <span aria-hidden className="text-content-tertiary">·</span>
