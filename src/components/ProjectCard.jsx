@@ -31,16 +31,16 @@ const ProjectCard = ({ project, index = 0 }) => {
       className="group flex h-full animate-fade-up flex-col overflow-hidden rounded-lg border border-surface-border bg-surface-raised shadow-card transition hover:-translate-y-0.5 hover:border-accent-muted/45 hover:shadow-cardHover"
       style={{ animationDelay: `${index * 60}ms`, opacity: 0 }}
     >
-      <div className="relative h-24 w-full overflow-hidden border-b border-surface-border md:h-28">
+      <div className="relative w-full overflow-hidden border-b border-surface-border">
         {project.image ? (
           <img
             src={project.image}
             alt=""
-            className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+            className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105"
           />
         ) : (
           <div
-            className={`relative flex h-full w-full flex-col justify-end bg-gradient-to-br px-4 py-3 md:px-5 ${toneFor(project.id)}`}
+            className={`absolute inset-0 bg-gradient-to-br ${toneFor(project.id)}`}
             aria-hidden="true"
           >
             <div
@@ -51,25 +51,36 @@ const ProjectCard = ({ project, index = 0 }) => {
                 backgroundSize: "14px 14px",
               }}
             />
-            <div className="relative z-[1] min-w-0 space-y-1.5">
-              <p className="truncate font-display text-base font-semibold text-content-primary md:text-lg">
-                {project.name}
-              </p>
-              {stackPreview.length > 0 ? (
-                <div className="flex flex-wrap gap-1">
-                  {stackPreview.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded border border-accent/15 bg-white/70 px-1.5 py-0.5 font-mono text-[10px] text-accent"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
-            </div>
           </div>
         )}
+        {project.image ? (
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" aria-hidden="true" />
+        ) : null}
+        <div className="relative z-[1] flex min-h-28 flex-col justify-end gap-1.5 px-4 pb-3 pt-10 md:min-h-32 md:px-5">
+          <h3
+            className={`font-display text-lg font-semibold leading-snug md:text-xl ${
+              project.image ? "text-white" : "text-content-primary"
+            }`}
+          >
+            {project.name}
+          </h3>
+          {stackPreview.length > 0 ? (
+            <div className="flex flex-wrap gap-1">
+              {stackPreview.map((tech) => (
+                <span
+                  key={tech}
+                  className={`rounded border px-1.5 py-0.5 font-mono text-[10px] ${
+                    project.image
+                      ? "border-white/25 bg-black/35 text-white"
+                      : "border-accent/15 bg-white/70 text-accent"
+                  }`}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          ) : null}
+        </div>
         <span
           className={`absolute right-3 top-2.5 z-[1] rounded-full px-2 py-0.5 text-[11px] font-medium ${
             isCaseStudy
@@ -82,10 +93,7 @@ const ProjectCard = ({ project, index = 0 }) => {
       </div>
 
       <div className="flex flex-1 flex-col p-5 md:p-6">
-        <h3 className="font-display text-lg font-semibold text-content-primary md:text-xl">
-          {project.name}
-        </h3>
-        <p className="mt-3 text-base leading-relaxed text-content-secondary">
+        <p className="text-base leading-relaxed text-content-secondary">
           <span className="font-medium text-content-primary">{t("projects.labels.problem")} </span>
           {project.problem}
         </p>

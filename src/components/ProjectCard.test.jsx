@@ -45,10 +45,11 @@ test("omits the live demo link when no demoUrl is set", () => {
   expect(screen.queryByRole("link", { name: /Live demo/i })).toBeNull();
 });
 
-test("renders a compact header band with title and stack preview", () => {
+test("renders a single title inside the header band with stack preview", () => {
   renderCard(baseProject);
   expect(screen.queryByRole("img")).toBeNull();
-  expect(screen.getAllByText("Test Project").length).toBeGreaterThanOrEqual(2);
+  expect(screen.getAllByText("Test Project")).toHaveLength(1);
+  expect(screen.getByRole("heading", { name: "Test Project" })).toBeInTheDocument();
   expect(screen.getAllByText("React").length).toBeGreaterThanOrEqual(1);
   expect(screen.getByText("Personal project")).toBeInTheDocument();
 });
