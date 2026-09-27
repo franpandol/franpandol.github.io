@@ -12,7 +12,7 @@ const ProjectsPage = () => {
     <main className="w-full">
       <PageHeader title={t("projects.page.title")} description={t("projects.page.description")} />
       <div className="w-full px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8 lg:px-16">
-        <ul className="grid max-w-[90rem] gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <ul className="mx-auto grid max-w-[90rem] gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <li key={project.id}>
               <ProjectCard project={project} index={index} />
