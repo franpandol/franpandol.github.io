@@ -32,9 +32,9 @@ export default {
           "sans-serif",
         ],
         display: [
-          "Outfit",
           "Plus Jakarta Sans",
           "system-ui",
+          "-apple-system",
           "sans-serif",
         ],
         mono: [
