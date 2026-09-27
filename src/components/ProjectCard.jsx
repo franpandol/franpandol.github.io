@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const linkClass = "text-sm text-accent underline-offset-4 hover:underline";
+const linkClass = "text-base text-accent underline-offset-4 hover:underline";
 
 const initials = (name) =>
   name
@@ -50,19 +50,28 @@ const ProjectCard = ({ project, index = 0 }) => {
         <h3 className="font-display text-lg font-semibold text-content-primary md:text-xl">
           {project.name}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-content-secondary md:text-[15px]">
+        <p className="mt-3 text-base leading-relaxed text-content-secondary">
           <span className="font-medium text-content-primary">{t("projects.labels.problem")} </span>
           {project.problem}
         </p>
-        <p className="mt-2 text-sm leading-relaxed text-content-secondary md:text-[15px]">
+        <p className="mt-2 text-base leading-relaxed text-content-secondary">
           <span className="font-medium text-content-primary">{t("projects.labels.solution")} </span>
           {project.solution}
         </p>
-        <p className="mt-2 text-sm leading-relaxed text-content-secondary md:text-[15px]">
+        <p className="mt-2 text-base leading-relaxed text-content-secondary">
           <span className="font-medium text-content-primary">{t("projects.labels.impact")} </span>
           {project.impact}
         </p>
-        <p className="mt-3 font-mono text-xs text-content-tertiary">{project.stack.join(" · ")}</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {project.stack.map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-surface-border bg-surface-overlay px-2.5 py-1 font-mono text-xs text-content-secondary"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
         <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 pt-1">
           {project.repoUrl ? (
             <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>

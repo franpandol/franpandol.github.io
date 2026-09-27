@@ -89,7 +89,7 @@ const RecruiterInterviewCta = () => {
       >
         {t("contact.recruiters.title")}
       </h2>
-      <p className="mt-3 text-sm leading-relaxed text-content-secondary md:text-[15px]">
+      <p className="mt-3 text-base leading-relaxed text-content-secondary">
         {t("contact.recruiters.intro")}
       </p>
 
@@ -98,10 +98,10 @@ const RecruiterInterviewCta = () => {
         {t("contact.recruiters.slotsHeading")}
       </p>
       <p className="mt-1 text-xs text-content-tertiary">{t("contact.recruiters.timezoneNote")}</p>
-      <p className="mt-3 text-sm font-medium text-content-secondary md:text-[15px]">
+      <p className="mt-3 text-base font-medium text-content-secondary">
         {t("contact.recruiters.dailyIntro")}
       </p>
-      <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-content-secondary md:text-[15px]">
+      <ul className="mt-2 list-inside list-disc space-y-1 text-base text-content-secondary">
         {dailyWindows.map((w, i) => (
           <li key={`${w.start}-${w.end}`}>{windowLines[i]}</li>
         ))}
@@ -112,7 +112,7 @@ const RecruiterInterviewCta = () => {
 
       {/* Action zone */}
       <div className="mt-6 rounded-md border border-surface-border bg-surface p-4">
-        <p className="text-sm leading-relaxed text-content-secondary md:text-[15px]">
+        <p className="text-base leading-relaxed text-content-secondary">
           {t("contact.recruiters.ctaInstruction")}
         </p>
 

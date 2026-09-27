@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { EMAIL } from "../constants/contact";
 
 // text-accent (#0f766e) ~5:1 on surface — passes WCAG AA
-const linkClass = "text-sm text-accent underline-offset-4 hover:underline";
+const linkClass = "text-base text-accent underline-offset-4 hover:underline";
 
 export const ContactContent = () => {
   const posthog = usePostHog();
@@ -33,7 +33,7 @@ export const ContactContent = () => {
 
   return (
     <>
-      <div className="space-y-4 text-sm md:text-[15px]">
+      <div className="space-y-4 text-base">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <a href={`mailto:${EMAIL}`} className={linkClass} onClick={handleContactClick}>
             {EMAIL}
@@ -92,7 +92,7 @@ export const ContactContent = () => {
         </a>
       </div>
 
-      <p className="mt-8 border-t border-surface-border pt-6 text-sm leading-relaxed text-content-tertiary md:text-[15px]">
+      <p className="mt-8 border-t border-surface-border pt-6 text-base leading-relaxed text-content-tertiary">
         {t("contact.footer")}
       </p>
     </>
