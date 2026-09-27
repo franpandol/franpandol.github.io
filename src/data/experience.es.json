@@ -6,23 +6,29 @@
       "slug": "dexter-development",
       "start": "2024-07-01",
       "current": true,
-      "summary": "Lideré el desarrollo de punta a punta de una plataforma de trading de criptomonedas desde el MVP hasta producción, definiendo arquitectura y hoja de ruta técnica mientras coordinaba escalabilidad, seguridad y cumplimiento regulatorio (KYC/AML).",
+      "summary": "Lideré la arquitectura y la hoja de ruta técnica de un exchange de criptomonedas en producción, incluyendo agentes de IA con Gemini y automatización de ingeniería impulsada por Claude Code.",
       "achievements": [
-        "Lideré el desarrollo de punta a punta de una plataforma de trading de criptomonedas, definiendo arquitectura y hoja de ruta técnica.",
-        "Coordiné decisiones técnicas clave para escalabilidad, seguridad y cumplimiento regulatorio (KYC/AML).",
-        "Diseñé APIs de alta concurrencia con Django/DRF para procesamiento de transacciones en tiempo real.",
-        "Integré servicios críticos (Fireblocks, MetaMap) para custodia de activos y verificación de identidad.",
-        "Establecí pipelines de CI/CD y prácticas de ingeniería para alta disponibilidad y entrega rápida."
+        "Lideré la arquitectura y la hoja de ruta técnica de un exchange de criptomonedas en producción, priorizando escalabilidad, seguridad y procesamiento confiable de transacciones.",
+        "Diseñé APIs REST de alta concurrencia con Django/DRF para transacciones financieras en tiempo real, siguiendo prácticas de codificación segura.",
+        "Construí un agente de IA con Gemini y tool calling, integrando flujos de trabajo basados en LLM con los servicios de backend (proyecto AURA).",
+        "Desarrollé flujos de ingeniería asistidos por IA con Claude Code, usando automatización basada en agentes para desarrollo, análisis de código y tareas de ingeniería en todo el codebase.",
+        "Integré Fireblocks para custodia segura de activos digitales y MetaMap para verificación de identidad KYC/AML.",
+        "Diseñé flujos de trabajo asíncronos y orientados a eventos con Celery para procesamiento escalable y confiabilidad operativa.",
+        "Construí y operé infraestructura en AWS (ECS/Fargate, Docker, RDS, CloudWatch) con foco en confiabilidad y observabilidad en producción.",
+        "Establecí pipelines de CI/CD y prácticas de ingeniería para despliegues confiables e iteración rápida del producto."
       ],
       "tech": [
         "Python",
         "Django",
         "DRF",
+        "Celery",
         "PostgreSQL",
+        "AWS (ECS/Fargate, RDS, CloudWatch)",
+        "Docker",
+        "Gemini API",
+        "Claude Code",
         "Fireblocks",
-        "MetaMap",
-        "CI/CD",
-        "APIs de criptomonedas"
+        "MetaMap"
       ],
       "projects": [
         {
@@ -77,6 +83,7 @@
     {
       "role": "Ingeniero senior de software",
       "company": "Apptim",
+      "slug": "apptim",
       "start": "2021-02-01",
       "end": "2022-07-31",
       "summary": "Desarrollé herramientas de análisis de rendimiento para apps móviles, lideré la migración de Python 2 a 3 y automatizé pruebas con AWS Device Farm.",

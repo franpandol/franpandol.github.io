@@ -97,8 +97,8 @@ export function getExperienceSkills(lang) {
  */
 const CASE_STUDY_SLUGS = [
   { slug: "dexter-development", featured: true },
+  { slug: "apptim", featured: true },
   { slug: "realtrends", featured: true },
-  { slug: "glasfunds", featured: false },
 ];
 
 function toCaseStudy(exp, featured) {

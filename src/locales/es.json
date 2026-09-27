@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Francisco Pandol · Líder de proyectos de software · Backend",
-    "description": "Francisco Pandol — Líder de proyectos de software y líder técnico de backend. Más de 10 años, Python/Django/FastAPI, ecosistema Mercado Libre, fintech, alta concurrencia y diseño de sistemas."
+    "description": "Francisco Pandol — Líder de proyectos de software y líder técnico de backend. Más de 10 años, Python/Django/FastAPI y Node.js/NestJS, agentes de IA, fintech y cripto, alta concurrencia y diseño de sistemas."
   },
   "common": {
     "present": "Presente",
@@ -23,8 +23,8 @@
   },
   "hero": {
     "kicker": "Liderazgo en software · Backend",
-    "subtitle": "Líder de proyectos de software · Líder técnico de backend · Más de 10 años",
-    "badges": ["Más de 10 años", "Fintech y marketplaces", "Python · Django · FastAPI"],
+    "subtitle": "Líder técnico de backend · Python y Node.js · Sistemas escalables",
+    "badges": ["Más de 10 años", "Python y Node.js", "Agentes de IA (Gemini, Claude Code)"],
     "ctaContact": "Contactame",
     "ctaExperience": "Ver experiencia",
     "downloadPdf": "Descargar CV (PDF)",
@@ -49,7 +49,7 @@
     },
     "featuredProjects": {
       "title": "Trabajos destacados",
-      "description": "Algunos proyectos que muestran el rango — desde sistemas fintech en producción hasta herramientas open-source.",
+      "description": "Casos reales en producción y herramientas open-source sólidas — fintech, plataformas de rendimiento e infraestructura backend.",
       "viewAll": "Ver todos los proyectos →"
     },
     "blogs": {
@@ -73,8 +73,8 @@
     "earlierIntro": "Docencia, plataformas del sector público, entregas freelance e ingeniería universitaria."
   },
   "about": {
-    "p1": "Soy <1>Francisco Pandol</1> — <2>Líder de proyectos de software y líder técnico de backend</2> con <3>más de diez años</3> liderando arquitectura y entrega en <4>fintech, sistemas en tiempo real y backends a escala de marketplace</4>. Trabajo con <5>Python, Django y FastAPI</5> y tomo decisiones que impactan escalabilidad, latencia y seguridad operativa — el mismo perfil que importa en plataformas grandes de producto y pagos.",
-    "p2": "He liderado equipos en el <1>ecosistema Mercado Libre</1> (RealTrends), entregado backends tipo exchange con custodia e integraciones KYC y mejorado el rendimiento de plataformas a escala (incluidos avances importantes en cargas de gestión patrimonial). Mantengo cercanía con el código y las revisiones alineando ingeniería con resultados de negocio."
+    "p1": "Soy <1>Francisco Pandol</1> — <2>Líder de proyectos de software y líder técnico de backend</2> con <3>más de diez años</3> liderando arquitectura y entrega en <4>fintech, cripto y sistemas en tiempo real</4>. Trabajo con <5>Python (Django, FastAPI) y Node.js (NestJS)</5> y tomo decisiones que impactan escalabilidad, latencia y seguridad operativa — el mismo perfil que importa en plataformas grandes de producto y pagos.",
+    "p2": "He liderado equipos en el <1>ecosistema Mercado Libre</1> (RealTrends), entregado backends tipo exchange con custodia (Fireblocks) e integraciones KYC/AML, y mejorado el rendimiento de plataformas a escala (incluidos avances importantes en cargas de gestión patrimonial). Más recientemente construí agentes de IA con Gemini y usé Claude Code para automatizar tareas de ingeniería en un codebase de producción. Mantengo cercanía con el código y las revisiones alineando ingeniería con resultados de negocio."
   },
   "skills": {
     "page": {
@@ -88,31 +88,44 @@
           "Python",
           "Django",
           "FastAPI",
+          "Node.js",
+          "NestJS",
           "REST y diseño de APIs"
         ]
       },
       "systems": {
-        "title": "Sistemas",
+        "title": "Sistemas y datos",
         "items": [
           "Sistemas distribuidos",
-          "Patrones asíncronos y orientados a eventos",
-          "Alta concurrencia"
+          "Patrones asíncronos y orientados a eventos (Celery)",
+          "Alta concurrencia",
+          "PostgreSQL y MongoDB"
         ]
       },
       "cloud": {
-        "title": "Nube",
+        "title": "Nube y DevOps",
         "items": [
-          "AWS",
+          "AWS (ECS/Fargate, RDS, CloudWatch)",
           "Google Cloud Platform",
-          "Azure"
+          "Azure",
+          "Docker",
+          "CI/CD (GitHub Actions)"
+        ]
+      },
+      "aiAgents": {
+        "title": "Ingeniería de agentes de IA",
+        "items": [
+          "Agentes con Gemini y tool calling",
+          "Flujos de ingeniería con Claude Code",
+          "Servicios de backend integrados con LLMs"
         ]
       },
       "engineering": {
-        "title": "Ingeniería",
+        "title": "Liderazgo y entrega",
         "items": [
-          "CI/CD (GitHub Actions)",
-          "Arquitectura y tradeoffs",
-          "Ingeniería de rendimiento"
+          "Arquitectura y hoja de ruta técnica",
+          "Liderazgo de equipos (4–6 ingenieros)",
+          "Sistemas de seguridad crítica (Fireblocks, MetaMap, MFA)"
         ]
       }
     }
@@ -130,26 +143,26 @@
     },
     "page": {
       "title": "Proyectos",
-      "description": "Backends y herramientas de código abierto: problema, solución, impacto y stack."
+      "description": "Casos reales en producción y backends open-source: problema, solución, impacto y stack."
     },
     "items": {
+      "aws-infra-report": {
+        "name": "AWS Infra Report",
+        "problem": "Las cuentas cloud acumulan recursos ociosos, security groups abiertos y redes opacas — desperdicio y riesgo difíciles de ver sin horas en la consola.",
+        "solution": "Construí un auditor de solo lectura en Python con boto3 que mapea la topología VPC/compute a un diagrama Mermaid interactivo, prioriza hallazgos (CRITICAL→LOW) con comandos aws CLI listos para copiar, y estima el desperdicio de costo mensual.",
+        "impact": "Muestra fluidez AWS de producción — networking, ECS, ELB, RDS, CloudWatch — empaquetada como un informe HTML autocontenido que los equipos pueden ejecutar sin permisos de escritura."
+      },
+      "unofficial-mural-python-client": {
+        "name": "Cliente Python de MURAL",
+        "problem": "Integrar la API pública de MURAL desde Python implicaba armar a mano OAuth, paginación y JSON sin tipos para docenas de endpoints.",
+        "solution": "Publiqué un SDK tipado que cubre la superficie OpenAPI: modelos Pydantic v2, OAuth2 con auto-refresh, paginación transparente por cursor, CLI con Typer y una jerarquía completa de excepciones.",
+        "impact": "Demuestra diseño de librerías de API — validación del lado cliente, 98+ tests mockeados con ~99% de cobertura — los mismos patrones para integraciones third-party confiables en backends de producción."
+      },
       "lebenslauf-generator": {
         "name": "Generador de CV",
         "problem": "Los profesionales necesitan CVs portátiles y versionados que se rendericen consistentemente en distintos formatos, sin depender de herramientas propietarias.",
         "solution": "Construí una CLI y una app web de código abierto: Pydantic valida el JSON fuente, Jinja2 lo renderiza, WeasyPrint exporta el PDF, y una app con Pyodide ejecuta todo el pipeline en el navegador sin servidor.",
         "impact": "Demuestra tooling Python de extremo a extremo — validación de esquemas, plantillas, generación de PDF — más distribución vía WebAssembly sin dependencias."
-      },
-      "readme-enhancer": {
-        "name": "README Enhancer",
-        "problem": "La mayoría de los proyectos open-source tienen READMEs débiles o inexistentes, lo que perjudica la adopción y el onboarding de colaboradores.",
-        "solution": "Construí una CLI en Go que lee el contenido del repositorio y reescribe el README usando la API de OpenAI, generando documentación estructurada en un solo comando.",
-        "impact": "Muestra ingeniería en Go e integración práctica de la API de IA: una herramienta autónoma que cualquier desarrollador puede ejecutar en segundos sobre cualquier repo."
-      },
-      "chicago-artworks": {
-        "name": "Explorador de Arte de Chicago",
-        "problem": "Datasets culturales públicos como la API del Art Institute of Chicago rara vez se exponen a través de interfaces limpias y usables.",
-        "solution": "App full-stack con backend TypeScript/Node.js y frontend React, que expone la API pública del museo con búsqueda y navegación.",
-        "impact": "Demuestra desarrollo JS/TS de extremo a extremo — desde integración de API hasta entrega de UI — en un único proyecto full-stack."
       }
     }
   },

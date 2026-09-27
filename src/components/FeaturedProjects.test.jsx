@@ -4,7 +4,7 @@ import { I18nextProvider } from "react-i18next";
 import { MemoryRouter } from "react-router-dom";
 import i18n from "../i18n";
 import FeaturedProjects from "./FeaturedProjects";
-import { selectedProjects } from "../data/projects";
+import { getCaseStudies } from "../data/experience";
 
 beforeEach(async () => {
   await i18n.changeLanguage("en");
@@ -19,12 +19,13 @@ test("renders only featured projects, capped at 3", () => {
     </I18nextProvider>
   );
 
-  const featuredCount = selectedProjects.filter((p) => p.featured).length;
-  expect(featuredCount).toBeGreaterThan(0);
+  const featuredCaseStudies = getCaseStudies("en").filter((p) => p.featured);
+  expect(featuredCaseStudies.length).toBeGreaterThan(0);
 
   const headings = screen.getAllByRole("heading", { level: 3 });
   expect(headings.length).toBeLessThanOrEqual(3);
   expect(headings.length).toBeGreaterThan(0);
+  expect(headings.length).toBe(Math.min(3, featuredCaseStudies.length));
 });
 
 test("links to the full projects page", () => {

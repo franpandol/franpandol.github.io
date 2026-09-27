@@ -45,10 +45,13 @@ test("omits the live demo link when no demoUrl is set", () => {
   expect(screen.queryByRole("link", { name: /Live demo/i })).toBeNull();
 });
 
-test("renders a placeholder with initials when no image is set", () => {
+test("renders a richer placeholder when no image is set", () => {
   renderCard(baseProject);
   expect(screen.queryByRole("img")).toBeNull();
+  // Monogram + title both appear in the header band (title also in h3)
+  expect(screen.getAllByText("Test Project").length).toBeGreaterThanOrEqual(2);
   expect(screen.getByText("TP")).toBeInTheDocument();
+  expect(screen.getAllByText("React").length).toBeGreaterThanOrEqual(1);
 });
 
 test("renders the image when one is provided", () => {

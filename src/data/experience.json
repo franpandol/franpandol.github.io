@@ -6,23 +6,29 @@
       "slug": "dexter-development",
       "start": "2024-07-01",
       "current": true,
-      "summary": "Led end-to-end development of a cryptocurrency trading platform from MVP to production, defining architecture and technical roadmap while coordinating scalability, security, and regulatory compliance (KYC/AML).",
+      "summary": "Led end-to-end architecture and technical roadmap for a production cryptocurrency exchange, including Gemini-powered AI agent workflows and Claude Code-driven engineering automation across the codebase.",
       "achievements": [
-        "Led end-to-end development of a cryptocurrency trading platform, defining architecture and technical roadmap.",
-        "Coordinated key technical decisions ensuring scalability, security, and regulatory compliance (KYC/AML).",
-        "Designed high-concurrency APIs using Django/DRF for real-time transaction processing.",
-        "Integrated critical services (Fireblocks, MetaMap) for secure asset management and identity verification.",
-        "Established CI/CD pipelines and engineering practices for high availability and fast delivery."
+        "Led end-to-end architecture and technical roadmap for a production cryptocurrency exchange, focusing on scalability, security, and reliable transaction processing.",
+        "Designed high-concurrency REST APIs using Django/DRF for real-time financial transactions, following secure coding practices.",
+        "Built an AI agent powered by Gemini with tool calling, integrating LLM-driven workflows with backend services (AURA project).",
+        "Developed AI-assisted engineering workflows with Claude Code, using agent-based automation for development, code analysis, and engineering tasks across the codebase.",
+        "Integrated Fireblocks for secure digital-asset custody and MetaMap for KYC/AML identity verification.",
+        "Designed asynchronous and event-driven backend workflows using Celery for scalable processing and operational reliability.",
+        "Built and operated AWS infrastructure (ECS/Fargate, Docker, RDS, CloudWatch) with a focus on production reliability and observability.",
+        "Established CI/CD pipelines and engineering practices supporting reliable deployments and rapid product iteration."
       ],
       "tech": [
         "Python",
         "Django",
         "DRF",
+        "Celery",
         "PostgreSQL",
+        "AWS (ECS/Fargate, RDS, CloudWatch)",
+        "Docker",
+        "Gemini API",
+        "Claude Code",
         "Fireblocks",
-        "MetaMap",
-        "CI/CD",
-        "Cryptocurrency APIs"
+        "MetaMap"
       ],
       "projects": [
         {
@@ -77,6 +83,7 @@
     {
       "role": "Senior Software Engineer",
       "company": "Apptim",
+      "slug": "apptim",
       "start": "2021-02-01",
       "end": "2022-07-31",
       "summary": "Developed performance analysis tools for mobile apps, led Python 2 to 3 migration, and automated testing with AWS Device Farm.",

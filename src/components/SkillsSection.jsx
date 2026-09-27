@@ -2,13 +2,13 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { sectionTitleClass } from "../sectionTitles";
 
-const groupKeys = ["backend", "systems", "cloud", "engineering"];
+const groupKeys = ["backend", "systems", "cloud", "aiAgents", "engineering"];
 
 export const SkillsContent = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-12">
       {groupKeys.map((key) => {
         const items = t(`skills.groups.${key}.items`, { returnObjects: true });
         const list = Array.isArray(items) ? items : [];

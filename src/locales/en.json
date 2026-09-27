@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Francisco Pandol · Software Project Leader · Backend",
-    "description": "Francisco Pandol — Software Project Leader & Backend Tech Lead. 10+ years, Python/Django/FastAPI, Mercado Libre ecosystem, fintech, high concurrency, system design."
+    "description": "Francisco Pandol — Software Project Leader & Backend Tech Lead. 10+ years, Python/Django/FastAPI & Node.js/NestJS, AI-agent engineering, fintech & crypto, high concurrency, system design."
   },
   "common": {
     "present": "Present",
@@ -23,8 +23,8 @@
   },
   "hero": {
     "kicker": "Software leadership · Backend",
-    "subtitle": "Software Project Leader · Backend Tech Lead · 10+ years",
-    "badges": ["10+ years", "Fintech & marketplaces", "Python · Django · FastAPI"],
+    "subtitle": "Backend Tech Lead · Python & Node.js · Scalable Systems",
+    "badges": ["10+ years", "Python & Node.js", "AI-agent engineering (Gemini, Claude Code)"],
     "ctaContact": "Contact me",
     "ctaExperience": "View experience",
     "downloadPdf": "Download CV (PDF)",
@@ -49,7 +49,7 @@
     },
     "featuredProjects": {
       "title": "Selected work",
-      "description": "A few projects that show the range — from production fintech systems to open-source tools.",
+      "description": "Production case studies and serious open-source tools — fintech, performance platforms, and backend infrastructure.",
       "viewAll": "View all projects →"
     },
     "blogs": {
@@ -73,8 +73,8 @@
     "earlierIntro": "Teaching, public-sector platforms, freelance delivery, and university engineering."
   },
   "about": {
-    "p1": "I am <1>Francisco Pandol</1> — a <2>Software Project Leader and Backend Tech Lead</2> with <3>over ten years</3> owning architecture and delivery in <4>fintech, real-time systems, and marketplace-scale backends</4>. I lead with <5>Python, Django, and FastAPI</5>, and I am comfortable making the calls that affect scalability, latency, and operational safety — the same profile that matters for large product and payments platforms.",
-    "p2": "I have led teams on the <1>Mercado Libre ecosystem</1> (RealTrends), shipped exchange-grade backends with custody and KYC integrations, and improved platform performance at scale (including significant gains on wealth-management workloads). I stay close to code and reviews while aligning engineering with business outcomes."
+    "p1": "I am <1>Francisco Pandol</1> — a <2>Software Project Leader and Backend Tech Lead</2> with <3>over ten years</3> owning architecture and delivery in <4>fintech, crypto, and real-time systems</4>. I lead with <5>Python (Django, FastAPI) and Node.js (NestJS)</5>, and I am comfortable making the calls that affect scalability, latency, and operational safety — the same profile that matters for large product and payments platforms.",
+    "p2": "I have led teams on the <1>Mercado Libre ecosystem</1> (RealTrends), shipped exchange-grade backends with custody (Fireblocks) and KYC/AML integrations, and improved platform performance at scale (including significant gains on wealth-management workloads). More recently I've built Gemini-powered AI agent workflows and used Claude Code to automate engineering work across a production codebase. I stay close to code and reviews while aligning engineering with business outcomes."
   },
   "skills": {
     "page": {
@@ -88,31 +88,44 @@
           "Python",
           "Django",
           "FastAPI",
+          "Node.js",
+          "NestJS",
           "REST & API design"
         ]
       },
       "systems": {
-        "title": "Systems",
+        "title": "Systems & Data",
         "items": [
           "Distributed systems",
-          "Async & event-driven patterns",
-          "High concurrency"
+          "Async & event-driven patterns (Celery)",
+          "High concurrency",
+          "PostgreSQL & MongoDB"
         ]
       },
       "cloud": {
-        "title": "Cloud",
+        "title": "Cloud & DevOps",
         "items": [
-          "AWS",
+          "AWS (ECS/Fargate, RDS, CloudWatch)",
           "Google Cloud Platform",
-          "Azure"
+          "Azure",
+          "Docker",
+          "CI/CD (GitHub Actions)"
+        ]
+      },
+      "aiAgents": {
+        "title": "AI-agent engineering",
+        "items": [
+          "Gemini tool-calling agents",
+          "Claude Code engineering workflows",
+          "LLM-integrated backend services"
         ]
       },
       "engineering": {
-        "title": "Engineering",
+        "title": "Leadership & delivery",
         "items": [
-          "CI/CD (GitHub Actions)",
-          "Architecture & tradeoffs",
-          "Performance engineering"
+          "Architecture & technical roadmap",
+          "Team leadership (4–6 engineers)",
+          "Security-critical systems (Fireblocks, MetaMap, MFA)"
         ]
       }
     }
@@ -130,26 +143,26 @@
     },
     "page": {
       "title": "Projects",
-      "description": "Backend systems and open-source tools: problem, solution, impact, and stack."
+      "description": "Production case studies and open-source backends: problem, solution, impact, and stack."
     },
     "items": {
+      "aws-infra-report": {
+        "name": "AWS Infra Report",
+        "problem": "Cloud accounts accumulate idle resources, open security groups, and opaque networking — waste and risk that are hard to see without hours of console clicking.",
+        "solution": "Built a read-only Python auditor with boto3 that maps VPC/compute topology into an interactive Mermaid diagram, ranks findings (CRITICAL→LOW) with copy-pasteable aws CLI fixes, and estimates monthly cost waste.",
+        "impact": "Shows production AWS fluency — networking, ECS, ELB, RDS, CloudWatch — packaged as a single-file, shareable HTML report teams can run without granting write access."
+      },
+      "unofficial-mural-python-client": {
+        "name": "MURAL Python Client",
+        "problem": "Integrating with the MURAL Public API from Python meant hand-rolling OAuth, pagination, and untyped JSON for dozens of endpoints.",
+        "solution": "Shipped a typed SDK covering the OpenAPI surface: Pydantic v2 models, OAuth2 with auto-refresh, transparent cursor pagination, a Typer CLI, and a full exception hierarchy.",
+        "impact": "Demonstrates library-grade API design — client-side validation, 98+ mocked tests at ~99% coverage — the same patterns used for reliable third-party integrations in production backends."
+      },
       "lebenslauf-generator": {
         "name": "CV Generator",
         "problem": "Professionals need portable, version-controlled CVs that render consistently across formats — without locking content into proprietary tools.",
         "solution": "Built an open-source CLI and in-browser app: Pydantic validates the JSON source, Jinja2 renders it, WeasyPrint exports PDF, and a Pyodide-powered web app runs the whole pipeline client-side with no server.",
         "impact": "Demonstrates end-to-end Python tooling — schema validation, templating, PDF generation — plus WebAssembly delivery for zero-dependency distribution."
-      },
-      "readme-enhancer": {
-        "name": "README Enhancer",
-        "problem": "Most open-source projects ship with weak or missing README files, hurting adoption and contributor onboarding.",
-        "solution": "Built a Go CLI that reads repository content and rewrites the README using the OpenAI API, producing structured, informative documentation in one command.",
-        "impact": "Shows Go engineering and practical AI API integration: a self-contained tool developers can run in seconds against any repo."
-      },
-      "chicago-artworks": {
-        "name": "Chicago Artworks Explorer",
-        "problem": "Public cultural datasets like the Art Institute of Chicago API are rarely exposed through clean, usable interfaces.",
-        "solution": "Full-stack app with a TypeScript/Node.js backend and React frontend, surfacing the museum's public API with search and browsing.",
-        "impact": "Demonstrates end-to-end JS/TS development — from API integration to UI delivery — across the full stack in a single project."
       }
     }
   },
