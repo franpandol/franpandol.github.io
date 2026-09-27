@@ -24,10 +24,9 @@
   "hero": {
     "kicker": "Liderazgo en software · Backend",
     "subtitle": "Líder de proyectos de software · Líder técnico de backend · Más de 10 años",
-    "intro": "Líder técnico de backend con más de 10 años construyendo sistemas de alta concurrencia en fintech y entornos en tiempo real. Fuerte en Python, Django y FastAPI: dueño de la arquitectura, liderazgo de equipos y resultados medibles de rendimiento y escala.",
-    "summaryLabel": "Resumen:",
-    "summaryLine": "Diseño y lidero backends escalables para equipos de producto y plataforma.",
-    "goTo": "Ir a:",
+    "badges": ["Más de 10 años", "Fintech y marketplaces", "Python · Django · FastAPI"],
+    "ctaContact": "Contactame",
+    "ctaExperience": "Ver experiencia",
     "downloadPdf": "Descargar CV (PDF)",
     "downloadMd": "Descargar CV (Markdown)",
     "recruitersLink": "Para reclutadores →",
@@ -39,9 +38,6 @@
     "experience": {
       "title": "Experiencia",
       "description": "Roles, retos y resultados en fintech y backends a gran escala."
-    },
-    "about": {
-      "title": "Sobre mí"
     },
     "skills": {
       "title": "Habilidades",

@@ -24,10 +24,9 @@
   "hero": {
     "kicker": "Software leadership · Backend",
     "subtitle": "Software Project Leader · Backend Tech Lead · 10+ years",
-    "intro": "Backend Tech Lead with 10+ years building high-concurrency systems in fintech and real-time environments. Strong in Python, Django, and FastAPI — owning architecture, leading teams, and delivering measurable performance and scale outcomes.",
-    "summaryLabel": "Summary:",
-    "summaryLine": "I design and lead scalable backend systems for product and platform teams.",
-    "goTo": "Go to:",
+    "badges": ["10+ years", "Fintech & marketplaces", "Python · Django · FastAPI"],
+    "ctaContact": "Contact me",
+    "ctaExperience": "View experience",
     "downloadPdf": "Download CV (PDF)",
     "downloadMd": "Download CV (Markdown)",
     "recruitersLink": "For recruiters →",
@@ -39,9 +38,6 @@
     "experience": {
       "title": "Experience",
       "description": "Roles, challenges, and outcomes across fintech and high-scale backends."
-    },
-    "about": {
-      "title": "About"
     },
     "skills": {
       "title": "Skills",
