@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import DocumentMeta from "./components/DocumentMeta";
 import Navbar from "./components/Navbar";
+import ChatWidget from "./components/ChatWidget";
 import Home from "./components/Home";
 import ProjectsPage from "./pages/ProjectsPage";
 import ExperiencePage from "./pages/ExperiencePage";
@@ -25,6 +26,7 @@ const App = () => (
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <ChatWidget />
     </div>
   </Router>
 );

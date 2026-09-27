@@ -1,0 +1,7 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "franpandol-github-io",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2025-01-01",
+  "ai": { "binding": "AI" }
+}

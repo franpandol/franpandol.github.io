@@ -204,5 +204,15 @@
       "mailSubject": "Interview request — Francisco Pandol",
       "mailBody": "Hello,\n\nI would like to schedule an interview with Francisco Pandol. Please send a calendar invitation to {{email}}.\n\nReference availability (please propose a concrete time):\n{{slots}}\n\nPlease include:\n- Company and role title\n- Interview format (phone / video) and expected duration\n\nThank you,\n"
     }
+  },
+  "chat": {
+    "launcherAria": "Open chat about Francisco's experience",
+    "closeAria": "Close chat",
+    "title": "Ask about Francisco",
+    "intro": "Ask about his experience, skills, or availability — answered by AI, grounded in his real CV.",
+    "placeholder": "Ask a question…",
+    "send": "Send",
+    "errorMessage": "Something went wrong. Please try again or email directly.",
+    "emptyState": "Try: \"What backend stack does he use?\" or \"Is he available for interviews?\""
   }
 }
