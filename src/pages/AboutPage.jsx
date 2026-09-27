@@ -11,25 +11,27 @@ const AboutPage = () => {
     <main className="w-full">
       <PageHeader title={t("about.page.title")} description={t("about.page.description")} />
       <div className="w-full px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8 lg:px-16">
-        <div className="max-w-3xl space-y-6 text-base leading-relaxed text-content-secondary md:leading-[1.7]">
-          <p>
-            <Trans
-              i18nKey="about.p1"
-              components={[
-                <strong key="s1" className={strongClass} />,
-                <strong key="s2" className={strongClass} />,
-                <strong key="s3" className={strongClass} />,
-                <strong key="s4" className={strongClass} />,
-                <strong key="s5" className={strongClass} />,
-              ]}
-            />
-          </p>
-          <p>
-            <Trans
-              i18nKey="about.p2"
-              components={[<strong key="s1" className={strongClass} />]}
-            />
-          </p>
+        <div className="mx-auto max-w-[90rem]">
+          <div className="max-w-3xl space-y-6 text-base leading-relaxed text-content-secondary md:leading-[1.7]">
+            <p>
+              <Trans
+                i18nKey="about.p1"
+                components={[
+                  <strong key="s1" className={strongClass} />,
+                  <strong key="s2" className={strongClass} />,
+                  <strong key="s3" className={strongClass} />,
+                  <strong key="s4" className={strongClass} />,
+                  <strong key="s5" className={strongClass} />,
+                ]}
+              />
+            </p>
+            <p>
+              <Trans
+                i18nKey="about.p2"
+                components={[<strong key="s1" className={strongClass} />]}
+              />
+            </p>
+          </div>
         </div>
       </div>
     </main>
