@@ -1,6 +1,6 @@
 # Monogram logo assets
 
-Geometric teal monogram mark for gasteibem.
+Geometric teal monogram mark for Francisco Pandol / franpandol.com.
 
 ## Files
 
