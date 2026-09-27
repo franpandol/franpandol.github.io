@@ -23,7 +23,8 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "vite build",
+    "generate:md": "node scripts/generate-site-md.mjs",
+    "build": "npm run generate:md && vite build",
     "preview": "vite preview",
     "test": "vitest run"
   },

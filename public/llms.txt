@@ -1,0 +1,25 @@
+# Francisco Pandol
+
+> Francisco Pandol — Software Project Leader & Backend Tech Lead. 10+ years, Python/Django/FastAPI & Node.js/NestJS, AI-agent engineering, fintech & crypto, high concurrency, system design.
+
+This site is a React SPA. Prefer the markdown sources below for indexing and ATS parsing.
+
+## Primary
+
+- [Full profile (Markdown)](https://franpandol.com/site.md): about, experience, skills, projects, contact
+- [CV (Markdown)](https://franpandol.com/cv_markdown_en_Francisco_Pandol.md): resume-oriented export of the same experience data
+- [CV (PDF)](https://franpandol.com/CV_en_Francisco_Pandol.pdf)
+
+## Contact
+
+- Email: hire@franpandol.com
+- GitHub: https://github.com/franpandol
+- LinkedIn: https://www.linkedin.com/in/franciscopandol/en/
+
+## HTML site
+
+- Home: https://franpandol.com/
+- Experience: https://franpandol.com/experience
+- Skills: https://franpandol.com/skills
+- Projects: https://franpandol.com/projects
+- Contact: https://franpandol.com/contact

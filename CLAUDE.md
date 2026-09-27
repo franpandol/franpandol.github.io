@@ -5,10 +5,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev       # Vite dev server at http://localhost:5173
-npm test          # Run tests once with Vitest
-npm run build     # Production build → dist/
-npm run preview   # Serve the dist/ build locally
+npm run dev          # Vite dev server at http://localhost:5173
+npm test             # Run tests once with Vitest
+npm run generate:md  # Regenerate public/site.md, llms.txt, CV markdown
+npm run build        # generate:md + production build → dist/
+npm run preview      # Serve the dist/ build locally
 ```
 
 Run a single test file:
