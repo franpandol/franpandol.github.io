@@ -48,9 +48,10 @@ function toFeaturedRole(exp, locale, presentLabel) {
     title: exp.role,
     org: exp.company,
     period: formatPeriod(exp, locale, presentLabel),
+    current: exp.current === true,
     problem: exp.summary,
     highlights: exp.achievements,
-    stack: exp.tech.join(", "),
+    stack: exp.tech,
   };
 }
 
