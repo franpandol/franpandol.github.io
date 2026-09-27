@@ -8,7 +8,6 @@ const LandingNav = () => {
     { to: "/experience", titleKey: "landing.experience.title", descKey: "landing.experience.description" },
     { to: "/about", titleKey: "landing.about.title", descKey: "landing.about.description" },
     { to: "/skills", titleKey: "landing.skills.title", descKey: "landing.skills.description" },
-    { to: "/work", titleKey: "landing.work.title", descKey: "landing.work.description" },
     { to: "/projects", titleKey: "landing.projects.title", descKey: "landing.projects.description" },
     { to: "/contact", titleKey: "landing.contact.title", descKey: "landing.contact.description" },
   ];

@@ -15,6 +15,8 @@ export default {
           muted: "#0d9488",
           dim: "rgba(13, 148, 136, 0.18)",
           soft: "rgba(13, 148, 136, 0.09)",
+          secondary: "#b45309",
+          "secondary-soft": "rgba(180, 83, 9, 0.1)",
         },
         content: {
           primary: "#18181b",
@@ -62,6 +64,7 @@ export default {
       boxShadow: {
         glow: "0 0 0 1px rgba(13, 148, 136, 0.35)",
         card: "0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.06)",
+        cardHover: "0 2px 4px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.10)",
         page: "none",
       },
       maxWidth: {

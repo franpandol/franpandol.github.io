@@ -18,8 +18,7 @@
     "experience": "Experience",
     "about": "About",
     "skills": "Skills",
-    "work": "Selected work",
-    "projects": "All projects",
+    "projects": "Projects",
     "blogs": "Writing",
     "contact": "Contact"
   },
@@ -50,13 +49,14 @@
       "title": "Skills",
       "description": "Python, Django, FastAPI, cloud, and delivery leadership."
     },
-    "work": {
-      "title": "Selected work",
-      "description": "Highlighted projects with problem, solution, and impact."
-    },
     "projects": {
-      "title": "All projects",
-      "description": "Full list of public repositories and demos."
+      "title": "Projects",
+      "description": "Production case studies from senior backend roles, plus open-source tools."
+    },
+    "featuredProjects": {
+      "title": "Selected work",
+      "description": "A few projects that show the range — from production fintech systems to open-source tools.",
+      "viewAll": "View all projects →"
     },
     "blogs": {
       "title": "Writing",
@@ -126,13 +126,6 @@
       }
     }
   },
-  "work": {
-    "page": {
-      "title": "Selected work",
-      "description": "Representative backend work with public repositories — problem, solution, impact, and stack."
-    },
-    "browseAll": "Browse all projects →"
-  },
   "projects": {
     "labels": {
       "problem": "Problem.",
@@ -140,11 +133,13 @@
       "impact": "Impact.",
       "github": "GitHub",
       "liveDemo": "Live demo",
-      "live": "Live"
+      "live": "Live",
+      "caseStudy": "Case study",
+      "personal": "Personal project"
     },
     "page": {
-      "title": "All projects",
-      "description": "APIs and backends with real constraints: problem, solution, impact, and stack."
+      "title": "Projects",
+      "description": "Backend systems and open-source tools: problem, solution, impact, and stack."
     },
     "items": {
       "lebenslauf-generator": {

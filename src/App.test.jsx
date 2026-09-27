@@ -14,3 +14,10 @@ test("renders CV masthead and name", () => {
     screen.getByRole("heading", { level: 1, name: /Francisco Pandol/i })
   ).toBeInTheDocument();
 });
+
+test("redirects the old /work route to /projects", () => {
+  window.history.pushState({}, "", "/work");
+  render(<App />);
+  expect(window.location.pathname).toBe("/projects");
+  expect(screen.getByRole("heading", { level: 1, name: /Projects/i })).toBeInTheDocument();
+});

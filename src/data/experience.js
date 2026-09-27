@@ -33,6 +33,7 @@ function formatPeriod(exp, locale, presentLabel) {
 }
 
 function makeId(exp) {
+  if (exp.slug) return exp.slug;
   return `${exp.company}-${exp.role}`
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
@@ -87,4 +88,40 @@ export function buildExperienceLists(lang, presentLabel) {
 /** Skills block from the active locale JSON */
 export function getExperienceSkills(lang) {
   return getRaw(lang || "en").skills;
+}
+
+/**
+ * Roles surfaced as "professional" project case studies on the Projects page.
+ * `featured` controls whether the case study appears in the Home page preview.
+ */
+const CASE_STUDY_SLUGS = [
+  { slug: "dexter-development", featured: true },
+  { slug: "realtrends", featured: true },
+  { slug: "glasfunds", featured: false },
+];
+
+function toCaseStudy(exp, featured) {
+  const project = exp.projects?.[0];
+  return {
+    id: exp.slug,
+    type: "professional",
+    name: project?.name ?? exp.role,
+    problem: exp.summary,
+    solution: exp.achievements.slice(0, 3).join(" "),
+    impact: project?.description ?? exp.achievements[exp.achievements.length - 1],
+    stack: exp.tech,
+    repoUrl: null,
+    demoUrl: project?.link ?? null,
+    image: null,
+    featured,
+  };
+}
+
+/** Professional case-study projects derived from experience data, for the given language. */
+export function getCaseStudies(lang) {
+  const raw = getRaw(lang);
+  return CASE_STUDY_SLUGS.map(({ slug, featured }) => {
+    const exp = raw.experiences.find((e) => e.slug === slug);
+    return exp ? toCaseStudy(exp, featured) : null;
+  }).filter(Boolean);
 }

@@ -3,11 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import DocumentMeta from "./components/DocumentMeta";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import ProjectList from "./components/ProjectList";
+import ProjectsPage from "./pages/ProjectsPage";
 import ExperiencePage from "./pages/ExperiencePage";
 import AboutPage from "./pages/AboutPage";
 import SkillsPage from "./pages/SkillsPage";
-import WorkPage from "./pages/WorkPage";
 import ContactPage from "./pages/ContactPage";
 
 const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "";
@@ -22,8 +21,8 @@ const App = () => (
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/skills" element={<SkillsPage />} />
-        <Route path="/work" element={<WorkPage />} />
-        <Route path="/projects" element={<ProjectList />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/work" element={<Navigate to="/projects" replace />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

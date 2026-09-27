@@ -18,8 +18,7 @@
     "experience": "Experiencia",
     "about": "Sobre mí",
     "skills": "Habilidades",
-    "work": "Trabajos destacados",
-    "projects": "Todos los proyectos",
+    "projects": "Proyectos",
     "blogs": "Escritos",
     "contact": "Contacto"
   },
@@ -50,13 +49,14 @@
       "title": "Habilidades",
       "description": "Python, Django, FastAPI, nube y liderazgo en entrega."
     },
-    "work": {
-      "title": "Trabajos destacados",
-      "description": "Proyectos con problema, solución e impacto."
-    },
     "projects": {
-      "title": "Todos los proyectos",
-      "description": "Lista completa de repositorios y demos públicos."
+      "title": "Proyectos",
+      "description": "Casos reales de roles senior de backend, más herramientas de código abierto."
+    },
+    "featuredProjects": {
+      "title": "Trabajos destacados",
+      "description": "Algunos proyectos que muestran el rango — desde sistemas fintech en producción hasta herramientas open-source.",
+      "viewAll": "Ver todos los proyectos →"
     },
     "blogs": {
       "title": "Escritos",
@@ -126,13 +126,6 @@
       }
     }
   },
-  "work": {
-    "page": {
-      "title": "Trabajos destacados",
-      "description": "Trabajo representativo de backend con repositorios públicos: problema, solución, impacto y stack."
-    },
-    "browseAll": "Ver todos los proyectos →"
-  },
   "projects": {
     "labels": {
       "problem": "Problema.",
@@ -140,11 +133,13 @@
       "impact": "Impacto.",
       "github": "GitHub",
       "liveDemo": "Demo en vivo",
-      "live": "En vivo"
+      "live": "En vivo",
+      "caseStudy": "Caso real",
+      "personal": "Proyecto personal"
     },
     "page": {
-      "title": "Todos los proyectos",
-      "description": "APIs y backends con restricciones reales: problema, solución, impacto y stack."
+      "title": "Proyectos",
+      "description": "Backends y herramientas de código abierto: problema, solución, impacto y stack."
     },
     "items": {
       "lebenslauf-generator": {
