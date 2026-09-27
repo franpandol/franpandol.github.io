@@ -33,7 +33,7 @@ export const ExperienceContent = () => {
                       {t("experience.current")}
                     </span>
                   ) : null}
-                  <time className="rounded-full bg-surface-overlay px-3 py-1 font-mono text-xs text-content-secondary">
+                  <time className="rounded-full bg-surface-overlay px-3 py-1.5 font-mono text-sm text-content-secondary">
                     {role.period}
                   </time>
                 </div>
@@ -93,7 +93,7 @@ export const ExperienceContent = () => {
                   <span className="font-semibold text-content-primary">{role.title}</span>
                   <span className="text-content-tertiary"> · {role.org}</span>
                 </span>
-                <time className="font-mono text-xs text-content-tertiary">{role.period}</time>
+                <time className="font-mono text-sm text-content-tertiary">{role.period}</time>
               </div>
               <p className="mt-1 leading-relaxed text-content-secondary">{role.summary}</p>
             </li>
