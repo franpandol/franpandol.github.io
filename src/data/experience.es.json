@@ -1,7 +1,7 @@
 {
   "experiences": [
     {
-      "role": "Líder técnico de backend",
+      "role": "Líder técnico backend",
       "company": "Dexter Development",
       "slug": "dexter-development",
       "start": "2024-07-01",
@@ -9,7 +9,7 @@
       "summary": "Lideré la arquitectura y la hoja de ruta técnica de un exchange de criptomonedas en producción, incluyendo agentes de IA con Gemini y automatización de ingeniería impulsada por Claude Code.",
       "achievements": [
         "Lideré la arquitectura y la hoja de ruta técnica de un exchange de criptomonedas en producción, priorizando escalabilidad, seguridad y procesamiento confiable de transacciones.",
-        "Diseñé APIs REST de alta concurrencia con Django/DRF para transacciones financieras en tiempo real, siguiendo prácticas de codificación segura.",
+        "Diseñé APIs REST de alta concurrencia con Django/DRF para transacciones financieras en tiempo real, siguiendo prácticas de desarrollo seguro.",
         "Construí un agente de IA con Gemini y tool calling, integrando flujos de trabajo basados en LLM con los servicios de backend (proyecto AURA).",
         "Desarrollé flujos de ingeniería asistidos por IA con Claude Code, usando automatización basada en agentes para desarrollo, análisis de código y tareas de ingeniería en todo el codebase.",
         "Integré Fireblocks para custodia segura de activos digitales y MetaMap para verificación de identidad KYC/AML.",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "role": "Ingeniero senior de backend",
+      "role": "Ingeniero senior backend",
       "company": "AgioRatings",
       "start": "2023-12-01",
       "end": "2024-03-31",
@@ -60,12 +60,12 @@
       ]
     },
     {
-      "role": "Ingeniero senior de backend",
+      "role": "Ingeniero senior backend",
       "company": "GLASFunds",
       "slug": "glasfunds",
       "start": "2022-08-01",
       "end": "2023-10-31",
-      "summary": "Desarrollé backends escalables para herramientas financieras en Django con fuerte foco en rendimiento de base de datos y escalado horizontal en GCP.",
+      "summary": "Desarrollé backends escalables para herramientas financieras en Django priorizando el rendimiento de base de datos y escalado horizontal en GCP.",
       "achievements": [
         "Desarrollé backends escalables para herramientas financieras con Django.",
         "Optimicé el rendimiento de la base de datos reduciendo el tiempo de consulta en más del 40%.",
@@ -86,11 +86,11 @@
       "slug": "apptim",
       "start": "2021-02-01",
       "end": "2022-07-31",
-      "summary": "Desarrollé herramientas de análisis de rendimiento para apps móviles, lideré la migración de Python 2 a 3 y automatizé pruebas con AWS Device Farm.",
+      "summary": "Desarrollé herramientas de análisis de rendimiento para apps móviles, lideré la migración de Python 2 a 3 y automaticé pruebas con AWS Device Farm.",
       "achievements": [
         "Desarrollé herramientas de análisis de rendimiento para apps móviles.",
         "Lideré la migración de Python 2 a Python 3.",
-        "Automatizé pipelines de pruebas con AWS Device Farm."
+        "Automaticé pipelines de pruebas con AWS Device Farm."
       ],
       "tech": ["Python", "AWS", "AWS Device Farm", "Pruebas de rendimiento móvil"],
       "projects": [
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "role": "Líder técnico de backend",
+      "role": "Líder técnico backend",
       "company": "RealTrends",
       "slug": "realtrends",
       "start": "2019-02-01",
@@ -124,11 +124,11 @@
       ]
     },
     {
-      "role": "Ingeniero líder",
+      "role": "Lead Engineer",
       "company": "Al Pelo",
       "start": "2018-01-01",
       "end": "2019-02-01",
-      "summary": "Ingeniero líder de una plataforma de delivery bajo demanda (0 → MVP): fundé y lideré el equipo de ingeniería, definí la arquitectura de backend y entregué un MVP listo para producción.",
+      "summary": "Lead Engineer de una plataforma de delivery bajo demanda (0 → MVP): fundé y lideré el equipo de ingeniería, definí la arquitectura de backend y entregué un MVP listo para producción.",
       "achievements": [
         "Fundé y lideré el equipo de ingeniería, definiendo la arquitectura de backend desde cero.",
         "Diseñé un sistema escalable de dispatch y logística en tiempo real.",
@@ -139,7 +139,7 @@
       "projects": [
         {
           "name": "Plataforma de delivery bajo demanda (0 → MVP)",
-          "description": "Delivery de punta a punta con dispatch en tiempo real, logística y backend escalable."
+          "description": "Delivery de extremo a extremo con dispatch en tiempo real, logística y backend escalable."
         }
       ]
     },
@@ -148,7 +148,7 @@
       "company": "PredictionLabs",
       "start": "2016-07-01",
       "end": "2017-11-30",
-      "summary": "Líder técnico de backend de un exchange de criptomonedas: arquitectura, APIs, sistemas de administración y seguridad para transacciones financieras.",
+      "summary": "Líder técnico backend de un exchange de criptomonedas: arquitectura, APIs, sistemas de administración y seguridad para transacciones financieras.",
       "achievements": [
         "Diseñé e implementé la arquitectura de backend de un exchange de Bitcoin, incluyendo APIs y paneles de administración.",
         "Desarrollé mecanismos de seguridad avanzados (MFA, verificación de identidad) para proteger transacciones.",
@@ -169,10 +169,10 @@
       "company": "Gobierno de Catamarca y Clúster Tecnológico",
       "start": "2016-11-01",
       "end": "2017-06-30",
-      "summary": "Instructor de Django en un programa de formación técnica: currículos intensivos de backend y mentoría.",
+      "summary": "Instructor de Django en un programa de formación técnica: programas intensivos de backend y mentoría.",
       "achievements": [
         "Diseñé e impartí programas intensivos de desarrollo backend con Django.",
-        "Mentoricé a profesionales en buenas prácticas, diseño de sistemas y arquitectura escalable.",
+        "Fui mentor de profesionales en buenas prácticas, diseño de sistemas y arquitectura escalable.",
         "Impulsé la adopción de estándares modernos de desarrollo e ingeniería."
       ],
       "tech": ["Django", "Python", "Formación técnica", "Arquitectura de software"]

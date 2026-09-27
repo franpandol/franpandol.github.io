@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Francisco Pandol · Líder de proyectos de software · Backend",
-    "description": "Francisco Pandol — Líder de proyectos de software y líder técnico de backend. Más de 10 años, Python/Django/FastAPI y Node.js/NestJS, agentes de IA, fintech y cripto, alta concurrencia y diseño de sistemas."
+    "title": "Francisco Pandol · Líder de ingeniería · Backend",
+    "description": "Francisco Pandol — Líder de ingeniería y líder técnico backend. Más de 10 años, Python/Django/FastAPI y Node.js/NestJS, agentes de IA, fintech y cripto, alta concurrencia y diseño de sistemas."
   },
   "common": {
     "present": "Presente",
@@ -23,7 +23,7 @@
   },
   "hero": {
     "kicker": "Liderazgo en software · Backend",
-    "subtitle": "Líder técnico de backend · Python y Node.js · Sistemas escalables",
+    "subtitle": "Líder técnico backend · Python y Node.js · Sistemas escalables",
     "badges": ["Más de 10 años", "Python y Node.js", "Agentes de IA (Gemini, Claude Code)"],
     "ctaContact": "Contactame",
     "ctaExperience": "Ver experiencia",
@@ -45,11 +45,11 @@
     },
     "projects": {
       "title": "Proyectos",
-      "description": "Casos reales de roles senior de backend, más herramientas de código abierto."
+      "description": "Casos de estudio de roles senior de backend, además de herramientas de código abierto."
     },
     "featuredProjects": {
       "title": "Trabajos destacados",
-      "description": "Casos reales en producción y herramientas open-source sólidas — fintech, plataformas de rendimiento e infraestructura backend.",
+      "description": "Casos de estudio en producción y herramientas open-source sólidas — fintech, plataformas de performance e infraestructura backend.",
       "viewAll": "Ver todos los proyectos →"
     },
     "blogs": {
@@ -73,13 +73,13 @@
     "earlierIntro": "Docencia, plataformas del sector público, entregas freelance e ingeniería universitaria."
   },
   "about": {
-    "p1": "Soy <1>Francisco Pandol</1> — <2>Líder de proyectos de software y líder técnico de backend</2> con <3>más de diez años</3> liderando arquitectura y entrega en <4>fintech, cripto y sistemas en tiempo real</4>. Trabajo con <5>Python (Django, FastAPI) y Node.js (NestJS)</5> y tomo decisiones que impactan escalabilidad, latencia y seguridad operativa — el mismo perfil que importa en plataformas grandes de producto y pagos.",
-    "p2": "He liderado equipos en el <1>ecosistema Mercado Libre</1> (RealTrends), entregado backends tipo exchange con custodia (Fireblocks) e integraciones KYC/AML, y mejorado el rendimiento de plataformas a escala (incluidos avances importantes en cargas de gestión patrimonial). Más recientemente construí agentes de IA con Gemini y usé Claude Code para automatizar tareas de ingeniería en un codebase de producción. Mantengo cercanía con el código y las revisiones alineando ingeniería con resultados de negocio."
+    "p1": "Soy <1>Francisco Pandol</1> — <2>Líder de ingeniería y líder técnico backend</2> con <3>más de diez años</3> liderando arquitectura y entrega en <4>fintech, cripto y sistemas en tiempo real</4>. Trabajo con <5>Python (Django, FastAPI) y Node.js (NestJS)</5> y tomo decisiones que impactan escalabilidad, latencia y confiabilidad operativa — el mismo perfil que importa en grandes plataformas de producto y pagos.",
+    "p2": "He liderado equipos en el <1>ecosistema Mercado Libre</1> (RealTrends), entregado backends tipo exchange con custodia (Fireblocks) e integraciones KYC/AML, y mejorado el rendimiento de plataformas a escala (incluidas mejoras importantes de rendimiento en workloads de gestión patrimonial). Más recientemente construí agentes de IA con Gemini y usé Claude Code para automatizar tareas de ingeniería en un codebase de producción. Sigo cerca del código y de las code reviews, y alineo ingeniería con resultados de negocio."
   },
   "skills": {
     "page": {
       "title": "Habilidades",
-      "description": "Backend, sistemas, nube y entrega — alineado con roles senior de liderazgo técnico."
+      "description": "Backend, sistemas, nube y entrega — pensado para roles senior de liderazgo técnico."
     },
     "groups": {
       "backend": {
@@ -125,7 +125,7 @@
         "items": [
           "Arquitectura y hoja de ruta técnica",
           "Liderazgo de equipos (4–6 ingenieros)",
-          "Sistemas de seguridad crítica (Fireblocks, MetaMap, MFA)"
+          "Sistemas críticos de seguridad (Fireblocks, MetaMap, MFA)"
         ]
       }
     }
@@ -138,25 +138,25 @@
       "github": "GitHub",
       "liveDemo": "Demo en vivo",
       "live": "En vivo",
-      "caseStudy": "Caso real",
+      "caseStudy": "Caso de estudio",
       "personal": "Proyecto personal"
     },
     "page": {
       "title": "Proyectos",
-      "description": "Casos reales en producción y backends open-source: problema, solución, impacto y stack."
+      "description": "Casos de estudio en producción y backends open-source: problema, solución, impacto y stack."
     },
     "items": {
       "aws-infra-report": {
         "name": "AWS Infra Report",
         "problem": "Las cuentas cloud acumulan recursos ociosos, security groups abiertos y redes opacas — desperdicio y riesgo difíciles de ver sin horas en la consola.",
         "solution": "Construí un auditor de solo lectura en Python con boto3 que mapea la topología VPC/compute a un diagrama Mermaid interactivo, prioriza hallazgos (CRITICAL→LOW) con comandos aws CLI listos para copiar, y estima el desperdicio de costo mensual.",
-        "impact": "Muestra fluidez AWS de producción — networking, ECS, ELB, RDS, CloudWatch — empaquetada como un informe HTML autocontenido que los equipos pueden ejecutar sin permisos de escritura."
+        "impact": "Demuestra dominio de AWS en producción — networking, ECS, ELB, RDS, CloudWatch — empaquetada como un informe HTML autocontenido que los equipos pueden ejecutar sin permisos de escritura."
       },
       "unofficial-mural-python-client": {
         "name": "Cliente Python de MURAL",
         "problem": "Integrar la API pública de MURAL desde Python implicaba armar a mano OAuth, paginación y JSON sin tipos para docenas de endpoints.",
         "solution": "Publiqué un SDK tipado que cubre la superficie OpenAPI: modelos Pydantic v2, OAuth2 con auto-refresh, paginación transparente por cursor, CLI con Typer y una jerarquía completa de excepciones.",
-        "impact": "Demuestra diseño de librerías de API — validación del lado cliente, 98+ tests mockeados con ~99% de cobertura — los mismos patrones para integraciones third-party confiables en backends de producción."
+        "impact": "Demuestra diseño de librerías de API — validación del lado cliente, 98+ tests mockeados con ~99% de cobertura — los mismos patrones para integraciones con terceros confiables en backends de producción."
       },
       "lebenslauf-generator": {
         "name": "Generador de CV",
@@ -180,7 +180,7 @@
   "contact": {
     "page": {
       "title": "Contacto",
-      "description": "Abierto a roles de Líder de proyectos de software y Líder técnico de backend donde importen diseño de sistemas, alta concurrencia y ownership técnico."
+      "description": "Abierto a roles de Líder de ingeniería y Líder técnico backend donde importen diseño de sistemas, alta concurrencia y ownership técnico."
     },
     "directTitle": "Contacto directo",
     "footer": "Me interesan marketplaces, pagos y backends a escala de plataforma donde el impacto de ingeniería se mida en confiabilidad y throughput.",
@@ -188,21 +188,21 @@
     "downloadMd": "Descargar CV (Markdown)",
     "recruiters": {
       "title": "Para reclutadores",
-      "intro": "Si buscas cubrir un rol de Líder de proyectos de software o Líder técnico de backend, propón una entrevista por correo. Cuando acordemos un horario, envía una invitación de calendario (Google Calendar, Outlook, etc.).",
+      "intro": "Si buscás un perfil de Líder de ingeniería o Líder técnico backend, proponé una entrevista por correo. Cuando acordemos un horario, mandá una invitación de calendario (Google Calendar, Outlook, etc.).",
       "slotsHeading": "Disponibilidad habitual",
       "timezoneNote": "ART = UTC−3. Equivalente en UTC entre paréntesis.",
       "dailyIntro": "Todos los días:",
       "windowLine": "{{start}}–{{end}} ART ({{utcStart}}–{{utcEnd}} UTC)",
       "disclaimer": "Estas ventanas son orientativas; confirmaré un horario concreto por correo.",
-      "ctaInstruction": "Escribe desde tu cliente de correo a la dirección de abajo. Puedes copiar un borrador que incluye esta disponibilidad.",
+      "ctaInstruction": "Escribí desde tu cliente de correo a la dirección de abajo. Podés copiar un borrador que incluye esta disponibilidad.",
       "sendToLabel": "Enviar a:",
       "copyTemplate": "Copiar borrador",
       "subjectLineLabel": "Asunto:",
       "templateCopied": "Borrador copiado",
       "previewDraft": "Vista previa del mensaje",
-      "nextSteps": "Tras copiar, abre tu cliente de correo, pega, añade empresa y cargo, y envía.",
+      "nextSteps": "Tras copiar, abrí tu cliente de correo, pegá, agregá empresa y cargo, y mandá.",
       "mailSubject": "Solicitud de entrevista — Francisco Pandol",
-      "mailBody": "Hola,\n\nQuiero coordinar una entrevista con Francisco Pandol. Por favor envía una invitación de calendario a {{email}}.\n\nDisponibilidad de referencia (propón un horario concreto):\n{{slots}}\n\nIncluye:\n- Empresa y título del rol\n- Formato de la entrevista (teléfono / videollamada) y duración aproximada\n\nGracias,\n"
+      "mailBody": "Hola,\n\nQuiero coordinar una entrevista con Francisco Pandol. Por favor mandá una invitación de calendario a {{email}}.\n\nDisponibilidad de referencia (proponé un horario concreto):\n{{slots}}\n\nIncluye:\n- Empresa y título del rol\n- Formato de la entrevista (teléfono / videollamada) y duración aproximada\n\nGracias,\n"
     }
   }
 }
