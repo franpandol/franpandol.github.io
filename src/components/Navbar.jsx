@@ -44,9 +44,6 @@ const Navbar = () => {
             <NavLink to="/experience" className={navLinkClass} onClick={() => setOpen(false)}>
               {t("nav.experience")}
             </NavLink>
-            <NavLink to="/about" className={navLinkClass} onClick={() => setOpen(false)}>
-              {t("nav.about")}
-            </NavLink>
             <NavLink to="/skills" className={navLinkClass} onClick={() => setOpen(false)}>
               {t("nav.skills")}
             </NavLink>

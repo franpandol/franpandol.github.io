@@ -61,8 +61,6 @@ const Hero = () => {
               <span className="text-content-secondary">{t("hero.goTo")}</span>
               <Link to="/experience" className={textLink}>{t("nav.experience")}</Link>
               <span aria-hidden className="text-content-tertiary">·</span>
-              <Link to="/about" className={textLink}>{t("nav.about")}</Link>
-              <span aria-hidden className="text-content-tertiary">·</span>
               <Link to="/skills" className={textLink}>{t("nav.skills")}</Link>
               <span aria-hidden className="text-content-tertiary">·</span>
               <Link to="/projects" className={textLink}>{t("nav.projects")}</Link>

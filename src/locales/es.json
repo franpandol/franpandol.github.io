@@ -16,7 +16,6 @@
   "nav": {
     "brand": "Francisco Pandol",
     "experience": "Experiencia",
-    "about": "Sobre mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
     "blogs": "Escritos",
@@ -42,8 +41,7 @@
       "description": "Roles, retos y resultados en fintech y backends a gran escala."
     },
     "about": {
-      "title": "Sobre mí",
-      "description": "Trayectoria, enfoque y cómo colaboro con producto e ingeniería."
+      "title": "Sobre mí"
     },
     "skills": {
       "title": "Habilidades",
@@ -79,10 +77,6 @@
     "earlierIntro": "Docencia, plataformas del sector público, entregas freelance e ingeniería universitaria."
   },
   "about": {
-    "page": {
-      "title": "Sobre mí",
-      "description": "Trayectoria, áreas de foco y cómo trabajo con equipos de producto y plataforma."
-    },
     "p1": "Soy <1>Francisco Pandol</1> — <2>Líder de proyectos de software y líder técnico de backend</2> con <3>más de diez años</3> liderando arquitectura y entrega en <4>fintech, sistemas en tiempo real y backends a escala de marketplace</4>. Trabajo con <5>Python, Django y FastAPI</5> y tomo decisiones que impactan escalabilidad, latencia y seguridad operativa — el mismo perfil que importa en plataformas grandes de producto y pagos.",
     "p2": "He liderado equipos en el <1>ecosistema Mercado Libre</1> (RealTrends), entregado backends tipo exchange con custodia e integraciones KYC y mejorado el rendimiento de plataformas a escala (incluidos avances importantes en cargas de gestión patrimonial). Mantengo cercanía con el código y las revisiones alineando ingeniería con resultados de negocio."
   },

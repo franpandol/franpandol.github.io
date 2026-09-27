@@ -6,7 +6,6 @@ const LandingNav = () => {
   const { t } = useTranslation();
   const items = [
     { to: "/experience", titleKey: "landing.experience.title", descKey: "landing.experience.description" },
-    { to: "/about", titleKey: "landing.about.title", descKey: "landing.about.description" },
     { to: "/skills", titleKey: "landing.skills.title", descKey: "landing.skills.description" },
     { to: "/projects", titleKey: "landing.projects.title", descKey: "landing.projects.description" },
     { to: "/contact", titleKey: "landing.contact.title", descKey: "landing.contact.description" },

@@ -16,7 +16,6 @@
   "nav": {
     "brand": "Francisco Pandol",
     "experience": "Experience",
-    "about": "About",
     "skills": "Skills",
     "projects": "Projects",
     "blogs": "Writing",
@@ -42,8 +41,7 @@
       "description": "Roles, challenges, and outcomes across fintech and high-scale backends."
     },
     "about": {
-      "title": "About",
-      "description": "Background, focus, and how I partner with product and engineering."
+      "title": "About"
     },
     "skills": {
       "title": "Skills",
@@ -79,10 +77,6 @@
     "earlierIntro": "Teaching, public-sector platforms, freelance delivery, and university engineering."
   },
   "about": {
-    "page": {
-      "title": "About",
-      "description": "Background, focus areas, and how I work with product and platform teams."
-    },
     "p1": "I am <1>Francisco Pandol</1> — a <2>Software Project Leader and Backend Tech Lead</2> with <3>over ten years</3> owning architecture and delivery in <4>fintech, real-time systems, and marketplace-scale backends</4>. I lead with <5>Python, Django, and FastAPI</5>, and I am comfortable making the calls that affect scalability, latency, and operational safety — the same profile that matters for large product and payments platforms.",
     "p2": "I have led teams on the <1>Mercado Libre ecosystem</1> (RealTrends), shipped exchange-grade backends with custody and KYC integrations, and improved platform performance at scale (including significant gains on wealth-management workloads). I stay close to code and reviews while aligning engineering with business outcomes."
   },
