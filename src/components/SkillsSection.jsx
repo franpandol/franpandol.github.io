@@ -15,9 +15,12 @@ export const SkillsContent = () => {
         return (
           <div key={key}>
             <h3 className={`${sectionTitleClass} mb-4`}>{t(`skills.groups.${key}.title`)}</h3>
-            <ul className="space-y-2 text-sm text-content-secondary md:text-[15px]">
+            <ul className="flex flex-wrap gap-2">
               {list.map((item) => (
-                <li key={item} className="leading-relaxed">
+                <li
+                  key={item}
+                  className="rounded-full border border-surface-border bg-surface-raised px-3 py-1.5 text-sm font-medium text-content-primary shadow-card"
+                >
                   {item}
                 </li>
               ))}
