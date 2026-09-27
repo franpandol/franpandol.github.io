@@ -32,8 +32,12 @@ export const ContactContent = () => {
   };
 
   return (
-    <>
-      <div className="space-y-4 text-base">
+    <section className="rounded-lg border border-surface-border bg-surface-raised p-6 shadow-sm md:p-8">
+      <h2 className="font-display text-lg font-semibold tracking-tight text-content-primary md:text-xl">
+        {t("contact.directTitle")}
+      </h2>
+
+      <div className="mt-4 space-y-4 text-base">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <a href={`mailto:${EMAIL}`} className={linkClass} onClick={handleContactClick}>
             {EMAIL}
@@ -95,6 +99,6 @@ export const ContactContent = () => {
       <p className="mt-8 border-t border-surface-border pt-6 text-base leading-relaxed text-content-tertiary">
         {t("contact.footer")}
       </p>
-    </>
+    </section>
   );
 };

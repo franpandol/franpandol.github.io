@@ -80,7 +80,7 @@ const RecruiterInterviewCta = () => {
   return (
     <section
       id="recruiters"
-      className="mb-12 rounded-lg border border-surface-border bg-surface-raised p-6 shadow-sm md:p-8"
+      className="rounded-lg border border-surface-border bg-surface-raised p-6 shadow-sm md:p-8"
       aria-labelledby="recruiters-heading"
     >
       <h2
