@@ -17,7 +17,7 @@ I have led teams on the Mercado Libre ecosystem (RealTrends), shipped exchange-g
 - LinkedIn: https://www.linkedin.com/in/franciscopandol/en/
 - Site: https://franpandol.com
 - CV (Markdown): https://franpandol.com/cv_markdown_en_Francisco_Pandol.md
-- CV (PDF): https://franpandol.com/CV_en_Francisco_Pandol.pdf
+- CV (PDF): https://franpandol.com/CV_Francisco_Pandol.pdf
 
 Interview availability (America/Argentina/Buenos_Aires), every day:
 - 06:00–10:00

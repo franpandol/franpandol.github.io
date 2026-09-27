@@ -8,7 +8,7 @@ This site is a React SPA. Prefer the markdown sources below for indexing and ATS
 
 - [Full profile (Markdown)](https://franpandol.com/site.md): about, experience, skills, projects, contact
 - [CV (Markdown)](https://franpandol.com/cv_markdown_en_Francisco_Pandol.md): resume-oriented export of the same experience data
-- [CV (PDF)](https://franpandol.com/CV_en_Francisco_Pandol.pdf)
+- [CV (PDF)](https://franpandol.com/CV_Francisco_Pandol.pdf)
 
 ## Contact
 

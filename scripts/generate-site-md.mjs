@@ -70,7 +70,7 @@ function buildSiteMarkdown() {
   lines.push(`- LinkedIn: ${LINKEDIN_URL}`);
   lines.push(`- Site: ${SITE_URL}`);
   lines.push(`- CV (Markdown): ${SITE_URL}/${CV_MD_FILENAME}`);
-  lines.push(`- CV (PDF): ${SITE_URL}/CV_en_Francisco_Pandol.pdf`);
+  lines.push(`- CV (PDF): ${SITE_URL}/CV_Francisco_Pandol.pdf`);
   lines.push("");
   lines.push(`Interview availability (${TIMEZONE_IANA}), every day:`);
   for (const window of dailyWindows) {
@@ -235,7 +235,7 @@ This site is a React SPA. Prefer the markdown sources below for indexing and ATS
 
 - [Full profile (Markdown)](${SITE_URL}/site.md): about, experience, skills, projects, contact
 - [CV (Markdown)](${SITE_URL}/${CV_MD_FILENAME}): resume-oriented export of the same experience data
-- [CV (PDF)](${SITE_URL}/CV_en_Francisco_Pandol.pdf)
+- [CV (PDF)](${SITE_URL}/CV_Francisco_Pandol.pdf)
 
 ## Contact
 

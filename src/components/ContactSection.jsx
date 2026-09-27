@@ -78,7 +78,7 @@ export const ContactContent = () => {
 
       <div className="mt-8 flex flex-wrap gap-x-4 gap-y-1">
         <a
-          href="/CV_en_Francisco_Pandol.pdf"
+          href="/CV_Francisco_Pandol.pdf"
           download
           className={linkClass}
           onClick={() => onDownload("pdf")}
