@@ -1,14 +1,50 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { EMAIL } from "../constants/contact";
+import { TURNSTILE_ACTION, TURNSTILE_SITEKEY } from "../constants/turnstile";
 
 const MAX_HISTORY = 12;
+const TURNSTILE_SCRIPT_SRC =
+  "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 
-async function streamChatResponse({ messages, lang, onToken, signal }) {
+function loadTurnstileApi() {
+  if (typeof window === "undefined") {
+    return Promise.reject(new Error("No window"));
+  }
+  if (window.turnstile) {
+    return Promise.resolve(window.turnstile);
+  }
+
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector("script[data-cf-turnstile]");
+    if (existing) {
+      existing.addEventListener("load", () => resolve(window.turnstile), { once: true });
+      existing.addEventListener("error", () => reject(new Error("Turnstile script failed")), {
+        once: true,
+      });
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = TURNSTILE_SCRIPT_SRC;
+    script.async = true;
+    script.defer = true;
+    script.dataset.cfTurnstile = "1";
+    script.onload = () => resolve(window.turnstile);
+    script.onerror = () => reject(new Error("Turnstile script failed"));
+    document.head.appendChild(script);
+  });
+}
+
+async function streamChatResponse({ messages, lang, turnstileToken, onToken, signal }) {
   const response = await fetch("/api/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ messages, lang }),
+    body: JSON.stringify({
+      messages,
+      lang,
+      "cf-turnstile-response": turnstileToken,
+    }),
     signal,
   });
 
@@ -57,7 +93,10 @@ const ChatWidget = () => {
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
   const scrollRef = useRef(null);
+  const turnstileHostRef = useRef(null);
+  const turnstileWidgetIdRef = useRef(null);
 
   useEffect(() => {
     const node = scrollRef.current;
@@ -65,6 +104,65 @@ const ChatWidget = () => {
       node.scrollTo({ top: node.scrollHeight });
     }
   }, [messages]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return undefined;
+    }
+
+    let cancelled = false;
+
+    const mount = async () => {
+      try {
+        const turnstile = await loadTurnstileApi();
+        if (cancelled || !turnstileHostRef.current || !turnstile) return;
+
+        if (turnstileWidgetIdRef.current != null) {
+          turnstile.remove(turnstileWidgetIdRef.current);
+          turnstileWidgetIdRef.current = null;
+        }
+
+        setTurnstileToken("");
+        turnstileWidgetIdRef.current = turnstile.render(turnstileHostRef.current, {
+          sitekey: TURNSTILE_SITEKEY,
+          action: TURNSTILE_ACTION,
+          callback: (token) => {
+            setTurnstileToken(typeof token === "string" ? token : "");
+          },
+          "expired-callback": () => {
+            setTurnstileToken("");
+          },
+          "error-callback": () => {
+            setTurnstileToken("");
+          },
+        });
+      } catch {
+        if (!cancelled) {
+          setError(t("chat.turnstileError"));
+        }
+      }
+    };
+
+    mount();
+
+    return () => {
+      cancelled = true;
+      const widgetId = turnstileWidgetIdRef.current;
+      if (widgetId != null && window.turnstile) {
+        window.turnstile.remove(widgetId);
+      }
+      turnstileWidgetIdRef.current = null;
+      setTurnstileToken("");
+    };
+  }, [isOpen, t]);
+
+  const resetTurnstile = () => {
+    setTurnstileToken("");
+    const widgetId = turnstileWidgetIdRef.current;
+    if (widgetId != null && window.turnstile) {
+      window.turnstile.reset(widgetId);
+    }
+  };
 
   const toggleOpen = () => {
     setIsOpen((prev) => !prev);
@@ -77,13 +175,16 @@ const ChatWidget = () => {
   const sendMessage = async (event) => {
     event.preventDefault();
     const content = input.trim();
-    if (!content || isStreaming) return;
+    if (!content || isStreaming || !turnstileToken) return;
 
     const history = [...messages, { role: "user", content }].slice(-MAX_HISTORY);
+    const tokenForRequest = turnstileToken;
     setMessages([...history, { role: "assistant", content: "" }]);
     setInput("");
     setError("");
     setIsStreaming(true);
+    // Token is single-use; clear immediately so a retry requires a fresh challenge.
+    setTurnstileToken("");
 
     let assistantContent = "";
 
@@ -91,6 +192,7 @@ const ChatWidget = () => {
       await streamChatResponse({
         messages: history,
         lang: i18n.language,
+        turnstileToken: tokenForRequest,
         onToken: (token) => {
           assistantContent += token;
           setMessages((prev) => {
@@ -109,11 +211,13 @@ const ChatWidget = () => {
         next[next.length - 1] = { role: "assistant", content: assistantContent };
         return next;
       });
-    } catch {
-      setError(t("chat.errorMessage"));
+    } catch (err) {
+      const status = typeof err?.message === "string" && err.message.includes("403") ? 403 : 0;
+      setError(status === 403 ? t("chat.turnstileError") : t("chat.errorMessage"));
       setMessages((prev) => prev.slice(0, -1));
     } finally {
       setIsStreaming(false);
+      resetTurnstile();
     }
   };
 
@@ -197,7 +301,11 @@ const ChatWidget = () => {
           </button>
         </div>
 
-        <form onSubmit={sendMessage} className="flex items-center gap-2 border-t border-surface-border p-3">
+        <div className="border-t border-surface-border px-3 pt-3">
+          <div ref={turnstileHostRef} className="flex justify-center" />
+        </div>
+
+        <form onSubmit={sendMessage} className="flex items-center gap-2 p-3">
           <input
             type="text"
             value={input}
@@ -208,7 +316,7 @@ const ChatWidget = () => {
           />
           <button
             type="submit"
-            disabled={isStreaming || !input.trim()}
+            disabled={isStreaming || !input.trim() || !turnstileToken}
             className="rounded-md bg-accent px-3 py-2 text-sm font-medium text-white disabled:opacity-50"
           >
             {t("chat.send")}

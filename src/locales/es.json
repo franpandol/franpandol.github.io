@@ -213,6 +213,7 @@
     "placeholder": "Escribí una pregunta…",
     "send": "Enviar",
     "errorMessage": "Algo salió mal. Probá de nuevo o escribí directamente por email.",
+    "turnstileError": "Falló la verificación anti-bots. Reiniciá el desafío e intentá de nuevo, o escribí por email.",
     "emptyState": "Probá: \"¿Qué stack de backend usa?\" o \"¿Está disponible para entrevistas?\"",
     "ctaLine": "¿Querés seguir la conversación? Escribí a {{email}} para coordinar una entrevista."
   }

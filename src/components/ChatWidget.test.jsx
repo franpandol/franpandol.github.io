@@ -25,12 +25,26 @@ function mockChatFetch(chunks) {
   );
 }
 
+function mockTurnstile(token = "test-turnstile-token") {
+  window.turnstile = {
+    render: vi.fn((_el, options) => {
+      // Simulate a successful challenge shortly after mount.
+      queueMicrotask(() => options?.callback?.(token));
+      return "widget-1";
+    }),
+    reset: vi.fn(),
+    remove: vi.fn(),
+  };
+}
+
 beforeEach(async () => {
   await i18n.changeLanguage("en");
+  mockTurnstile();
 });
 
 afterEach(() => {
   vi.restoreAllMocks();
+  delete window.turnstile;
 });
 
 test("renders a closed launcher button by default", () => {
@@ -44,7 +58,7 @@ test("renders a closed launcher button by default", () => {
   expect(screen.queryByText("Ask about Francisco")).not.toBeInTheDocument();
 });
 
-test("opening the launcher shows the panel", () => {
+test("opening the launcher shows the panel", async () => {
   render(
     <I18nextProvider i18n={i18n}>
       <ChatWidget />
@@ -54,6 +68,9 @@ test("opening the launcher shows the panel", () => {
   fireEvent.click(screen.getByRole("button", { name: /Open chat about Francisco's experience/i }));
 
   expect(screen.getByText("Ask about Francisco")).toBeInTheDocument();
+  await waitFor(() => {
+    expect(window.turnstile.render).toHaveBeenCalled();
+  });
 });
 
 test("sending a message streams the assistant reply into view", async () => {
@@ -74,6 +91,10 @@ test("sending a message streams the assistant reply into view", async () => {
   fireEvent.change(screen.getByPlaceholderText("Ask a question…"), {
     target: { value: "What does he work with?" },
   });
+
+  await waitFor(() => {
+    expect(screen.getByRole("button", { name: "Send" })).not.toBeDisabled();
+  });
   fireEvent.click(screen.getByRole("button", { name: "Send" }));
 
   expect(await screen.findByText("What does he work with?")).toBeInTheDocument();
@@ -88,8 +109,12 @@ test("sending a message streams the assistant reply into view", async () => {
 
   expect(global.fetch).toHaveBeenCalledWith(
     "/api/chat",
-    expect.objectContaining({ method: "POST" })
+    expect.objectContaining({
+      method: "POST",
+      body: expect.stringContaining('"cf-turnstile-response":"test-turnstile-token"'),
+    })
   );
+  expect(window.turnstile.reset).toHaveBeenCalledWith("widget-1");
 });
 
 test("also parses the older flat {response} chunk shape as a fallback", async () => {
@@ -104,6 +129,10 @@ test("also parses the older flat {response} chunk shape as a fallback", async ()
   fireEvent.click(screen.getByRole("button", { name: /Open chat about Francisco's experience/i }));
   fireEvent.change(screen.getByPlaceholderText("Ask a question…"), {
     target: { value: "Hey" },
+  });
+
+  await waitFor(() => {
+    expect(screen.getByRole("button", { name: "Send" })).not.toBeDisabled();
   });
   fireEvent.click(screen.getByRole("button", { name: "Send" }));
 
@@ -124,6 +153,10 @@ test("shows an error message when the request fails", async () => {
   fireEvent.click(screen.getByRole("button", { name: /Open chat about Francisco's experience/i }));
   fireEvent.change(screen.getByPlaceholderText("Ask a question…"), {
     target: { value: "Anything" },
+  });
+
+  await waitFor(() => {
+    expect(screen.getByRole("button", { name: "Send" })).not.toBeDisabled();
   });
   fireEvent.click(screen.getByRole("button", { name: "Send" }));
 
