@@ -193,10 +193,17 @@ export async function onRequestPost(context) {
 
   const systemPrompt = buildSystemPrompt(retrieval.chunks.join("\n\n---\n\n"), resolvedLang);
 
-  const stream = await env.AI.run(MODEL, {
-    messages: [{ role: "system", content: systemPrompt }, ...messages],
-    stream: true,
-  });
+  // Optional: route through Cloudflare AI Gateway to log every prompt/response.
+  // Enabled only when AI_GATEWAY_ID is set (create the gateway in the dashboard).
+  const gatewayId = String(env.AI_GATEWAY_ID ?? "").trim();
+  const stream = await env.AI.run(
+    MODEL,
+    {
+      messages: [{ role: "system", content: systemPrompt }, ...messages],
+      stream: true,
+    },
+    gatewayId ? { gateway: { id: gatewayId, collectLog: true } } : undefined,
+  );
 
   return sseResponse(stream);
 }
