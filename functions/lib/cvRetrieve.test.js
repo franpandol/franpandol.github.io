@@ -1,8 +1,9 @@
-import { describe, expect, test } from "vitest";
+import { describe, expect, test, vi } from "vitest";
 import {
   chunkProfile,
   cosineSimilarity,
   lexicalOverlap,
+  retrieveCvContext,
 } from "./cvRetrieve.js";
 import { outOfScopeRefusal } from "./chatScope.js";
 
@@ -50,5 +51,39 @@ describe("outOfScopeRefusal", () => {
   test("mentions CV grounding", () => {
     expect(outOfScopeRefusal("en")).toMatch(/CV/);
     expect(outOfScopeRefusal("es")).toMatch(/CV/);
+  });
+});
+
+describe("retrieveCvContext gateway routing", () => {
+  const markdown = `# Gateway routing fixture
+
+Francisco builds backend systems with Django and FastAPI for a living.
+`;
+
+  function makeEnv(extra = {}) {
+    const run = vi.fn(async (_model, input) => ({
+      data: input.text.map(() => [1, 0]),
+    }));
+    return { env: { AI: { run }, ...extra }, run };
+  }
+
+  test("sends embedding calls through the gateway when configured", async () => {
+    const { env, run } = makeEnv({ AI_GATEWAY_ID: "default" });
+    await retrieveCvContext({ env, profileMarkdown: `${markdown}\ngateway-on`, query: "django" });
+
+    expect(run).toHaveBeenCalled();
+    for (const call of run.mock.calls) {
+      expect(call[2]).toEqual({ gateway: { id: "default", collectLog: true } });
+    }
+  });
+
+  test("does not pass gateway options when not configured", async () => {
+    const { env, run } = makeEnv();
+    await retrieveCvContext({ env, profileMarkdown: `${markdown}\ngateway-off`, query: "django" });
+
+    expect(run).toHaveBeenCalled();
+    for (const call of run.mock.calls) {
+      expect(call[2]).toBeUndefined();
+    }
   });
 });

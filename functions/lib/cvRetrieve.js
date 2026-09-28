@@ -4,6 +4,8 @@
  * excerpts. No off-topic phrase lists to maintain.
  */
 
+import { gatewayOptions } from "./aiGateway.js";
+
 const EMBED_MODEL = "@cf/baai/bge-m3";
 const TOP_K = 4;
 /** Cosine similarity floor; below this we refuse without calling the LLM. */
@@ -113,7 +115,7 @@ function simpleHash(text) {
  */
 async function embedTexts(env, texts) {
   if (texts.length === 0) return [];
-  const result = await env.AI.run(EMBED_MODEL, { text: texts });
+  const result = await env.AI.run(EMBED_MODEL, { text: texts }, gatewayOptions(env));
   const data = result?.data;
   if (!Array.isArray(data) || data.length !== texts.length) {
     throw new Error("Unexpected embedding response shape");

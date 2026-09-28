@@ -5,6 +5,7 @@
  * refused before generation. Turnstile siteverify gates every request.
  */
 
+import { gatewayOptions } from "../lib/aiGateway.js";
 import { outOfScopeRefusal, sseTextStream } from "../lib/chatScope.js";
 import { retrieveCvContext } from "../lib/cvRetrieve.js";
 
@@ -193,16 +194,13 @@ export async function onRequestPost(context) {
 
   const systemPrompt = buildSystemPrompt(retrieval.chunks.join("\n\n---\n\n"), resolvedLang);
 
-  // Optional: route through Cloudflare AI Gateway to log every prompt/response.
-  // Enabled only when AI_GATEWAY_ID is set (create the gateway in the dashboard).
-  const gatewayId = String(env.AI_GATEWAY_ID ?? "").trim();
   const stream = await env.AI.run(
     MODEL,
     {
       messages: [{ role: "system", content: systemPrompt }, ...messages],
       stream: true,
     },
-    gatewayId ? { gateway: { id: gatewayId, collectLog: true } } : undefined,
+    gatewayOptions(env),
   );
 
   return sseResponse(stream);
