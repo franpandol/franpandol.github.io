@@ -32,9 +32,4 @@ React 18 SPA built with Vite, React Router v6, Tailwind CSS, and i18next (EN/ES)
 
 **Availability / contact** (`src/data/availability.js`, `src/constants/contact.js`): update `dailyWindows` and `TIMEZONE_IANA` in `availability.js` when interview availability changes. `EMAIL` in `contact.js` is the single source for the contact email.
 
-**Analytics**: PostHog via `posthog-js`. Mock it in tests with:
-```js
-vi.mock("posthog-js/react", () => ({ usePostHog: () => ({ capture: vi.fn() }) }))
-```
-
 **Testing**: Vitest + jsdom + React Testing Library. Setup in `src/setupTests.js`. Tests that use i18n should wrap with `<I18nextProvider i18n={i18n}>` and call `await i18n.changeLanguage("en")` in `beforeEach`.

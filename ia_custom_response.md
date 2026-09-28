@@ -200,13 +200,10 @@ No enterprise-grade auth, no third-party WAF rule — because the actual risk he
 
 The widget (`src/components/ChatWidget.jsx`) reads the Workers AI SSE stream token-by-token and paints the reply as it arrives, rather than blocking on a full response — the same instinct that makes a terminal feel alive versus a form that submits into a loading screen. It's mounted once, globally, in `App.jsx`, so it's available from any route, and it respects the site's existing i18n and Tailwind design tokens rather than importing a new component library or color palette.
 
-Every meaningful interaction — opening the widget, sending a message, copying the contact email from inside it — fires a PostHog event (`chat_opened`, `chat_message_sent`, `chat_cta_clicked`), the same instrumentation pattern already used on `RecruiterInterviewCta`. That turns "we shipped a chatbot" into a measurable funnel: opens → questions → contact clicks, which is the number that actually matters for a feature whose entire purpose is boosting hiring conversion.
-
 ## Why this, again, reads as a leadership signal
 
 - **He wouldn't duplicate a source of truth**, even under pressure to ship a flashy AI feature fast.
 - **He picked infrastructure he already operates**, instead of adding a new vendor relationship for a personal-site feature.
 - **He priced the solution before building it** — cheapest capable model, free-tier-aware, guardrailed proportionally to actual risk.
-- **He instrumented the thing he built**, so the feature's success is a number, not a vibe.
 
 If you want to see it: open [franpandol.com](https://franpandol.com), click the chat launcher in the corner, and ask it what stack he uses, or whether he's available this week. It will answer from his real CV — and it will tell you how to reach him.

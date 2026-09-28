@@ -1,12 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import { expect, test, vi, beforeEach } from "vitest";
+import { expect, test, beforeEach } from "vitest";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../i18n";
 import RecruiterInterviewCta from "./RecruiterInterviewCta";
-
-vi.mock("posthog-js/react", () => ({
-  usePostHog: () => ({ capture: vi.fn() }),
-}));
 
 beforeEach(async () => {
   await i18n.changeLanguage("en");

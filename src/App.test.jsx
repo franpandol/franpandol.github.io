@@ -1,11 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { expect, test, vi } from "vitest";
+import { expect, test } from "vitest";
 import App from "./App";
-
-vi.mock("posthog-js/react", () => ({
-  usePostHog: () => ({ capture: vi.fn() }),
-  PostHogProvider: ({ children }) => children,
-}));
 
 test("renders CV masthead and name", () => {
   render(<App />);

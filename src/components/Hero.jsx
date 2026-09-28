@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { usePostHog } from "posthog-js/react";
 import { Trans, useTranslation } from "react-i18next";
 import { EMAIL } from "../constants/contact";
 
@@ -9,7 +8,6 @@ const textLink = "text-sm text-accent underline-offset-4 hover:underline";
 const strongClass = "font-medium text-content-primary";
 
 const Hero = () => {
-  const posthog = usePostHog();
   const { t } = useTranslation();
   const [copyFeedback, setCopyFeedback] = useState("");
   const badges = t("hero.badges", { returnObjects: true });
@@ -19,7 +17,6 @@ const Hero = () => {
     navigator.clipboard.writeText(EMAIL).then(
       () => {
         setCopyFeedback(t("common.copied"));
-        posthog?.capture("recruiter_interview_email_copied");
         window.setTimeout(() => setCopyFeedback(""), 2000);
       },
       () => {

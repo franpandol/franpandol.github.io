@@ -4,22 +4,11 @@ import './i18n';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { PostHogProvider} from 'posthog-js/react'
-
-const options = {
-  api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
-  persistence: 'localStorage',
-};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <PostHogProvider 
-          apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY}
-          options={options}
-        >
-        <App />
-    </PostHogProvider>
+    <App />
   </React.StrictMode>
 );
 

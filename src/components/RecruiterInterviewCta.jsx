@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from "react";
-import { usePostHog } from "posthog-js/react";
 import { useTranslation } from "react-i18next";
 import { EMAIL } from "../constants/contact";
 import { dailyWindows, TIMEZONE_IANA } from "../data/availability";
@@ -19,7 +18,6 @@ const formatInTz = (hhmm, tz, locale) =>
 
 const RecruiterInterviewCta = () => {
   const { t, i18n } = useTranslation();
-  const posthog = usePostHog();
   const locale = i18n.language === "es" ? "es-AR" : "en-US";
   const [copyFeedback, setCopyFeedback] = useState("");
 
@@ -59,20 +57,14 @@ const RecruiterInterviewCta = () => {
 
   const copyEmail = () => {
     navigator.clipboard.writeText(EMAIL).then(
-      () => {
-        showFeedback("common.copied");
-        posthog?.capture("recruiter_interview_email_copied");
-      },
+      () => showFeedback("common.copied"),
       () => showFeedback("common.copyFailed")
     );
   };
 
   const copyTemplate = () => {
     navigator.clipboard.writeText(messageDraft).then(
-      () => {
-        showFeedback("contact.recruiters.templateCopied");
-        posthog?.capture("recruiter_interview_template_copied");
-      },
+      () => showFeedback("contact.recruiters.templateCopied"),
       () => showFeedback("common.copyFailed")
     );
   };

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { usePostHog } from "posthog-js/react";
 import { useTranslation } from "react-i18next";
 import { EMAIL } from "../constants/contact";
 
@@ -7,13 +6,8 @@ import { EMAIL } from "../constants/contact";
 const linkClass = "text-base text-accent underline-offset-4 hover:underline";
 
 export const ContactContent = () => {
-  const posthog = usePostHog();
   const { t } = useTranslation();
   const [copySuccess, setCopySuccess] = useState("");
-
-  const handleContactClick = () => {
-    posthog?.capture("contact_me_clicked");
-  };
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(EMAIL).then(
@@ -27,10 +21,6 @@ export const ContactContent = () => {
     );
   };
 
-  const onDownload = (format) => {
-    posthog?.capture("download_cv", { format });
-  };
-
   return (
     <section className="rounded-lg border border-surface-border bg-surface-raised p-6 shadow-sm md:p-8">
       <h2 className="font-display text-lg font-semibold tracking-tight text-content-primary md:text-xl">
@@ -39,7 +29,7 @@ export const ContactContent = () => {
 
       <div className="mt-4 space-y-4 text-base">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <a href={`mailto:${EMAIL}`} className={linkClass} onClick={handleContactClick}>
+          <a href={`mailto:${EMAIL}`} className={linkClass}>
             {EMAIL}
           </a>
           <button
@@ -81,7 +71,6 @@ export const ContactContent = () => {
           href="/CV_Francisco_Pandol.pdf"
           download
           className={linkClass}
-          onClick={() => onDownload("pdf")}
         >
           {t("contact.downloadPdf")}
         </a>
@@ -90,7 +79,6 @@ export const ContactContent = () => {
           href="/cv_markdown_en_Francisco_Pandol.md"
           download
           className={linkClass}
-          onClick={() => onDownload("markdown")}
         >
           {t("contact.downloadMd")}
         </a>

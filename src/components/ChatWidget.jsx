@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { usePostHog } from "posthog-js/react";
 import { useTranslation } from "react-i18next";
 import { EMAIL } from "../constants/contact";
 
@@ -49,13 +48,11 @@ async function streamChatResponse({ messages, lang, onToken, signal }) {
 
 const ChatWidget = () => {
   const { t, i18n } = useTranslation();
-  const posthog = usePostHog();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
   const [error, setError] = useState("");
-  const hasOpenedRef = useRef(false);
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -66,20 +63,11 @@ const ChatWidget = () => {
   }, [messages]);
 
   const toggleOpen = () => {
-    setIsOpen((prev) => {
-      const next = !prev;
-      if (next && !hasOpenedRef.current) {
-        hasOpenedRef.current = true;
-        posthog?.capture("chat_opened");
-      }
-      return next;
-    });
+    setIsOpen((prev) => !prev);
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText(EMAIL).then(() => {
-      posthog?.capture("chat_cta_clicked");
-    });
+    navigator.clipboard.writeText(EMAIL);
   };
 
   const sendMessage = async (event) => {
@@ -92,7 +80,6 @@ const ChatWidget = () => {
     setInput("");
     setError("");
     setIsStreaming(true);
-    posthog?.capture("chat_message_sent");
 
     let assistantContent = "";
 

@@ -4,12 +4,6 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "../i18n";
 import ChatWidget from "./ChatWidget";
 
-const capture = vi.fn();
-
-vi.mock("posthog-js/react", () => ({
-  usePostHog: () => ({ capture }),
-}));
-
 function sseStreamFrom(chunks) {
   const encoder = new TextEncoder();
   return new ReadableStream({
@@ -33,7 +27,6 @@ function mockChatFetch(chunks) {
 
 beforeEach(async () => {
   await i18n.changeLanguage("en");
-  capture.mockClear();
 });
 
 afterEach(() => {
@@ -51,7 +44,7 @@ test("renders a closed launcher button by default", () => {
   expect(screen.queryByText("Ask about Francisco")).not.toBeInTheDocument();
 });
 
-test("opening the launcher shows the panel and fires chat_opened once", () => {
+test("opening the launcher shows the panel", () => {
   render(
     <I18nextProvider i18n={i18n}>
       <ChatWidget />
@@ -61,8 +54,6 @@ test("opening the launcher shows the panel and fires chat_opened once", () => {
   fireEvent.click(screen.getByRole("button", { name: /Open chat about Francisco's experience/i }));
 
   expect(screen.getByText("Ask about Francisco")).toBeInTheDocument();
-  expect(capture).toHaveBeenCalledWith("chat_opened");
-  expect(capture).toHaveBeenCalledTimes(1);
 });
 
 test("sending a message streams the assistant reply into view", async () => {
@@ -84,7 +75,6 @@ test("sending a message streams the assistant reply into view", async () => {
   });
   fireEvent.click(screen.getByRole("button", { name: "Send" }));
 
-  expect(capture).toHaveBeenCalledWith("chat_message_sent");
   expect(await screen.findByText("What does he work with?")).toBeInTheDocument();
 
   await waitFor(() => {
@@ -115,10 +105,9 @@ test("shows an error message when the request fails", async () => {
   expect(await screen.findByText(/Something went wrong/i)).toBeInTheDocument();
 });
 
-test("copying the email captures chat_cta_clicked", async () => {
-  Object.assign(navigator, {
-    clipboard: { writeText: vi.fn().mockResolvedValue(undefined) },
-  });
+test("copying the email uses the clipboard", async () => {
+  const writeText = vi.fn().mockResolvedValue(undefined);
+  Object.assign(navigator, { clipboard: { writeText } });
 
   render(
     <I18nextProvider i18n={i18n}>
@@ -130,6 +119,6 @@ test("copying the email captures chat_cta_clicked", async () => {
   fireEvent.click(screen.getByRole("button", { name: "Copy" }));
 
   await waitFor(() => {
-    expect(capture).toHaveBeenCalledWith("chat_cta_clicked");
+    expect(writeText).toHaveBeenCalledWith("hire@franpandol.com");
   });
 });
