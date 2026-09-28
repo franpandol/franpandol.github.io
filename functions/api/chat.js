@@ -50,31 +50,34 @@ function isValidMessages(messages) {
 }
 
 function expectedHostnames(env) {
+  // Fallback so a missing Pages plain-var never fail-closes every request
+  // when the Dashboard only allows encrypted secrets (wrangler-managed vars).
+  const raw = String(env.TURNSTILE_HOSTNAMES || "franpandol.com");
   return new Set(
-    String(env.TURNSTILE_HOSTNAMES ?? "")
+    raw
       .split(",")
-      .map((hostname) => hostname.trim())
+      .map((hostname) => hostname.trim().toLowerCase())
       .filter(Boolean)
   );
 }
 
 /**
  * Canonical Turnstile siteverify. Fail closed on any network/parse/mismatch issue.
- * @returns {Promise<boolean>}
+ * @returns {Promise<{ ok: true } | { ok: false, code: string }>}
  */
 async function verifyTurnstile({ token, remoteip, env }) {
   const hostnames = expectedHostnames(env);
-  const secret = env.TURNSTILE_SECRET;
+  // Dashboard paste often adds a trailing newline; trim so siteverify accepts it.
+  const secret = String(env.TURNSTILE_SECRET ?? "").trim();
 
-  if (
-    typeof token !== "string" ||
-    token.length === 0 ||
-    token.length > 2048 ||
-    hostnames.size === 0 ||
-    typeof secret !== "string" ||
-    secret.length === 0
-  ) {
-    return false;
+  if (typeof token !== "string" || token.length === 0 || token.length > 2048) {
+    return { ok: false, code: "missing_token" };
+  }
+  if (!secret) {
+    return { ok: false, code: "missing_secret" };
+  }
+  if (hostnames.size === 0) {
+    return { ok: false, code: "missing_hostnames" };
   }
 
   let result;
@@ -84,25 +87,40 @@ async function verifyTurnstile({ token, remoteip, env }) {
       body.set("remoteip", remoteip);
     }
 
-    const response = await fetch(SITEVERIFY_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      signal: AbortSignal.timeout(10_000),
-      body,
-    });
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10_000);
+    let response;
+    try {
+      response = await fetch(SITEVERIFY_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        signal: controller.signal,
+        body,
+      });
+    } finally {
+      clearTimeout(timer);
+    }
+
     if (!response.ok) {
-      return false;
+      return { ok: false, code: "siteverify_http" };
     }
     result = await response.json();
   } catch {
-    return false;
+    return { ok: false, code: "siteverify_network" };
   }
 
-  return (
-    result?.success === true &&
-    result.action === TURNSTILE_ACTION &&
-    hostnames.has(result.hostname)
-  );
+  if (result?.success !== true) {
+    const codes = Array.isArray(result?.["error-codes"]) ? result["error-codes"] : [];
+    return { ok: false, code: codes[0] || "siteverify_rejected" };
+  }
+  if (result.action !== TURNSTILE_ACTION) {
+    return { ok: false, code: "action_mismatch" };
+  }
+  const hostname = String(result.hostname || "").toLowerCase();
+  if (!hostnames.has(hostname)) {
+    return { ok: false, code: "hostname_mismatch" };
+  }
+  return { ok: true };
 }
 
 export async function onRequestPost(context) {
@@ -119,9 +137,12 @@ export async function onRequestPost(context) {
   const turnstileToken = body?.["cf-turnstile-response"];
   const remoteip = request.headers.get("CF-Connecting-IP") || undefined;
 
-  const allowed = await verifyTurnstile({ token: turnstileToken, remoteip, env });
-  if (!allowed) {
-    return Response.json({ error: "Forbidden" }, { status: 403 });
+  const verification = await verifyTurnstile({ token: turnstileToken, remoteip, env });
+  if (!verification.ok) {
+    return Response.json(
+      { error: "Forbidden", code: verification.code },
+      { status: 403 }
+    );
   }
 
   if (!isValidMessages(messages)) {
