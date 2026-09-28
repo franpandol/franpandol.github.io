@@ -213,6 +213,7 @@
     "placeholder": "Ask a question…",
     "send": "Send",
     "errorMessage": "Something went wrong. Please try again or email directly.",
-    "emptyState": "Try: \"What backend stack does he use?\" or \"Is he available for interviews?\""
+    "emptyState": "Try: \"What backend stack does he use?\" or \"Is he available for interviews?\"",
+    "ctaLine": "Want to talk further? Email {{email}} to schedule an interview."
   }
 }

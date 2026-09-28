@@ -57,9 +57,10 @@ test("opening the launcher shows the panel", () => {
 });
 
 test("sending a message streams the assistant reply into view", async () => {
+  // Real Workers AI shape: OpenAI-compatible chat completion chunks.
   mockChatFetch([
-    'data: {"response":"Hello"}\n\n',
-    'data: {"response":" there"}\n\n',
+    'data: {"choices":[{"delta":{"content":"Hello"}}]}\n\n',
+    'data: {"choices":[{"delta":{"content":" there"}}]}\n\n',
     "data: [DONE]\n\n",
   ]);
 
@@ -78,13 +79,37 @@ test("sending a message streams the assistant reply into view", async () => {
   expect(await screen.findByText("What does he work with?")).toBeInTheDocument();
 
   await waitFor(() => {
-    expect(screen.getByText("Hello there")).toBeInTheDocument();
+    expect(screen.getByText(/Hello there/)).toBeInTheDocument();
   });
+
+  // The contact nudge is appended deterministically, regardless of what
+  // the model itself said, so it must always be present.
+  expect(screen.getByText(/Email hire@franpandol\.com to schedule an interview/)).toBeInTheDocument();
 
   expect(global.fetch).toHaveBeenCalledWith(
     "/api/chat",
     expect.objectContaining({ method: "POST" })
   );
+});
+
+test("also parses the older flat {response} chunk shape as a fallback", async () => {
+  mockChatFetch(['data: {"response":"Hi"}\n\n', "data: [DONE]\n\n"]);
+
+  render(
+    <I18nextProvider i18n={i18n}>
+      <ChatWidget />
+    </I18nextProvider>
+  );
+
+  fireEvent.click(screen.getByRole("button", { name: /Open chat about Francisco's experience/i }));
+  fireEvent.change(screen.getByPlaceholderText("Ask a question…"), {
+    target: { value: "Hey" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "Send" }));
+
+  await waitFor(() => {
+    expect(screen.getByText(/Hi/)).toBeInTheDocument();
+  });
 });
 
 test("shows an error message when the request fails", async () => {

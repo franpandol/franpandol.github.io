@@ -213,6 +213,7 @@
     "placeholder": "Escribí una pregunta…",
     "send": "Enviar",
     "errorMessage": "Algo salió mal. Probá de nuevo o escribí directamente por email.",
-    "emptyState": "Probá: \"¿Qué stack de backend usa?\" o \"¿Está disponible para entrevistas?\""
+    "emptyState": "Probá: \"¿Qué stack de backend usa?\" o \"¿Está disponible para entrevistas?\"",
+    "ctaLine": "¿Querés seguir la conversación? Escribí a {{email}} para coordinar una entrevista."
   }
 }

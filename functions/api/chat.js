@@ -20,7 +20,7 @@ function buildSystemPrompt(profileMarkdown, lang) {
     "Keep answers short: 2-4 sentences.",
     "Never invent facts that are not in the profile below.",
     "If asked about anything unrelated to Francisco's candidacy (general knowledge, coding help, opinions, etc.), politely decline and steer back to his experience.",
-    "End every answer with a brief, natural nudge to book an interview or email Francisco, using the contact details in the profile below.",
+    "Answer the question directly and factually. Do not add a closing sentence about contacting Francisco or booking an interview — that is appended separately, after your answer.",
     languageLine,
     "",
     "--- PROFILE START ---",

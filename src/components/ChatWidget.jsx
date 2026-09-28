@@ -36,8 +36,12 @@ async function streamChatResponse({ messages, lang, onToken, signal }) {
 
       try {
         const parsed = JSON.parse(payload);
-        if (typeof parsed.response === "string") {
-          onToken(parsed.response);
+        // Workers AI streams OpenAI-compatible chat completion chunks
+        // (choices[0].delta.content); `response` is kept as a fallback
+        // for models/binding versions that use the older flat shape.
+        const token = parsed.choices?.[0]?.delta?.content ?? parsed.response;
+        if (typeof token === "string" && token) {
+          onToken(token);
         }
       } catch {
         // Ignore partial/malformed SSE chunks.
@@ -95,6 +99,15 @@ const ChatWidget = () => {
             return next;
           });
         },
+      });
+
+      // Appended deterministically rather than left to the model, so the
+      // contact nudge always shows regardless of instruction-following.
+      assistantContent += `\n\n${t("chat.ctaLine", { email: EMAIL })}`;
+      setMessages((prev) => {
+        const next = [...prev];
+        next[next.length - 1] = { role: "assistant", content: assistantContent };
+        return next;
       });
     } catch {
       setError(t("chat.errorMessage"));
