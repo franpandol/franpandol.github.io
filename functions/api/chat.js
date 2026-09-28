@@ -101,10 +101,12 @@ async function verifyTurnstile({ token, remoteip, env }) {
       clearTimeout(timer);
     }
 
-    if (!response.ok) {
-      return { ok: false, code: "siteverify_http" };
+    // Siteverify returns JSON on 4xx (e.g. invalid-input-secret) as well as 2xx.
+    try {
+      result = await response.json();
+    } catch {
+      return { ok: false, code: response.ok ? "siteverify_bad_json" : "siteverify_http" };
     }
-    result = await response.json();
   } catch {
     return { ok: false, code: "siteverify_network" };
   }
