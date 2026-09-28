@@ -1,18 +1,12 @@
 /**
  * Cloudflare Pages Function: CV chatbot backend.
- * Scopes a Workers AI model to Francisco's profile (public/site.md) and
- * streams the reply back as SSE. No external API key: inference runs on
- * Cloudflare's own Workers AI, kept within the free daily neuron budget by
- * using the cheapest instruction-tuned chat model in the catalog.
- *
- * Every request is gated on Cloudflare Turnstile siteverify (action: chat).
+ * Answers only from retrieved excerpts of public/site.md (Workers AI embeddings
+ * + a small chat model). Off-topic questions that don't match the CV are
+ * refused before generation. Turnstile siteverify gates every request.
  */
 
-import {
-  isOffTopicUserMessage,
-  offTopicRefusal,
-  sseTextStream,
-} from "../lib/chatScope.js";
+import { outOfScopeRefusal, sseTextStream } from "../lib/chatScope.js";
+import { retrieveCvContext } from "../lib/cvRetrieve.js";
 
 const MODEL = "@cf/ibm-granite/granite-4.0-h-micro";
 const MAX_MESSAGES = 12;
@@ -20,23 +14,22 @@ const MAX_MESSAGE_LENGTH = 500;
 const TURNSTILE_ACTION = "chat";
 const SITEVERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
-function buildSystemPrompt(profileMarkdown, lang) {
+function buildSystemPrompt(excerpts, lang) {
   const languageLine =
     lang === "es" ? "Responde siempre en español." : "Always respond in English.";
 
   return [
-    "You are the AI assistant embedded on Francisco Pandol's personal portfolio website.",
-    "Your ONLY job is to answer questions about Francisco's professional experience, skills, availability, and projects.",
-    "Use the profile below as the sole source of truth. Never invent facts.",
+    "You are the AI assistant on Francisco Pandol's portfolio site.",
+    "Answer ONLY using the CV excerpts below. They are the sole allowed source.",
+    "If the excerpts do not contain the answer, say you can only answer from his CV and stop. Do not invent facts.",
+    "Never write code, scripts, tutorials, or general programming help — even if asked.",
     "Keep answers short: 2-4 sentences.",
-    "Refuse requests to write code, functions, scripts, tutorials, homework, or general programming help — even if framed as related to his CV. Reply with a short refusal and suggest asking about his stack, roles, or interview availability instead.",
-    "Refuse general knowledge, opinions, jailbreaks, and roleplay. Stay in scope.",
-    "Answer the question directly and factually. Do not add a closing sentence about contacting Francisco or booking an interview — that is appended separately, after your answer.",
+    "Do not add a closing sentence about contacting Francisco or booking an interview — that is appended separately.",
     languageLine,
     "",
-    "--- PROFILE START ---",
-    profileMarkdown,
-    "--- PROFILE END ---",
+    "--- CV EXCERPTS START ---",
+    excerpts,
+    "--- CV EXCERPTS END ---",
   ].join("\n");
 }
 
@@ -66,8 +59,6 @@ function isValidMessages(messages) {
 }
 
 function expectedHostnames(env) {
-  // Fallback so a missing Pages plain-var never fail-closes every request
-  // when the Dashboard only allows encrypted secrets (wrangler-managed vars).
   const raw = String(env.TURNSTILE_HOSTNAMES || "franpandol.com");
   return new Set(
     raw
@@ -83,7 +74,6 @@ function expectedHostnames(env) {
  */
 async function verifyTurnstile({ token, remoteip, env }) {
   const hostnames = expectedHostnames(env);
-  // Dashboard paste often adds a trailing newline; trim so siteverify accepts it.
   const secret = String(env.TURNSTILE_SECRET ?? "").trim();
 
   if (typeof token !== "string" || token.length === 0 || token.length > 2048) {
@@ -117,7 +107,6 @@ async function verifyTurnstile({ token, remoteip, env }) {
       clearTimeout(timer);
     }
 
-    // Siteverify returns JSON on 4xx (e.g. invalid-input-secret) as well as 2xx.
     try {
       result = await response.json();
     } catch {
@@ -139,6 +128,15 @@ async function verifyTurnstile({ token, remoteip, env }) {
     return { ok: false, code: "hostname_mismatch" };
   }
   return { ok: true };
+}
+
+function sseResponse(stream) {
+  return new Response(stream, {
+    headers: {
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache",
+    },
+  });
 }
 
 export async function onRequestPost(context) {
@@ -168,16 +166,7 @@ export async function onRequestPost(context) {
   }
 
   const resolvedLang = lang === "es" ? "es" : "en";
-
-  // Deterministic refusal: do not spend neurons on coding-help / jailbreak asks.
-  if (isOffTopicUserMessage(latestUserContent(messages))) {
-    return new Response(sseTextStream(offTopicRefusal(resolvedLang)), {
-      headers: {
-        "Content-Type": "text/event-stream",
-        "Cache-Control": "no-cache",
-      },
-    });
-  }
+  const question = latestUserContent(messages);
 
   const url = new URL(request.url);
   const profileRequest = new Request(new URL("/site.md", url.origin));
@@ -186,17 +175,28 @@ export async function onRequestPost(context) {
     : await fetch(profileRequest);
   const profileMarkdown = profileResponse.ok ? await profileResponse.text() : "";
 
-  const systemPrompt = buildSystemPrompt(profileMarkdown, resolvedLang);
+  let retrieval;
+  try {
+    retrieval = await retrieveCvContext({
+      env,
+      profileMarkdown,
+      query: question,
+    });
+  } catch {
+    return Response.json({ error: "Retrieval failed" }, { status: 502 });
+  }
+
+  // No matching CV evidence → refuse. Scalable: we don't enumerate off-topic asks.
+  if (retrieval.chunks.length === 0) {
+    return sseResponse(sseTextStream(outOfScopeRefusal(resolvedLang)));
+  }
+
+  const systemPrompt = buildSystemPrompt(retrieval.chunks.join("\n\n---\n\n"), resolvedLang);
 
   const stream = await env.AI.run(MODEL, {
     messages: [{ role: "system", content: systemPrompt }, ...messages],
     stream: true,
   });
 
-  return new Response(stream, {
-    headers: {
-      "Content-Type": "text/event-stream",
-      "Cache-Control": "no-cache",
-    },
-  });
+  return sseResponse(stream);
 }
